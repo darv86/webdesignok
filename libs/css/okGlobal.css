@@ -65,6 +65,10 @@ body {
     margin: 0 auto;
     background: hsla(0, 0%, 95%, 1);
 }
+.flexbox {
+    display: flex;
+    align-items: center;
+}
 
 /* TEXT */
 .title {
