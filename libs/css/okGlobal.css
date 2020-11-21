@@ -11,8 +11,6 @@
 
 :root {
     --colorMain: 216, 100%, 45%;
-    --colorAccent: 342, 63%, 48%;
-    --colorGray: 0, 0%, 16%;
     --module: 16px;
 }
 html {
@@ -50,26 +48,14 @@ body {
     border: none;
 }
 .button:focus {
-    box-shadow: 0 0 0 2px white, 0 0 0 4px hsla(var(--colorMain) 1);
-}
-.button--sizeS {
-    font-size: .75em;
-}
-.button--sizeM {
-    font-size: 1em;
-}
-.button--sizeL {
-    font-size: 1.25em;
-}
-.button--sizeXL {
-    font-size: 1.75em;
+    box-shadow: 0 0 0 2px white, 0 0 0 4px hsla(var(--colorMain), 1);
 }
 .button--main {
-    background-color: hsla(var(--colorMain) 1);
+    background-color: hsla(var(--colorMain), 1);
     color: white;
 }
 .button--second {
-    border: 1px solid hsla(var(--colorMain) 1);
+    border: 1px solid hsla(var(--colorMain), 1);
     color: hsla(var(--colorMain) 1);
 }
 
@@ -84,12 +70,6 @@ body {
 .title {
     font-weight: 800;
     letter-spacing: .02em;
-}
-.title--sizeH1 {
-    font-size: 3rem;
-}
-.title--sizeH2 {
-    font-size: 2rem;
 }
 .subtitle {
     font-weight: 600;
