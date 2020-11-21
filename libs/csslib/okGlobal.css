@@ -94,9 +94,7 @@ body {
 .subtitle {
     font-weight: 600;
 }
-.subtitle--sizeM {
-    font-size: 1.25em;
-}
+
 .paragraph {
     line-height: 1.5;
 }
@@ -106,12 +104,6 @@ body {
 }
 .caption {
     font-weight: 450;
-}
-.caption--sizeM {
-    font-size: .75em;
-}
-.caption--sizeS {
-    font-size: .625em;
 }
 
 
