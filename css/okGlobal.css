@@ -11,8 +11,6 @@
 
 :root {
     --colorMain: 216, 100%, 45%;
-    --colorAccent: 342, 63%, 48%;
-    --colorGray: 0, 0%, 16%;
     --module: 16px;
 }
 html {
@@ -85,17 +83,11 @@ body {
     font-weight: 800;
     letter-spacing: .02em;
 }
-.title--sizeH1 {
+.title--h1 {
     font-size: 3rem;
-}
-.title--sizeH2 {
-    font-size: 2rem;
 }
 .subtitle {
     font-weight: 600;
-}
-.subtitle--sizeM {
-    font-size: 1.25em;
 }
 .paragraph {
     line-height: 1.5;
@@ -106,12 +98,6 @@ body {
 }
 .caption {
     font-weight: 450;
-}
-.caption--sizeM {
-    font-size: .75em;
-}
-.caption--sizeS {
-    font-size: .625em;
 }
 
 
