@@ -11,9 +11,9 @@ small, strike, strong, tt, var, b, u, center,
 dl, dt, dd, ol, ul, li,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, output, summary,
-footer, header, section, menu, nav, 
-time, mark, audio, video, figure, figcaption, 
-form, label, legend, input, button, textarea, fieldset, select
+footer, header, section, menu, nav,
+time, mark, audio, video, figure, figcaption,
+form, label, legend, input, button, textarea, fieldset, select,
 :before, :after {
     margin: 0;
 	padding: 0;
@@ -28,15 +28,19 @@ form, label, legend, input, button, textarea, fieldset, select
 :focus, :active {
     outline: 0;
 }
-a {
-    color: inherit;
-}
 a, a:visited, a:hover {
     text-decoration: none;
+}
+a {
+    cursor: pointer;
+    color: inherit;
 }
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
+}
+ul, ol {
+    list-style-position: inside;
 }
 ul li {
     list-style: none;
@@ -59,6 +63,10 @@ button, select {
 button, input {
     line-height: normal;
 }
+button {
+    background-color: initial;
+    color: inherit;
+}
 textarea {
     overflow: auto;
     vertical-align: top;
@@ -71,6 +79,12 @@ button::-moz-focus-inner,
 input::-moz-focus-inner {
     border: 0;
     padding: 0;
+}
+input[type="radio"] {
+    border: none;
+	appearance: none;
+    -moz-appearance: none;
+	-webkit-appearance: none;
 }
 button,
 input[type="button"],
@@ -97,3 +111,17 @@ input::-moz-focus-inner {
     padding: 0;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus,
+select:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s;
+}
