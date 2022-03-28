@@ -1,0 +1,137 @@
+.projectIntro {
+    display: flex;
+    margin-bottom: 72px;
+}
+.projectIntro__imgBox {
+    width: calc(100% / 12 * 7 - 12px);
+    flex-shrink: 0;
+    margin-right: 72px;
+}
+.projectIntro__img {
+    width: 100%;
+}
+.projectIntro__linkBackTo {
+    margin-bottom: 24px;
+}
+.projectIntro__description {
+    align-self: center;
+}
+.projectIntro__title {
+    margin-top: 24px;
+}
+.titleLine::after {
+    margin-left: 0;
+}
+
+.projectIntro__secondButton {
+    display: block;
+    margin-top: 12px;
+    text-align: left;
+}
+.projectIntro__secondButton--behance::before {
+    content: none;
+}
+.projectIntro__secondButton--behance::after {
+    content: url(/img/svg/behanceLogo.svg);
+    border: none;
+    display: inline-block;
+    position: static;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.imgTextBox {
+    margin-top: 72px;
+}
+.projectPages__img {
+    border: 1px solid rgba(230, 230, 230, 1);
+    border-radius: 2px;
+    width: 100%;
+}
+
+.pageCard {
+    margin: 0 12px 24px;
+    width: calc(100% / 12 * 4 - 24px);
+}
+.projectPages .row {
+    margin-bottom: -24px;
+}
+.pageCard__link {
+    display: block;
+    height: 306px;
+    overflow-y: hidden;
+    border: 1px solid rgba(230, 230, 230, 1);
+    border-radius: 2px;
+}
+.pageCard__img {
+    width: 100%;
+}
+.pageCard__caption {
+    display: block;
+    margin-top: 12px;
+    /* font-size: 16px; */
+    color: hsla(0, 0%, 60%, 1);
+}
+
+.pageCard__link:focus + .pageCard__imgWrapper {
+    position: fixed;
+    z-index: 20;
+    top: 0; right: 0; bottom: 0; left: 0;
+    padding: 8%;
+    background-color: hsla(0, 0%, 0%, .75);
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    clip: auto;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .3s;
+}
+.pageCard__img--show {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    transform: translateY(10%);
+    transition: transform .5s ease-out .1s;
+}
+.pageCard__link:focus + .pageCard__imgWrapper .pageCard__img--show {
+    transform: translateY(0%);
+}
+
+
+@media screen and (max-width: 1024px) {
+    .projectIntro__imgBox {
+        margin-right: 48px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .projectIntro__title {
+        margin-top: 24px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .projectIntro__imgBox {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .projectIntro {
+        margin-bottom: 48px;
+    }
+    .imgTextBox {
+        margin-top: 48px;
+    }
+    .pageCard__link {
+        height: 153px;
+    }
+    .pageCard__link:focus + .pageCard__imgWrapper {
+        padding: 8% 12px;
+    }
+    .pageCard {
+        width: calc(100% / 12 * 6 - 24px);
+    }
+}

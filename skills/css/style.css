@@ -1,0 +1,218 @@
+.skillSection {
+    display: flex;
+    justify-content: center;
+    width: calc(100% / 12 * 4 - 12px);
+    background-color: rgba(250, 250, 250, 1);
+    border: 1px solid rgba(230, 230, 230, 1);
+    border-radius: 2px;
+    margin: 0 12px;
+    padding: 48px 0;
+}
+
+.progressSkillList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+}
+.skillUnit {
+    white-space: nowrap;
+}
+.skillUnit:first-child {
+    margin-right: 24px;
+    margin-bottom: 24px;
+}
+.skillUnit:last-child {
+    margin-left: 24px;
+}
+.skillUnit__item:first-child {
+    margin-right: 24px;
+}
+
+.softSkillsList {
+    max-width: 268px;
+    align-self: center;
+}
+.softSkillsUnit {
+    padding: 3px 6px;
+    border: 1px solid rgba(230, 230, 230, 1);
+    border-radius: 1px;
+    margin-bottom: 12px;
+}
+
+.designToolsUnit {
+    display: flex;
+    align-items: center;
+}
+.designToolsUnit + .designToolsUnit {
+    margin-top: 12px;
+}
+.designToolsUnit__img {
+    margin-right: 12px;
+}
+.designToolsUnit__title {
+    margin-right: 24px;
+}
+.designToolsUnit__progress {
+    position: relative;
+    width: 140px;
+    height: 8px;
+    background-color: rgba(230, 230, 230, 1);
+    border: 1px solid rgba(230, 230, 230, 1);
+    border-radius: 8px;
+    margin-left: auto;
+}
+.designToolsUnit__progress100::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    border-radius: 8px;
+    background-color: rgba(111, 44, 145, 1);
+}
+.designToolsUnit__progress100--90::after {
+    width: 90%;
+}
+.designToolsUnit__progress100--80::after {
+    width: 80%;
+}
+.designToolsUnit__progress100--70::after {
+    width: 70%;
+}
+.designToolsUnit__progress100--60::after {
+    width: 60%;
+}
+
+.professionalSkillsUnit {
+    display: flex;
+    align-items: center;
+}
+.professionalSkillsUnit + .professionalSkillsUnit {
+    margin-top: 12px;
+}
+.professionalSkillsUnit__title {
+    margin-right: 24px;
+}
+.ratingStars {
+    display: flex;
+    margin-left: auto;
+}
+.ratingStarsUnit + .ratingStarsUnit {
+    margin-left: 6px;
+}
+
+.totalSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% / 12 * 4 - 12px);
+    margin: 0 12px;
+}
+.totalSectionContent__title {
+    font-size: 1.5rem;
+    color: rgba(26, 26, 26, 1);
+    margin-right: 24px;
+}
+.totalSectionContent__total {
+    font-size: 3.2rem;
+    color: rgba(26, 26, 26, 1);
+    margin-right: 6px;
+}
+.totalSectionContent__star {
+    width: 48px;
+    height: 48px;
+    margin-left: 24px;
+}
+
+.hobbiesInterests .row {
+    display: block;
+}
+.hobbiesInterestsList {
+    display: flex;
+    flex-wrap: wrap;
+}
+.hobbiesInterestsUnit {
+    width: calc(100% / 12 * 1 - 24px);
+    margin: 0 12px;
+}
+.hobbiesInterestsUnit__wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+}
+.hobbiesInterestsUnit__circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(250, 250, 250, 1);
+    border: 1px solid rgba(230, 230, 230, 1);
+    border-radius: 50%;
+}
+.hobbiesInterestsUnit__icon {
+    width: 32px;
+    height: 32px;
+}
+
+
+@media screen and (max-width: 1280px) {
+    .skillUnit:first-child {
+        margin-right: 12px;
+        margin-bottom: 12px;
+    }
+    .skillUnit:last-child {
+        margin-left: 12px;
+    }
+    .skillUnit__item:first-child {
+        margin-right: 12px;
+    }
+} 
+
+@media screen and (max-width: 991px) {
+    .skillSection, .totalSection {
+        width: calc(100% / 12 * 6 - 24px);
+    }
+    .hobbiesInterestsUnit {
+        width: calc(100% / 12 * 3 - 24px);
+        margin-bottom: 24px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .skillSection {
+        width: 100%;
+        margin-bottom: 24px;
+    }
+    .skillSection:last-child {
+        margin-bottom: 0;
+    }
+    .totalSection {
+        width: 100%;
+        margin-top: 12px;
+    }
+    .progressSkillList {
+        max-width: 268px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .skillSection {
+        margin-bottom: 12px;
+    }
+    .designToolsUnit__title {
+        margin-right: 12px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .hobbiesInterestsUnit__icon {
+        width: 24px;
+        height: 24px;
+    }
+}

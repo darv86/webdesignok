@@ -1,0 +1,59 @@
+.leadLine::before {
+    left: 116px;
+}
+
+.widthFix {
+    width: 57px;
+}
+
+.booksBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 72px;
+}
+.booksBox__item {
+    width: calc(100% / 12 * 3 - 24px);
+    padding: 46px 31px;
+    background-color: white;
+    border-radius: 2px;
+    border: 1px solid rgba(230, 230, 230, 1);
+}
+.booksBox__item img {
+    max-width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+
+    .leadLine::before {
+        height: calc(100% - 130px);
+        left: 11px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .booksBox {
+        margin-top: 24px;
+    }
+    .booksBox__item {
+        width: calc(100% / 12 * 6 - 12px);
+        margin-top: 24px;
+        padding: 24px 12px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .leadLine::before {
+        height: calc(100% - 170px);
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .leadLine::before {
+        height: calc(100% - 186px);
+    }
+    .booksBox__item {
+        width: calc(100% / 12 * 12 - 12px);
+        margin-top: 24px;
+    }
+}

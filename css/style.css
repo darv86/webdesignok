@@ -1,0 +1,632 @@
+/*---------------------HEADER----------------------*/
+
+.header {
+    overflow: hidden;
+    height: 100vh;
+    padding-top: 7vh;
+}
+.header .wrapper {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
+}
+.header .wrapper h1 {
+    color: rgba(26, 26, 26, 1);
+    text-align: left;
+    margin: 0;
+}
+.header .groupButtons {
+    margin-top: 48px;
+    align-self: center;
+}
+.header .firstButton {
+    margin-right: 48px;
+}
+
+
+.header .intro {
+    line-height: 2;
+    max-width: 570px;
+    margin-top: 14px;
+}
+.header .intro::before {
+    content: "";
+    position: relative;
+    top: -14px;
+    width: 1px;
+    height: 124px;
+    background-image: linear-gradient(rgba(242, 105, 92, 1), rgba(111, 44, 145, 1));
+    float: left;
+    margin-right: 48px;
+}
+
+
+.header .keyView {
+    position: relative;
+    width: calc(100% / 12 * 6 - 24px);
+}
+.header .keyView .radushevPhoto {
+    display: block;
+    height: 65vmin;
+    margin: 0 auto;
+}
+.header .keyView .keyView_caption {
+    color: rgba(230, 230, 230, 1);
+    transform: rotate(-90deg);
+    display: inline-block;
+    position: absolute;
+    bottom: 30vh;
+    right: 0;
+    transition: color .6s;
+}
+.header .keyView:hover > .keyView_caption {
+    color: rgba(128, 128, 128, 1);
+}
+
+/* ----------------RESULTS SECTION-------------- */
+
+.results .subtitle {
+    margin-bottom: 24px;
+}
+.results .wrapper .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.results .wrapper .container article {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% / 12 * 2 - 24px);
+    margin-top: 48px;
+    border-bottom: 1px solid rgba(230, 230, 230, 1);
+}
+.results .wrapper .container article::after{
+    content: '';
+    margin: 24px auto 0;
+    height: 1px;
+    width: 0%;
+    background: rgba(230, 230, 230, 1);
+    transition: width .3s, background-color .3s;
+}
+.results .wrapper .container article:hover::after {
+    width: 100%;
+    background: rgba(128, 128, 128, 1);
+}
+.results article img {
+    height: 65px;
+    width: 64px;
+    margin: 0 auto;
+}
+.results .container article p.accent {
+    margin: 24px 0 20px;
+}
+.results .container article h2 {
+    margin-top: auto;
+}
+.results .container article h2::after {
+    content: none;
+}
+
+/* -------------------MAIN SERVICES----------------- */
+
+.services .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.services article {
+    width: calc(100% / 12 * 3 - 24px);
+    margin-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.services h3 {
+    text-transform: uppercase;
+}
+.services .accent {
+    display: inline-block;
+}
+.services .subtitle {
+    margin-bottom: 72px;
+}
+.services .bgCircleWrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    margin-bottom: 36px;
+}
+.services .bgCircle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(111, 44, 145, .08);
+    border-radius: 50%;
+}  
+.services .bgCircle img {
+    max-width: 100%;
+}
+.services ul {
+    margin: 0 auto;
+}
+.services li {
+    margin-top: 24px;
+    text-align: left;
+}
+.services svg {
+    float: left;
+    margin-right: 12px;
+}
+
+/*-------------------SECTION ADVANTAGES---------------*/
+
+.advantages .subtitle {
+    margin-bottom: 48px;
+}
+.advantages ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.advantages li {
+    margin-top: 24px;
+    width: calc(100% / 12 * 4 - 24px);
+    line-height: 73px;
+}
+.advantages li:hover > .itemAdvantages {
+    background: rgba(250, 250, 250, 1);
+}
+.advantages .itemAdvantages {
+    float: left;
+    height: 73px;
+    width: 73px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 50%;
+    border: 1px solid rgba(230, 230, 230, 1);
+    margin-right: 24px;
+    transition: background-color .3s;
+}
+.advantages .itemAdvantages img {
+    width: 24px;
+}
+.advantages .accent {
+    text-align: left;
+    line-height: inherit;
+}
+
+/*-------------------SECTION PORTFOLIO----------------*/
+
+.portfolio .container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 24px 1fr 24px 1fr;
+    -ms-grid-rows: 1fr 24px 1fr;
+    grid-gap: 24px;
+    grid-template-areas: 
+        "vertverticalProjectical squareProject square2Project"
+        "vertverticalProjectical horizontalProject horizontalProject";
+}
+.portfolio p.subtitle {
+    margin-bottom: 72px;
+}
+
+.portfolio figure {
+    position: relative;
+    border: 1px solid rgba(230, 230, 230, 1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+.portfolio .verticalProject {
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    grid-area: vertverticalProjectical;
+}
+.portfolio .squareProject {
+    -ms-grid-column: 3;
+    -ms-grid-row: 1;
+    grid-area: squareProject;
+}
+.portfolio .square2Project {
+    -ms-grid-column: 5;
+    -ms-grid-row: 1;
+    grid-area: square2Project;
+}
+.portfolio .horizontalProject {
+    -ms-grid-column: 3;
+    -ms-grid-row: 3;
+    -ms-grid-column-span: 3;
+    grid-area: horizontalProject;
+}
+
+.portfolio img {
+    transition: filter .3s;
+}
+.portfolio figure:hover > img {
+    filter: blur(5px);
+}
+
+.portfolio figcaption {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 48px;
+    background: rgba(255, 255, 255, .92);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity .3s;
+}
+.portfolio figure:hover > figcaption {
+    opacity: 1;
+}
+.portfolio figcaption h3 {
+    /* display: inline-block; */
+}
+.portfolio figcaption h3::after{
+    content: "";
+    display: block;
+    margin: 12px auto 12px;
+    width: 66%;
+    height: 1px;
+    background-image: linear-gradient(90deg, rgba(242, 105, 92, 1), rgba(111, 44, 145, 1));
+}
+.portfolio figcaption p {
+    margin-bottom: 24px;
+}
+
+/*---------------------SECTION CLIENTS-------------------*/
+
+.clients div.container::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: rgba(242, 242, 242, 1);
+    margin: 48px auto 24px;
+}
+.clients div.container h3 {
+    float: left;
+    margin-right: 24px;
+}
+.clients div.container svg {
+    margin-right: 12px;
+    float: left;
+}
+.clients div.container .accent {
+    display: inline-block;
+}
+
+/*------------------SECTION TESTIMONILS----------------*/
+
+.testimonials article{
+    overflow: hidden;
+    margin-top: 72px;
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(230, 230, 230, 1);
+    border-radius: 2px;
+    padding: 48px 194px 72px;
+}
+.testimonials .slider {
+    width: 300%;
+    display: flex;
+    transition: margin-left .6s ease-out;
+}
+.testimonials #slide1:checked ~ article .slider {
+    margin-left: 0;
+}
+.testimonials #slide2:checked ~ article .slider {
+    margin-left: -100%;
+}
+.testimonials #slide3:checked ~ article .slider {
+    margin-left: -200%;
+}
+
+
+.testimonials .infoClient, .testimonials p.accent {
+    text-align: left;
+}
+.testimonials .infoClient {
+    opacity: .1;
+    width: calc(100% / 3);
+    transition: opacity .3s;
+}
+
+
+.testimonials #slide1:checked ~ article .slide1 {
+    opacity: 1;
+}
+.testimonials #slide2:checked ~ article .slide2 {
+    opacity: 1;
+}
+.testimonials #slide3:checked ~ article .slide3 {
+    opacity: 1;
+}
+
+
+.testimonials #bullets {
+    margin: 24px auto 0;
+}
+.testimonials #bullets label {
+    display: inline-block;
+    vertical-align: middle;
+    width: 12px;
+    height: 12px;
+    background: rgba(230, 230, 230, 1);
+    border-radius: 50%;
+    margin-right: 12px;
+    cursor: pointer;
+}
+.testimonials #bullets label:last-child{
+    margin-right: 0;
+}
+.testimonials #slide1:checked ~ #bullets .slide1 {
+    width: 14px;
+    height: 14px;
+    background: rgba(111, 44, 145, 1);
+}
+.testimonials #slide2:checked ~ #bullets .slide2 {
+    width: 14px;
+    height: 14px;
+    background: rgba(111, 44, 145, 1);
+}
+.testimonials #slide3:checked ~ #bullets .slide3 {
+    width: 14px;
+    height: 14px;
+    background: rgba(111, 44, 145, 1);
+}
+
+
+.testimonials .accent {
+    line-height: 39px;
+    margin-top: 24px;
+}
+.testimonials img {
+    border-radius: 50%;
+    border: 1px solid rgba(230, 230, 230, 1);
+    margin-right: 24px;
+}
+.testimonials .nameClient {
+    display: inline-block;
+    vertical-align: middle;
+}
+.testimonials .nameClient p {
+    margin-top: 6px;
+}
+
+
+/*-------------------ADAPTIVE---------------------*/
+@media screen and (max-width: 1280px) {
+    .clients div.container h3 {
+        float: initial;
+        margin-right: 0;
+    }
+    .clients div.container li {
+        margin-top: 24px;
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+
+    /*--------------HEADER---------------*/
+
+    .header {
+        height: 100%;
+    }
+    .header .keyView {
+        margin-top: 48px;
+    }
+    .header .keyView .keyView_caption {
+        display: none;
+    }
+    .results .wrapper .container article {
+        width: calc(100% / 12 * 4 - 24px);
+    }
+
+    /*-----------------TESTIMONIALS------------------*/
+
+    .testimonials article{
+        padding: 48px 48px 60px;
+    }
+    .testimonials #bullets label {
+        width: 24px;
+        height: 24px;
+        margin-right: 48px;
+    }
+    .testimonials #slide1:checked ~ #bullets .slide1 {
+        width: 28px;
+        height: 28px;
+    }
+    .testimonials #slide2:checked ~ #bullets .slide2 {
+        width: 28px;
+        height: 28px;
+    }
+    .testimonials #slide3:checked ~ #bullets .slide3 {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+
+@media screen and (max-width: 991px) {
+    .header {
+        padding: 7vh 0 0;
+    }
+    .header .intro {
+        margin-top: 0;
+        max-width: calc(100% / 12 * 7 - 24px);
+    }
+    .header .intro::before {
+        content: "";
+        position: relative;
+        top: 0;
+        width: 1px;
+        height: 100%;
+    }
+    .header .firstButton {
+        margin-right: 24px;
+    }
+
+
+    main.services article {
+        width: calc(100% / 12 * 6 - 24px);
+    }
+    main.services article.designService {
+        margin: 0 auto 48px;
+    }
+
+
+    .advantages .itemAdvantages {
+        float: initial;
+        margin: 0 auto;
+    }
+    .advantages .accent {
+        text-align: center;
+        line-height: 1;
+        margin-top: 12px;
+    }
+
+
+    .portfolio .subtitle {
+        margin-bottom: 48px;
+    }
+    .portfolio .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .portfolio figure {
+        width: calc(100% / 12 * 6 - 12px);
+        height: 306px;
+        margin-top: 24px;
+    }
+    .portfolio figure img {
+        position: absolute;
+        right: 0;
+        min-width: 100%;
+    }
+
+
+    .clients .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .clients .container ul {
+        display: block;
+        margin: 0 auto;
+    }
+    .clients .container li {
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .header .wrapper h1 {
+        margin: 0 auto;
+        text-align: center;
+    }
+    .header .keyView {
+        width: calc(100% / 12 * 12 - 24px);
+        transform: translateX(24px);
+    }
+    .header .intro {
+        margin-top: 24px;
+        max-width: 100%;
+    }
+    .header .intro::before {
+        margin-right: 24px;
+    }
+    .header .groupButtons {
+        margin: 36px auto 0;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .header .intro::before {
+        display: block;
+        margin: 0 auto 12px;
+        float: initial;
+        height: 1px;
+        width: 40%;
+    }
+    .header .groupButtons {
+        width: 100%;
+    }
+    .header .firstButton {
+        margin-right: 0;
+    }
+    .header .secondButton {
+        display: block;
+        margin: 18px auto 0;
+    }
+
+
+    .results .wrapper article {
+        width: calc(100% / 12 * 4 - 12px);
+    }
+    .results .subtitle {
+        margin-bottom: 0;
+    }
+
+
+    main.services article {
+        width: 100%;
+    }
+    main.services .subtitle {
+        margin-bottom: 48px;
+    }
+    main.services .bgCircleWrapper {
+        margin-bottom: 24px;
+    }
+
+
+    .advantages .subtitle {
+        margin-bottom: 24px;
+    }
+
+
+    .portfolio .subtitle {
+        margin-bottom: 24px;
+    }
+    .portfolio figure {
+        width: 100%;
+    }
+
+
+    .clients .subtitle {
+        margin-bottom: 24px;
+    }
+
+
+    .testimonials article{
+        padding: 24px 24px 48px;
+        margin-top: 48px;
+    }
+    .testimonials img {
+        margin: 0 0 12px 0;
+    }
+    .testimonials .nameClient {
+        display: block;
+    }
+    .testimonials p.accent {
+        line-height: 1.5;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .results article {
+        width: calc(100% / 12 * 6 - 12px);
+    }
+    .testimonials .accent {
+        line-height: 1;
+    }
+}

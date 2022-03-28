@@ -1,0 +1,149 @@
+.services {
+    overflow-x: hidden;
+}
+.servicesSection {
+    position: relative;
+}
+.servicesSection__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.servicesSection__img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -150px;
+    width: 35%;
+}
+
+.services__icon {
+    display: block;
+    margin-bottom: 24px;
+}
+.services__title::after {
+    margin: 12px 0 24px;
+}
+.services__caption {
+    max-width: 655px;
+}
+
+.servicesToolsList {
+    display: flex;
+}
+.servicesToolsList__item + .servicesToolsList__item {
+    margin-left: 24px;
+}
+
+.projectStages {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.projectStages__item + .projectStages__item {
+    margin-left: 72px;
+}
+
+.leadLine::before {
+    height: 100%;
+    left: 89px;
+}
+.widthFix {
+    width: 30px;
+}
+
+.development {
+    position: relative;
+    background-color: rgba(250, 250, 250, 1);
+}
+.development .servicesSection__content {
+    align-items: flex-end;
+}
+.development .servicesSection__img {
+    position: absolute;
+    left: -40px;
+}
+.development .services__title::after {
+    margin-left: auto;
+}
+.development .services__caption {
+    text-align: right;
+}
+.development .leadLine::before {
+    z-index: initial;
+}
+.development .projectStages__item svg {
+    z-index: 1;
+}
+
+.graphdesign .servicesSection__img {
+    right: 0;
+    transform: scale(.8) translateY(-50%);
+}
+
+
+@media screen and (max-width: 991px) {
+    .servicesSection__img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .development .servicesSection__content {
+        align-items: flex-start;
+    }
+    .development .services__title::after {
+        margin-left: 0;
+    }
+    .development .services__caption {
+        text-align: left;
+    }
+    .eventBox {
+        margin-bottom: 36px;
+    }
+    .eventBox .accent {
+        display: block;
+    }
+    .projectStages__item + .projectStages__item {
+        margin-left: 0;
+        margin-top: 36px;
+    }
+    .leadLine:first-child::before {
+        transform-origin: top;
+        transform: scaleY(1.3);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .paddingTop-XL {
+        padding-top: 36px;
+    }
+    .marginXXL_bottom {
+        margin-bottom: 48px;
+    }
+    .paddingBottom-XXXL {
+        padding-bottom: 60px;
+    }
+    .marginL_bottom {
+        margin-bottom: 36px;
+    }
+    .eventBox {
+        margin-bottom: 24px;
+    }
+    .projectStages__item + .projectStages__item {
+        margin-top: 24px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .eventBox .accent {
+        margin-right: 24px;
+    }
+    .eventBox__title {
+        margin-left: 24px;
+    }
+    .leadLine::before {
+        left: 65px;
+    }
+}

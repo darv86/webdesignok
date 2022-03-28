@@ -1,0 +1,27 @@
+.thanks {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.thanks__box {
+    padding: 12px;
+}
+.backToList {
+    display: inline-block;
+    text-align: left;
+    margin: 48px auto 0;
+}
+.backToList__item + .backToList__item {
+    margin-top: 12px;
+}
+.backToList__link {
+    position: relative;
+}
+
+@media screen and (max-width: 767px) {
+    .backToList__item + .backToList__item {
+        margin-top: 24px;
+    }
+}

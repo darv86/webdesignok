@@ -1,0 +1,28 @@
+.leadLine::before {
+    left: 151px;
+}
+.widthFix {
+    width: 92px;
+}
+.eventBox time:nth-child(odd) {
+    margin-bottom: 6px;
+}
+
+@media screen and (max-width: 767px) {
+    .leadLine::before {
+        height: calc(100% - 140px);
+        left: 11px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .brands .subtitle {
+        margin-bottom: 24px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .leadLine::before {
+        height: calc(100% - 186px);
+    }
+}

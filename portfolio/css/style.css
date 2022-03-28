@@ -1,0 +1,124 @@
+.gridBox {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 24px 1fr 24px 1fr;
+    -ms-grid-rows: 1fr 24px 1fr;
+    grid-template-areas:
+        "verticalPreview square1Preview square2Preview"
+        "verticalPreview horizontalPreview horizontalPreview";
+    grid-gap: 24px;
+}
+.verticalPreview {
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    grid-area: verticalPreview;
+}
+.square1Preview {
+    -ms-grid-column: 3;
+    -ms-grid-row: 1;
+    grid-area: square1Preview;
+}
+.square2Preview {
+    -ms-grid-column: 5;
+    -ms-grid-row: 1;
+    grid-area: square2Preview;
+}
+.horizontalPreview {
+    -ms-grid-column: 3;
+    -ms-grid-row: 3;
+    -ms-grid-column-span: 3;
+    grid-area: horizontalPreview;
+}
+.projectCard {
+    position: relative;
+    border: 1px solid rgba(230, 230, 230, 1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+.projectCard__img {
+    transition: filter .3s;
+}
+.projectCard-hovered:hover .projectCard__img {
+    filter: blur(5px);
+}
+.projectCard__caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 24px;
+    background: rgba(255, 255, 255, .92);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    transition: opacity .3s;
+    opacity: 0;
+}
+.projectCard-hovered:hover .projectCard__caption {
+    opacity: 1;
+}
+.projectCard__title {
+    align-self: center;
+}
+.titleLine::after {
+    margin-bottom: 12px;
+}
+.projectCard__text {
+    margin-bottom: 24px;
+}
+
+
+@media screen and (max-width: 991px) {
+    .gridBox {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 24px 1fr;
+        -ms-grid-rows: minmax(0px, 306px) 24px minmax(0px, 306px);
+        grid-template-areas:
+            "verticalPreview square1Preview"
+            "square2Preview horizontalPreview";
+        grid-template-rows: minmax(0px, 306px);
+        grid-gap: 24px;
+    }
+    .verticalPreview {
+        -ms-grid-column: 1;
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
+    }
+    .square1Preview {
+        -ms-grid-column: 3;
+        -ms-grid-row: 1;
+    }
+    .square2Preview {
+        -ms-grid-column: 1;
+        -ms-grid-row: 3;
+    }
+    .horizontalPreview {
+        -ms-grid-column: 3;
+        -ms-grid-row: 3;
+    }
+    .horizontalPreview .projectCard__img {
+        position: absolute;
+        top: 0;
+        right: -50px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .gridBox {
+        display: block;
+    }
+    .projectCard {
+        width: 100%;
+        height: 306px;
+    }
+    .projectCard + .projectCard {
+        margin-top: 24px;
+    }
+    .projectCard__img {
+        min-width: 100%;
+    }
+}

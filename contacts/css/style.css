@@ -1,0 +1,81 @@
+.contactsItemsBox {
+    display: flex;
+    justify-content: space-between;
+}
+.avatarBox {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: start;
+    margin-right: 60px;
+}
+.avatarBox__avatar {
+    max-width: 170px;
+    margin-right: 24px;
+    margin-bottom: 24px;
+}
+.avatarBox__speechText {
+    max-width: 364px;
+    line-height: 1.5;
+    align-self: center;
+}
+.contactsBlocks {
+    max-width: 455px;
+}
+
+
+.imageTextBox {
+    white-space: nowrap;
+}
+.contactsBlocks span {
+    margin-left: 10px;
+}
+.contactsBlocks li {
+    margin-bottom: 12px;
+}
+.contactsBlocks li:last-child {
+    margin-bottom: 0;
+}
+.contactsBlocks .mail, .contactsBlocks .tel {
+    margin-bottom: 48px;
+}
+
+
+@media screen and (max-width: 991px) {
+    .contactsItemsBox {
+        flex-wrap: wrap;
+    }
+    .avatarBox {
+        margin: 0 auto 48px;
+    }
+    .contactsBlocks {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .avatarBox {
+        text-align: center;
+    }
+    .avatarBox__avatar {
+        margin: 0 auto 24px;
+    }
+    .avatarBox__speechText {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    
+}
+
+@media screen and (max-width: 320px) {
+    .contactsBlocks address {
+        width: 100%;
+    }
+    .contactsBlocks .messengers {
+        margin-bottom: 48px;
+    }
+    .hUnderline::after {
+        margin: 6px 0 12px;
+    }
+}
