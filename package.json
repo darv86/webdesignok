@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/darv86/webdesignok/issues"
   },
-  "homepage": "https://github.com/darv86/webdesignok#readme"
+  "homepage": "https://github.com/darv86/webdesignok#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
 }
