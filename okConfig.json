@@ -1,0 +1,19 @@
+{
+    "paths": {
+        "styles": {
+            "src": "src/styles/**/*.scss",
+            "dest": "build/css"
+        },
+        "scripts": {
+            "src": "src/scripts/**/*.js",
+            "dest": "build/js"
+        },
+        "markup": {
+            "src": "src/pug/pages/**/*.pug",
+            "dest": "build"
+        }
+    },
+    "css": {
+        "compressed": true
+    }
+}
