@@ -1,48 +1,63 @@
-const {src, dest, series, parallel, watch} = require('gulp');
+const { src, dest, series, parallel, watch } = require('gulp');
+const pug = require('gulp-pug');
 const sass = require('gulp-sass')(require('sass'));
-const sourcemaps = require('gulp-sourcemaps');
+// const sourcemaps = require('gulp-sourcemaps');
 const gulpif = require('gulp-if');
 const del = require('del');
 const path = require('path');
+
+const buildRelease = process.title === 'gulp release';
 const okConfig = require('./okConfig');
 
-// const paths = {
-//     styles: {
-//         src: "src/styles/**/*.scss",
-//         dest: "build/css"
-//     },
-//     scripts: {
-//         src: "src/scripts/**/*.js",
-//         dest: "build/js"
-//     },
-//     markup: {
-//         src: "src/pug/pages/**/*.pug",
-//         dest: "build"
-//     }
-// }
 
-function styles() {
-    return src(okConfig.paths.styles.src)
-        .pipe(sourcemaps.init())
-        // .pipe(sass().on('error', sass.logError))
-        .pipe(sass(gulpif(okConfig.css.compressed, {outputStyle: 'compressed'})).on('error', sass.logError))
-        .pipe(sourcemaps.write('./maps'))
-        .pipe(dest(okConfig.paths.styles.dest))
+function markup() {
+    return src(okConfig.paths.root.src + okConfig.paths.markup.src)
+        .pipe(pug({ pretty: true }))
+        .pipe(dest(okConfig.paths.root.dest + okConfig.paths.markup.dest));
 }
 
-function nmclean() {
-    return del(['node_modules'])
+function styles() {
+    return src(okConfig.paths.root.src + okConfig.paths.styles.src, gulpif(buildRelease, {}, { sourcemaps: true }))
+        .pipe(sass(gulpif(okConfig.css.compressed, { outputStyle: 'compressed' })).on('error', sass.logError))
+        .pipe(dest(okConfig.paths.root.dest + okConfig.paths.styles.dest, gulpif(buildRelease, {}, { sourcemaps: true })));
+}
+
+function scripts() {
+    return src(okConfig.paths.root.src + okConfig.paths.scripts.src, gulpif(buildRelease, {}, { sourcemaps: true }))
+        .pipe(dest(okConfig.paths.root.dest + okConfig.paths.scripts.dest, gulpif(buildRelease, {}, { sourcemaps: true })));
 }
 
 function clean() {
-    return del(['build/**/*'])
+    return del([okConfig.paths.root.dest + '/**/*']);
 }
 
-async function drname() {
-    console.log(__dirname);
+function copyStatic() {
+    return src(okConfig.paths.root.src + okConfig.paths.images.src)
+        .pipe(dest(okConfig.paths.root.dest + okConfig.paths.images.dest));
 }
 
+function watcher() {
+    watch(okConfig.paths.root.src + '/markup', markup);
+    // watch(okConfig.paths.root.src + okConfig.paths.markup.src, markup);
+    watch(okConfig.paths.root.src + okConfig.paths.styles.src, styles);
+    // watch(okConfig.paths.styles.src, styles);
+    // watch(okConfig.paths.styles.src, styles);
+    // watch(okConfig.paths.styles.src, styles);
+}
+
+function nmclean() {
+    return del(['node_modules']);
+}
+
+// async function drname() {
+//     console.log(__dirname);
+// }
+
+exports.markup = markup;
 exports.styles = styles;
-exports.nmclean = nmclean;
+exports.scripts = scripts;
 exports.clean = clean;
-exports.default = series(drname);
+exports.watcher = watcher;
+exports.nmclean = nmclean;
+exports.release = series(clean, parallel(styles, scripts, copyStatic), markup, watcher);
+exports.default = series(clean, parallel(styles, scripts, copyStatic), markup, watcher);

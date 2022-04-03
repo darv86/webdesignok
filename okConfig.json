@@ -1,19 +1,32 @@
 {
+    "release": true,
     "paths": {
-        "styles": {
-            "src": "src/styles/**/*.scss",
-            "dest": "build/css"
-        },
-        "scripts": {
-            "src": "src/scripts/**/*.js",
-            "dest": "build/js"
+        "root": {
+            "src": "src",
+            "dest": "build"
         },
         "markup": {
-            "src": "src/pug/pages/**/*.pug",
-            "dest": "build"
+            "src": "/markup/pages/**/*.pug",
+            "dest": ""
+        },
+        "styles": {
+            "src": "/styles/**/*.scss",
+            "dest": "/css"
+        },
+        "scripts": {
+            "src": "/scripts/**/*.js",
+            "dest": "/js"
+        },
+        "fonts": {
+            "src": "/fonts/**/*",
+            "dest": "/fonts"
+        },
+        "images": {
+            "src": "/images/**/*",
+            "dest": "/images"
         }
     },
     "css": {
-        "compressed": true
+        "compressed": false
     }
 }

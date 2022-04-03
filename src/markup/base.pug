@@ -1,0 +1,11 @@
+block vars
+	include vars.pug
+
+doctype html
+html.html(lang = curlang)
+	head
+		block styles
+			link(rel="stylesheet" href="/css/main.css")
+	body.body
+		.body__inner
+			block header
