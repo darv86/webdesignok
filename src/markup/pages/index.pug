@@ -1,7 +1,15 @@
 extends ../base
 
 append vars
-	- curlang = "en";
+	-
+		curlang = 'en';
+		pageTitle = 'Home page';
+
+append styles
+	link(rel='stylesheet' href='/css/index.css')
 
 block header
 	header.header
+block content
+	p.text.icon-arrow-menu !{obj.key} sdfg
+	img.header-img(src="images/png/photo-radushev-min.png" alt="photo of dima radushev")
