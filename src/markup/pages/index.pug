@@ -3,6 +3,7 @@ extends ../base
 append vars
 	-
 		curlang = 'en';
+		//- basedir = curlang == 'en' ? basedir : '../';
 		pageTitle = 'Home page';
 
 append styles
@@ -11,5 +12,7 @@ append styles
 block header
 	header.header
 block content
-	p.text.icon-arrow-menu !{obj.key} sdfg
-	img.header-img(src="images/png/photo-radushev-min.png" alt="photo of dima radushev")
+	p.text.icon-arrow-menu asds
+	p.text.icon-arrow-menu asds
+	p.text.icon-arrow-menu !{obj.key} asdsfsd
+	img.header-img(src='/images/png/photo-radushev-min.png' alt="photo of dima radushev")

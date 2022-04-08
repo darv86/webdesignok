@@ -1,7 +1,26 @@
 .text {
     font-size: 40px;
 	font-family: sans-serif;
+	color: blue;
 }
 .header-img {
 	width: 50%;
+}
+.list {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	padding: 40px;
+	background-color: hsla(0, 0%, 90%, 1);
+	.list__item {
+		font-size: 40px;
+		color: purple;
+		&:last-child::before {
+			content: '';
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			background-color: currentColor;
+		}
+	}
 }

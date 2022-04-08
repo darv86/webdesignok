@@ -1,0 +1,21 @@
+extends ../../base
+
+append vars
+	-
+		curlang = 'es';
+		pageTitle = 'Casa pajina';
+
+append styles
+	link(rel='stylesheet' href='/css/index.css')
+
+block header
+	header.header
+block content
+	p.text.icon-arrow-menu asds 11111113rfgfsdgs2
+	p.text2 !{obj.key} asds
+	p.text2 !{obj.key} asds
+	ul.list
+		- let x = 1;
+		- for(let i = 1; i <= 4; i++)
+			li.list__item sdfgdsfg !{x++}
+	img.header-img(src='/images/png/photo-radushev-min.png' alt="photo of dima radushev")

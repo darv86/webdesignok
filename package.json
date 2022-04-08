@@ -5,7 +5,8 @@
   "main": "gulpfile.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "go": "gulp",
+    "release": "gulp release"
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,10 @@
   },
   "homepage": "https://github.com/darv86/webdesignok#readme",
   "devDependencies": {
+    "browser-sync": "^2.27.9",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
     "gulp-if": "^3.0.0",
     "gulp-imagemin": "^8.0.0",
     "gulp-pug": "^5.0.0",

@@ -25,6 +25,9 @@ export default {
 			"dest": "/images"
 		}
 	},
+	"html": {
+		"compressed": false
+	},
 	"css": {
 		"compressed": false
 	}
