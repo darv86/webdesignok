@@ -1,7 +1,7 @@
 .text {
     font-size: 40px;
 	font-family: sans-serif;
-	color: blue;
+	color: black;
 }
 .header-img {
 	width: 50%;
@@ -22,5 +22,20 @@
 			border-radius: 50%;
 			background-color: currentColor;
 		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.header-img {
+		width: Min(50%, 230px);
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.header-img {
+		width: Min(50%, 230px);
+	}
+	.list {
+		display: flex;
 	}
 }
