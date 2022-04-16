@@ -3,8 +3,12 @@
 	font-family: sans-serif;
 	color: black;
 }
+.header {
+	height: 200px;
+	background: url('/images/mtiLogo240.png') center / 200px no-repeat;
+}
 .header-img {
-	width: 50%;
+	width: 200px;
 }
 .list {
 	display: grid;

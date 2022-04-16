@@ -42,6 +42,8 @@
     "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.2",
     "gulp-webp": "^4.0.1",
+    "gulp-webp-css-fixed": "^1.1.0",
+    "gulp-webp-html-nosvg": "^1.0.6",
     "sass": "^1.49.11"
   }
 }
