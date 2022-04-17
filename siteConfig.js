@@ -30,6 +30,11 @@ export default {
 			dest: '/images',
 			watch: '/images/**/*',
 		},
+		resources: {
+			src: '/resources/**/*',
+			dest: '',
+			watch: '/resources/**/*',
+		},
 	},
 	compressed: {
 		html: false,

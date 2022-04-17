@@ -2,7 +2,6 @@ import gulp from 'gulp';
 import pug from 'gulp-pug';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
-// import webpCss from 'gulp-webp-css';
 import webpCss from 'gulp-webp-css-fixed';
 import autoprefixer from 'gulp-autoprefixer';
 import groupMediaQueries from 'gulp-group-css-media-queries';
@@ -65,11 +64,9 @@ function fonts() {
 		.pipe(dest(siteConfig.paths.root.dest + siteConfig.paths.fonts.dest));
 }
 
-function server() {
-	browsersync.init({
-		notify: false,
-        proxy: 'http://webdev:88/',
-    });
+function resources() {
+	return src(siteConfig.paths.root.src + siteConfig.paths.resources.src)
+		.pipe(dest(siteConfig.paths.root.dest + siteConfig.paths.resources.dest));
 }
 
 function clean() {
@@ -78,6 +75,13 @@ function clean() {
 
 function nmclean() {
 	return del(['node_modules', 'build', 'package-lock.json']);
+}
+
+function server() {
+	browsersync.init({
+		notify: false,
+		proxy: 'http://webdev:88/',
+	});
 }
 
 function watcher() {
@@ -91,5 +95,5 @@ function watcher() {
 
 task('clean', clean);
 task('nmclean', nmclean);
-task('release', series(clean, parallel(markup, styles, scripts, fonts, images)));
-task('default', series(clean, parallel(markup, styles, scripts, fonts, images), parallel(watcher, server)));
+task('release', series(clean, parallel(markup, styles, scripts, fonts, images, resources)));
+task('default', series(clean, parallel(markup, styles, scripts, fonts, images, resources), parallel(watcher, server)));
