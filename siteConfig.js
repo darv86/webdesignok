@@ -24,11 +24,11 @@ export default {
 			dest: '/fonts',
 			watch: '/fonts/**/*',
 		},
-		images: {
-			// src: '/images/**/*.{jpg,jpeg,png,webp,ico,gif,svg}',
-			src: '/images/**/*',
-			dest: '/images',
-			watch: '/images/**/*',
+		media: {
+			// src: '/media/**/*.{jpg,jpeg,png,webp,ico,gif,svg}',
+			src: '/media/**/*',
+			dest: '/media',
+			watch: '/media/**/*',
 		},
 		resources: {
 			src: '/resources/**/*',

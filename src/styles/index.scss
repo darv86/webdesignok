@@ -1,11 +1,11 @@
 .text {
     font-size: 40px;
 	font-family: sans-serif;
-	color: black;
+	color: blue;
 }
 .header {
 	height: 200px;
-	background: url('/images/mtiLogo240.png') center / 200px no-repeat;
+	background: url('/media/mtiLogo240.png') center / 200px no-repeat;
 }
 .header-img {
 	width: 200px;
@@ -31,14 +31,11 @@
 
 @media screen and (max-width: 767px) {
 	.header-img {
-		width: Min(50%, 230px);
+		// padding: 25px;
 	}
 }
 
 @media screen and (max-width: 767px) {
-	.header-img {
-		width: Min(50%, 230px);
-	}
 	.list {
 		display: flex;
 	}
