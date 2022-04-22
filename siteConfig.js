@@ -1,4 +1,5 @@
 export default {
+	buildRelease: process.title === 'gulp release',
 	paths: {
 		root: {
 			src: 'src',
@@ -15,7 +16,7 @@ export default {
 			watch: '/styles/**/*.{scss,sass}',
 		},
 		scripts: {
-			src: '/scripts/**/*.js',
+			src: '/scripts/**/main.js',
 			dest: '/js',
 			watch: '/scripts/**/*.js',
 		},
