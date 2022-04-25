@@ -1,0 +1,23 @@
+constant,content
+,MAIN SCREEN
+mainscreen.title.text1,Human
+mainscreen.title.text2,Designer
+mainscreen.title.text3,Developer
+mainscreen.desc,Glad to see you here. My name is Dima Radushev. I create visual communications with people and for people. I designed and developed this website to help you find info easily about my skills and services. Hope it will be useful journey for you.
+mainscreen.caption,Dima Radushev
+,
+,RESULTS
+results.title,Result in numbers
+results.desc,"These numbers are reflection of my activity, attitude and passion which I carried through all projects I was involved in a few years"
+results.item1.title,Happy clients
+results.item1.desc,59
+results.item2.title,Positive feedback
+results.item2.desc,53
+results.item3.title,Clients countries
+results.item3.desc,6
+results.item4.title,Fast reply
+results.item4.desc,60min
+results.item5.title,Total projects
+results.item5.desc,129
+results.item6.title,Successful projects
+results.item6.desc,96%

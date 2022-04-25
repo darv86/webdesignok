@@ -10,12 +10,13 @@ append styles
 	link(rel='stylesheet' href='/css/index.css')
 
 append scripts
-	//- script(src='/js/index.js')
+	script(src='/js/index.js')
 
 block header
 	header.header
+		include ../blocks/nav
 block content
-	//- p.text.icon-arrow-menu asds
+	p.text.icon-arrow-menu asds
 	a.link(href="contacts.html") Contact page
 	p.text.icon-arrow-menu !{obj.key} asdsfsd afdsasd sdfa
 	ul.list

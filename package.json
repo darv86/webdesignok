@@ -45,6 +45,7 @@
     "gulp-webp-html-nosvg": "^1.0.6",
     "sass": "^1.49.11",
     "through2": "^4.0.2",
+    "vinyl-named": "^1.1.0",
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {

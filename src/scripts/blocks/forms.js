@@ -1,1 +1,1 @@
-console.log('forms');
+export default console.log('forms');
