@@ -11,11 +11,14 @@ import webp from 'gulp-webp'
 import webpHtml from 'gulp-webp-html-nosvg'
 import newer from 'gulp-newer'
 import gulpif from 'gulp-if'
+import injectdata from 'gulp-data'
+import csvtojson from 'gulp-csvtojson'
 import del from 'del'
 import browsersync from 'browser-sync'
 import through2 from 'through2'
-// import Vinyl from 'vinyl'
+import vinyl from 'vinyl'
 import named from 'vinyl-named'
+import fs from 'fs'
 import webpackConfig from './webpack.config.js'
 import siteConfig from './siteConfig.js'
 
@@ -26,11 +29,21 @@ const sass = gulpSass(dartSass)
 export const markup = () => {
 	// return src(siteConfig.paths.root.src + siteConfig.paths.markup.src, { since: lastRun(markup) })
 	return src(siteConfig.paths.root.src + siteConfig.paths.markup.src)
-		// .pipe(newer(siteConfig.paths.root.dest, '.html'))
+		// .pipe(injectdata(() => JSON.parse(fs.readFileSync(siteConfig.paths.root.src + '/content/en.json'))))
 		.pipe(pug(gulpif(siteConfig.compressed.html, { doctype: 'html', self: true }, { pretty: '	', doctype: 'html', self: true })))
 		.pipe(webpHtml())
 		.pipe(dest(siteConfig.paths.root.dest + siteConfig.paths.markup.dest))
 		.pipe(gulpif(!siteConfig.buildRelease, browsersync.stream()))
+}
+
+export const content = () => {
+	return src(siteConfig.paths.root.src + siteConfig.paths.content.src)
+		.pipe(csvtojson())
+		// .pipe(csvtojson({ toArrayString: true }))
+		// .pipe(through((file, enc, cb) => {
+		// 	cb(null, file)
+		// }))
+		.pipe(dest(siteConfig.paths.root.dest + siteConfig.paths.content.dest))
 }
 
 export const styles = () => {
@@ -41,7 +54,7 @@ export const styles = () => {
 		.pipe(gulpif(siteConfig.buildRelease, groupMediaQueries()))
 		.pipe(dest(siteConfig.paths.root.dest + siteConfig.paths.styles.dest, gulpif(siteConfig.buildRelease, {}, { sourcemaps: true })))
 		.pipe(gulpif(!siteConfig.buildRelease, browsersync.stream()))
-	}
+}
 
 export const scripts = () => {
 	return src(siteConfig.paths.root.src + siteConfig.paths.scripts.src)
@@ -90,7 +103,7 @@ export const server = () => {
 
 export const watcher = () => {
 	watch(siteConfig.paths.root.src + siteConfig.paths.markup.watch, markup)
-	// watch(siteConfig.paths.root.dest + '/*.html', markup)
+	// watch(siteConfig.paths.root.src + siteConfig.paths.content.watch, markup)
 	watch(siteConfig.paths.root.src + siteConfig.paths.styles.watch, styles)
 	watch(siteConfig.paths.root.src + siteConfig.paths.scripts.watch, scripts)
 	watch(siteConfig.paths.root.src + siteConfig.paths.media.watch, media)
@@ -99,4 +112,5 @@ export const watcher = () => {
 
 
 export const release = series(clean, parallel(markup, styles, scripts, fonts, media, resources))
-export default series(clean, parallel(markup, styles, scripts, fonts, media, resources), parallel(watcher, server))
+// export default series(clean, parallel(markup, styles, scripts, fonts, media, resources), parallel(watcher, server))
+export default series(clean, content, parallel(markup, styles, scripts, fonts, media, resources), parallel(watcher, server))

@@ -1,5 +1,5 @@
 .text {
-    font-size: 40px;
+	font-size: 40px;
 	font-family: sans-serif;
 	color: blue;
 }
@@ -14,7 +14,6 @@
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	padding: 40px;
-	background-color: hsla(0, 0%, 90%, 1);
 	.list__item {
 		font-size: 40px;
 		color: purple;
@@ -27,10 +26,6 @@
 			background-color: currentColor;
 		}
 	}
-}
-
-@media screen and (max-width: 767px) {
-	// .header-img {}
 }
 
 @media screen and (max-width: 767px) {

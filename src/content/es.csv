@@ -3,21 +3,21 @@ constant,content
 mainscreen.title.text1,Humano
 mainscreen.title.text2,Diseñador
 mainscreen.title.text3,Desarrollador
-mainscreen.desc,Me alegro de verte aquí. Mi nombre es Dima Radushev. Creo comunicaciones visuales con las personas y para las personas. Diseñé y desarrollé este sitio web para ayudarlo a encontrar información fácilmente sobre mis habilidades y servicios. Espero que sea un viaje útil para usted.
+mainscreen.desc,Me alegro de verte aquí. Mi nombre es Dima Radushev. Creo comunicaciones visuales con personas y para personas. Diseñé y desarrollé este sitio web para ayudarlo a encontrar información fácilmente sobre mis habilidades y servicios. Espero que sea un viaje útil para ti.
 mainscreen.caption,Dima Radushev
 ,
 ,RESULTS
-results.title,Dar lugar a números
-results.desc,"Estos números están reflexionando de mi actividad, actitud y pasión que llevé a través de todos los proyectos que estuve involucrado en unos pocos años"
+results.title,Resultar en números
+results.desc,"Estos números son reflejo de mi actividad, actitud y pasión que llevé a través de todos los proyectos en los que estuve involucrado unos años."
 results.item1.title,Clientes felices
 results.item1.desc,59
 results.item2.title,Retroalimentación positiva
 results.item2.desc,53
-results.item3.title,Países de los clientes
+results.item3.title,Clientes de países
 results.item3.desc,6
 results.item4.title,Respuesta Rápida
-results.item4.desc,60min
-results.item5.title,Proyectos totales
+results.item4.desc,60 minutos
+results.item5.title,Total de proyectos
 results.item5.desc,129
 results.item6.title,Proyectos exitosos
 results.item6.desc,96%

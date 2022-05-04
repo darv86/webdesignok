@@ -25,6 +25,11 @@ export default {
 			dest: '/fonts',
 			watch: '/fonts/**/*',
 		},
+		content: {
+			src: '/content/**/*.csv',
+			dest: '/content',
+			watch: '/content/**/*.csv',
+		},
 		media: {
 			// src: '/media/**/*.{jpg,jpeg,png,webp,ico,gif,svg}',
 			src: '/media/**/*',
