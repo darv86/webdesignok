@@ -27,9 +27,8 @@ const through = through2.obj
 const sass = gulpSass(dartSass)
 
 export const markup = () => {
-	// return src(siteConfig.paths.root.src + siteConfig.paths.markup.src, { since: lastRun(markup) })
 	return src(siteConfig.paths.root.src + siteConfig.paths.markup.src)
-		// .pipe(injectdata(() => JSON.parse(fs.readFileSync(siteConfig.paths.root.src + '/content/en.json'))))
+		.pipe(injectdata(() => JSON.parse(fs.readFileSync(siteConfig.paths.root.src + '/content/en.json'))))
 		.pipe(pug(gulpif(siteConfig.compressed.html, { doctype: 'html', self: true }, { pretty: '	', doctype: 'html', self: true })))
 		.pipe(webpHtml())
 		.pipe(dest(siteConfig.paths.root.dest + siteConfig.paths.markup.dest))
@@ -37,13 +36,15 @@ export const markup = () => {
 }
 
 export const content = () => {
-	return src(siteConfig.paths.root.src + siteConfig.paths.content.src)
-		.pipe(csvtojson())
-		// .pipe(csvtojson({ toArrayString: true }))
-		// .pipe(through((file, enc, cb) => {
-		// 	cb(null, file)
-		// }))
-		.pipe(dest(siteConfig.paths.root.dest + siteConfig.paths.content.dest))
+	return (
+		src(siteConfig.paths.root.src + siteConfig.paths.content.src)
+			.pipe(csvtojson())
+			// .pipe(csvtojson({ toArrayString: true }))
+			// .pipe(through((file, enc, cb) => {
+			// 	cb(null, file)
+			// }))
+			.pipe(dest(siteConfig.paths.root.dest + siteConfig.paths.content.dest))
+	)
 }
 
 export const styles = () => {
@@ -77,13 +78,11 @@ export const media = () => {
 }
 
 export const fonts = () => {
-	return src(siteConfig.paths.root.src + siteConfig.paths.fonts.src)
-		.pipe(dest(siteConfig.paths.root.dest + siteConfig.paths.fonts.dest))
+	return src(siteConfig.paths.root.src + siteConfig.paths.fonts.src).pipe(dest(siteConfig.paths.root.dest + siteConfig.paths.fonts.dest))
 }
 
 export const resources = () => {
-	return src(siteConfig.paths.root.src + siteConfig.paths.resources.src)
-		.pipe(dest(siteConfig.paths.root.dest + siteConfig.paths.resources.dest))
+	return src(siteConfig.paths.root.src + siteConfig.paths.resources.src).pipe(dest(siteConfig.paths.root.dest + siteConfig.paths.resources.dest))
 }
 
 export const clean = () => {
@@ -109,7 +108,6 @@ export const watcher = () => {
 	watch(siteConfig.paths.root.src + siteConfig.paths.media.watch, media)
 	// watch(siteConfig.paths.root.src + siteConfig.paths.fonts.watch, fonts)
 }
-
 
 export const release = series(clean, parallel(markup, styles, scripts, fonts, media, resources))
 // export default series(clean, parallel(markup, styles, scripts, fonts, media, resources), parallel(watcher, server))

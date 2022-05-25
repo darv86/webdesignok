@@ -1,0 +1,18 @@
+{
+	"mainscreen": {
+		"title": {
+			"text1": {
+				"en": "Human",
+				"es": "Humano"
+			},
+			"text2": {
+				"en": "Designer",
+				"es": "Deseno"
+			},
+			"text3": {
+				"en": "Developer",
+				"es": "Developero"
+			}
+		}
+	}
+}
