@@ -26,7 +26,7 @@ export default {
 			watch: '/fonts/**/*',
 		},
 		content: {
-			src: '/content/**/*.csv',
+			src: '/content',
 			dest: '/content',
 			watch: '/content/**/*.csv',
 		},
@@ -47,4 +47,4 @@ export default {
 		css: false,
 		js: false,
 	},
-}
+};

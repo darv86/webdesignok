@@ -1,0 +1,23 @@
+constant,content
+,MAIN SCREEN
+mainscreen.title.text1,Людина
+mainscreen.title.text2,Визайнер
+mainscreen.title.text3,Розробник
+mainscreen.desc,"Радий вас тут зустріти. Мене звати Дмитро Радушев. Я створюю візуальні комунікації з людьми и для людей. Розробив дизайн и сам сайт, щоб ви з легкітю знайшли інформацію про мої навички та послуги. Маю надію, що ця подорож буде корисною для вас."
+mainscreen.caption,Дмитро Радушев
+,
+,RESULTS
+results.title,Результати в цифрах
+results.desc,"Ці цифри є відображенням моєї діяльності, ставлення та пристрасті, яку я проніс через усі проекти, в яких брав участь кілька років."
+results.item1.title,Счастливі клієнти
+results.item1.desc,59
+results.item2.title,Позитивні відгуки
+results.item2.desc,53
+results.item3.title,Країни клієнтів
+results.item3.desc,6
+results.item4.title,Швидка відповідь
+results.item4.desc,60min
+results.item5.title,Всього проектів
+results.item5.desc,129
+results.item6.title,Успішні проекти
+results.item6.desc,96%
