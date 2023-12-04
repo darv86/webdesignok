@@ -8,7 +8,7 @@ export default {
 		markup: {
 			src: '/markup/pages/**/*.pug',
 			dest: '',
-			watch: '/markup',
+			watch: '/markup/**/*.pug',
 		},
 		styles: {
 			src: '/styles/**/*.{scss,sass}',
