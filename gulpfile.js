@@ -1,6 +1,6 @@
 import gulp from 'gulp';
 import pug from 'gulp-pug';
-import dartSass from 'sass';
+import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import webpCss from 'gulp-webp-css-fixed';
 import autoprefixer from 'gulp-autoprefixer';
@@ -100,8 +100,11 @@ export const nmclean = () => {
 
 export const server = () => {
 	browsersync.init({
+		server: siteConfig.paths.root.dest,
+		port: 88,
+		open: false,
 		notify: false,
-		proxy: 'http://webdev:88/',
+		// proxy: 'http://webdev:88',
 	});
 };
 
