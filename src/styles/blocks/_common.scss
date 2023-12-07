@@ -1,8 +1,17 @@
+@import '../utils/_mixins';
+
+@include font-face('MuseoSansCyrl-700');
+
 .body {
 	background-color: #333;
 }
 
 // .body__inner {}
+
+// .text {
+// 	font-family: 'Museo Sans Cyrl 700';
+// 	font-size: 1rem;
+// }
 
 .wrapper {
 	max-width: 1200;

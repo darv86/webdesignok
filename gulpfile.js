@@ -12,6 +12,7 @@ import webpHtml from 'gulp-webp-html-nosvg';
 import newer from 'gulp-newer';
 import gulpif from 'gulp-if';
 import injectdata from 'gulp-data';
+import font2woff2 from 'gulp-ttf2woff2';
 import del from 'del';
 import browsersync from 'browser-sync';
 import named from 'vinyl-named';
@@ -83,7 +84,9 @@ export const media = () => {
 };
 
 export const fonts = () => {
-	return src(siteConfig.paths.root.src + siteConfig.paths.fonts.src).pipe(dest(siteConfig.paths.root.dest + siteConfig.paths.fonts.dest));
+	return src(siteConfig.paths.root.src + siteConfig.paths.fonts.src)
+		.pipe(gulpif(font => font.extname !== '.woff', font2woff2({ ignoreExt: true, clone: true })))
+		.pipe(dest(siteConfig.paths.root.dest + siteConfig.paths.fonts.dest));
 };
 
 export const resources = () => {
