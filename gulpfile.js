@@ -15,6 +15,7 @@ import injectdata from 'gulp-data';
 import font2woff2 from 'gulp-ttf2woff2';
 import del from 'del';
 import browsersync from 'browser-sync';
+import ftp from 'vinyl-ftp';
 import named from 'vinyl-named';
 import csvtojson from 'csvtojson';
 // import fs from 'fs';
@@ -24,15 +25,16 @@ import _ from 'lodash/lodash.min.js';
 import webpackConfig from './webpack.config.js';
 import siteConfig from './siteConfig.js';
 
+const { buildRelease, paths, compressed, ftpConfig } = siteConfig;
 const { src, dest, series, parallel, watch, lastRun } = gulp;
 const sass = gulpSass(dartSass);
 
 export const getContent = async () => {
-	const langsArr = (await readdir(siteConfig.paths.root.src + siteConfig.paths.content.src)).map(file => path.parse(file).name),
+	const langsArr = (await readdir(paths.root.src + paths.content.src)).map(file => path.parse(file).name),
 		rawJsonArr = [],
 		constantsArr = [],
 		contentArr = [];
-	for (const lang of langsArr) rawJsonArr.push(await csvtojson().fromFile(`${siteConfig.paths.root.src}${siteConfig.paths.content.src}/${lang}.csv`));
+	for (const lang of langsArr) rawJsonArr.push(await csvtojson().fromFile(`${paths.root.src}${paths.content.src}/${lang}.csv`));
 	_(rawJsonArr)
 		.flattenDeep()
 		.filter('constant')
@@ -45,77 +47,80 @@ export const getContent = async () => {
 };
 
 export const markup = () => {
-	return src(siteConfig.paths.root.src + siteConfig.paths.markup.src)
+	return src(paths.root.src + paths.markup.src)
 		.pipe(injectdata(() => getContent()))
-		.pipe(pug(gulpif(siteConfig.compressed.html, { doctype: 'html', self: true }, { pretty: '	', doctype: 'html', self: true })))
+		.pipe(pug(gulpif(compressed.html, { doctype: 'html', self: true }, { pretty: '	', doctype: 'html', self: true })))
 		.pipe(webpHtml())
-		.pipe(dest(siteConfig.paths.root.dest + siteConfig.paths.markup.dest))
-		.pipe(gulpif(!siteConfig.buildRelease, browsersync.stream()));
+		.pipe(dest(paths.root.dest + paths.markup.dest))
+		.pipe(gulpif(!buildRelease, browsersync.stream()));
 };
 
 export const styles = () => {
-	return src(siteConfig.paths.root.src + siteConfig.paths.styles.src, gulpif(siteConfig.buildRelease, {}, { sourcemaps: true }))
-		.pipe(sass(gulpif(siteConfig.compressed.css, { outputStyle: 'compressed' })).on('error', sass.logError))
+	return src(paths.root.src + paths.styles.src, gulpif(buildRelease, {}, { sourcemaps: true }))
+		.pipe(sass(gulpif(compressed.css, { outputStyle: 'compressed' })).on('error', sass.logError))
 		.pipe(webpCss())
-		.pipe(gulpif(siteConfig.buildRelease, autoprefixer({ grid: true, cascade: false })))
-		.pipe(gulpif(siteConfig.buildRelease, groupMediaQueries()))
-		.pipe(dest(siteConfig.paths.root.dest + siteConfig.paths.styles.dest, gulpif(siteConfig.buildRelease, {}, { sourcemaps: true })))
-		.pipe(gulpif(!siteConfig.buildRelease, browsersync.stream()));
+		.pipe(gulpif(buildRelease, autoprefixer({ grid: true, cascade: false })))
+		.pipe(gulpif(buildRelease, groupMediaQueries()))
+		.pipe(dest(paths.root.dest + paths.styles.dest, gulpif(buildRelease, {}, { sourcemaps: true })))
+		.pipe(gulpif(!buildRelease, browsersync.stream()));
 };
 
 export const scripts = () => {
-	return src(siteConfig.paths.root.src + siteConfig.paths.scripts.src)
+	return src(paths.root.src + paths.scripts.src)
 		.pipe(named())
 		.pipe(webpack(webpackConfig))
-		.pipe(dest(siteConfig.paths.root.dest + siteConfig.paths.scripts.dest))
-		.pipe(gulpif(!siteConfig.buildRelease, browsersync.stream()));
+		.pipe(dest(paths.root.dest + paths.scripts.dest))
+		.pipe(gulpif(!buildRelease, browsersync.stream()));
 };
 
 export const media = () => {
-	return src(siteConfig.paths.root.src + siteConfig.paths.media.src + '.{jpg,jpeg,png,gif}')
-		.pipe(newer(siteConfig.paths.root.dest + siteConfig.paths.media.dest))
+	return src(paths.root.src + paths.media.src + '.{jpg,jpeg,png,gif}')
+		.pipe(newer(paths.root.dest + paths.media.dest))
 		.pipe(webp())
-		.pipe(dest(siteConfig.paths.root.dest + siteConfig.paths.media.dest))
-		.pipe(src(siteConfig.paths.root.src + siteConfig.paths.media.src))
-		.pipe(newer(siteConfig.paths.root.dest + siteConfig.paths.media.dest))
-		.pipe(gulpif(siteConfig.buildRelease, imagemin({ silent: false })))
-		.pipe(dest(siteConfig.paths.root.dest + siteConfig.paths.media.dest))
-		.pipe(gulpif(!siteConfig.buildRelease, browsersync.stream()));
+		.pipe(dest(paths.root.dest + paths.media.dest))
+		.pipe(src(paths.root.src + paths.media.src))
+		.pipe(newer(paths.root.dest + paths.media.dest))
+		.pipe(gulpif(buildRelease, imagemin({ silent: false })))
+		.pipe(dest(paths.root.dest + paths.media.dest))
+		.pipe(gulpif(!buildRelease, browsersync.stream()));
 };
 
 export const fonts = () => {
-	return src(siteConfig.paths.root.src + siteConfig.paths.fonts.src)
+	return src(paths.root.src + paths.fonts.src)
 		.pipe(gulpif(font => font.extname !== '.woff', font2woff2({ ignoreExt: true, clone: true })))
-		.pipe(dest(siteConfig.paths.root.dest + siteConfig.paths.fonts.dest));
+		.pipe(dest(paths.root.dest + paths.fonts.dest));
 };
 
 export const resources = () => {
-	return src(siteConfig.paths.root.src + siteConfig.paths.resources.src).pipe(dest(siteConfig.paths.root.dest + siteConfig.paths.resources.dest));
+	return src(paths.root.src + paths.resources.src, { dot: true }).pipe(dest(paths.root.dest + paths.resources.dest));
 };
 
 export const clean = () => {
-	return del(siteConfig.paths.root.dest + '/**/*');
+	return del(paths.root.dest + '/**/*');
 };
 
 export const nmclean = () => {
 	return del(['node_modules', 'build', 'package-lock.json']);
 };
 
+export const deploy = () => {
+	return src(paths.ftp.src, { dot: true }).pipe(ftp.create(ftpConfig).dest(paths.ftp.dest));
+};
+
 export const server = () => {
 	browsersync.init({
-		server: siteConfig.paths.root.dest,
+		server: paths.root.dest,
 		port: 88,
 		open: false,
 		notify: false,
-		// proxy: 'http://webdev:88',
 	});
 };
 
 export const watcher = () => {
-	watch(siteConfig.paths.root.src + siteConfig.paths.markup.watch, markup);
-	watch(siteConfig.paths.root.src + siteConfig.paths.styles.watch, styles);
-	watch(siteConfig.paths.root.src + siteConfig.paths.scripts.watch, scripts);
-	watch(siteConfig.paths.root.src + siteConfig.paths.media.watch, media);
+	watch(paths.root.src + paths.markup.watch, markup);
+	watch(paths.root.src + paths.styles.watch, styles);
+	watch(paths.root.src + paths.scripts.watch, scripts);
+	watch(paths.root.src + paths.media.watch, media);
 };
 
 export const release = series(clean, parallel(markup, styles, scripts, fonts, media, resources));

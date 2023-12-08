@@ -61,6 +61,7 @@
 		"gulp-webp-css-fixed": "^1.1.0",
 		"gulp-webp-html-nosvg": "^1.0.6",
 		"sass": "^1.49.11",
+		"vinyl-ftp": "^0.6.1",
 		"vinyl-named": "^1.1.0",
 		"webpack-stream": "^7.0.0"
 	},

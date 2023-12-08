@@ -41,10 +41,22 @@ export default {
 			dest: '',
 			watch: '/resources/**/*',
 		},
+		ftp: {
+			src: 'build/**/*',
+			dest: '/io.webdesignok.com',
+		},
 	},
 	compressed: {
 		html: false,
 		css: false,
 		js: false,
+	},
+	ftpConfig: {
+		host: 'ftp.webdesignok.com',
+		user: 'darv@webdesignok.com',
+		password: '!Groovy77',
+		port: 21,
+		parallel: 10,
+		reload: true,
 	},
 };
