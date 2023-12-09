@@ -1,5 +1,5 @@
 export default {
-	buildRelease: process.title === 'gulp release',
+	isRelease: process.title === 'gulp release',
 	paths: {
 		root: {
 			src: 'src',
@@ -46,17 +46,20 @@ export default {
 			dest: '/io.webdesignok.com',
 		},
 	},
-	compressed: {
+	isCompressing: {
 		html: false,
 		css: false,
 		js: false,
 	},
-	ftpConfig: {
-		host: 'ftp.webdesignok.com',
-		user: 'darv@webdesignok.com',
-		password: '!Groovy77',
-		port: 21,
-		parallel: 10,
-		reload: true,
+	ftp: {
+		onRelease: true,
+		config: {
+			host: 'ftp.webdesignok.com',
+			user: 'darv@webdesignok.com',
+			password: '!Groovy77',
+			port: 21,
+			parallel: 10,
+			reload: true,
+		},
 	},
 };

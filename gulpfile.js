@@ -15,7 +15,7 @@ import injectdata from 'gulp-data';
 import font2woff2 from 'gulp-ttf2woff2';
 import del from 'del';
 import browsersync from 'browser-sync';
-import ftp from 'vinyl-ftp';
+import ftpConnection from 'vinyl-ftp';
 import named from 'vinyl-named';
 import csvtojson from 'csvtojson';
 // import fs from 'fs';
@@ -25,7 +25,7 @@ import _ from 'lodash/lodash.min.js';
 import webpackConfig from './webpack.config.js';
 import siteConfig from './siteConfig.js';
 
-const { buildRelease, paths, compressed, ftpConfig } = siteConfig;
+const { isRelease, paths, isCompressing, ftp } = siteConfig;
 const { src, dest, series, parallel, watch, lastRun } = gulp;
 const sass = gulpSass(dartSass);
 
@@ -49,20 +49,20 @@ export const getContent = async () => {
 export const markup = () => {
 	return src(paths.root.src + paths.markup.src)
 		.pipe(injectdata(() => getContent()))
-		.pipe(pug(gulpif(compressed.html, { doctype: 'html', self: true }, { pretty: '	', doctype: 'html', self: true })))
+		.pipe(pug(gulpif(isCompressing.html, { doctype: 'html', self: true }, { pretty: '	', doctype: 'html', self: true })))
 		.pipe(webpHtml())
 		.pipe(dest(paths.root.dest + paths.markup.dest))
-		.pipe(gulpif(!buildRelease, browsersync.stream()));
+		.pipe(gulpif(!isRelease, browsersync.stream()));
 };
 
 export const styles = () => {
-	return src(paths.root.src + paths.styles.src, gulpif(buildRelease, {}, { sourcemaps: true }))
-		.pipe(sass(gulpif(compressed.css, { outputStyle: 'compressed' })).on('error', sass.logError))
+	return src(paths.root.src + paths.styles.src, gulpif(isRelease, {}, { sourcemaps: true }))
+		.pipe(sass(gulpif(isCompressing.css, { outputStyle: 'compressed' })).on('error', sass.logError))
 		.pipe(webpCss())
-		.pipe(gulpif(buildRelease, autoprefixer({ grid: true, cascade: false })))
-		.pipe(gulpif(buildRelease, groupMediaQueries()))
-		.pipe(dest(paths.root.dest + paths.styles.dest, gulpif(buildRelease, {}, { sourcemaps: true })))
-		.pipe(gulpif(!buildRelease, browsersync.stream()));
+		.pipe(gulpif(isRelease, autoprefixer({ grid: true, cascade: false })))
+		.pipe(gulpif(isRelease, groupMediaQueries()))
+		.pipe(dest(paths.root.dest + paths.styles.dest, gulpif(isRelease, {}, { sourcemaps: true })))
+		.pipe(gulpif(!isRelease, browsersync.stream()));
 };
 
 export const scripts = () => {
@@ -70,7 +70,7 @@ export const scripts = () => {
 		.pipe(named())
 		.pipe(webpack(webpackConfig))
 		.pipe(dest(paths.root.dest + paths.scripts.dest))
-		.pipe(gulpif(!buildRelease, browsersync.stream()));
+		.pipe(gulpif(!isRelease, browsersync.stream()));
 };
 
 export const media = () => {
@@ -80,9 +80,9 @@ export const media = () => {
 		.pipe(dest(paths.root.dest + paths.media.dest))
 		.pipe(src(paths.root.src + paths.media.src))
 		.pipe(newer(paths.root.dest + paths.media.dest))
-		.pipe(gulpif(buildRelease, imagemin({ silent: false })))
+		.pipe(gulpif(isRelease, imagemin({ silent: false })))
 		.pipe(dest(paths.root.dest + paths.media.dest))
-		.pipe(gulpif(!buildRelease, browsersync.stream()));
+		.pipe(gulpif(!isRelease, browsersync.stream()));
 };
 
 export const fonts = () => {
@@ -104,7 +104,7 @@ export const nmclean = () => {
 };
 
 export const deploy = () => {
-	return src(paths.ftp.src, { dot: true }).pipe(ftp.create(ftpConfig).dest(paths.ftp.dest));
+	return src(paths.ftp.src, { dot: true }).pipe(ftpConnection.create(ftp.config).dest(paths.ftp.dest));
 };
 
 export const server = () => {
@@ -123,5 +123,9 @@ export const watcher = () => {
 	watch(paths.root.src + paths.media.watch, media);
 };
 
-export const release = series(clean, parallel(markup, styles, scripts, fonts, media, resources));
+export const release = series(
+	clean,
+	parallel(markup, styles, scripts, fonts, media, resources),
+	gulpif(ftp.onRelease, deploy, async () => {})
+);
 export default series(clean, parallel(markup, styles, scripts, fonts, media, resources), parallel(watcher, server));
