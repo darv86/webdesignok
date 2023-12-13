@@ -3,8 +3,7 @@ extends ../base
 append vars
 	-
 		curlang = 'en';
-		//- basedir = curlang == 'en' ? basedir : '../';
-		pageTitle = 'Home page';
+		pageTitle = 'ok Home page';
 
 append styles
 	link(rel='stylesheet' href='/css/index.css')
@@ -18,7 +17,7 @@ block header
 block content
 	p.text.icon-arrow-slider !{self.mainscreen.caption.uk}
 	p.text !{self.results.desc.es}
-	p.text !{self.mainscreen.desc.en}
+	p.text !{self.colors.main}
 	ul.list
 		img.list__item.header-img(src='/media/1contactsRadushev-min.jpg' alt="photo 1 of dima radushev")
 		img.list__item.header-img(src='/media/animation.gif' alt="photo 2 of dima radushev")

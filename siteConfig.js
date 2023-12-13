@@ -41,10 +41,20 @@ export default {
 			dest: '',
 			watch: '/resources/**/*',
 		},
+		favicon: {
+			src: '/resources/favicon.svg',
+			dest: '',
+			watch: null,
+		},
 		ftp: {
 			src: 'build/**/*',
 			dest: '/io.webdesignok.com',
+			watch: null,
 		},
+	},
+	colors: {
+		main: '#6f2c91',
+		second: '#f2695c',
 	},
 	isCompressing: {
 		html: false,
