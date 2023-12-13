@@ -13,23 +13,35 @@ import newer from 'gulp-newer';
 import gulpif from 'gulp-if';
 import injectdata from 'gulp-data';
 import font2woff2 from 'gulp-ttf2woff2';
+import realFavicon from 'gulp-real-favicon';
 import del from 'del';
 import browsersync from 'browser-sync';
 import ftpConnection from 'vinyl-ftp';
 import named from 'vinyl-named';
 import csvtojson from 'csvtojson';
-// import fs from 'fs';
-import { readdir } from 'fs/promises';
-import path from 'path';
+import { readdir, unlink } from 'node:fs/promises';
+// import { Transform } from 'node:stream';
+import path from 'node:path';
 import _ from 'lodash/lodash.min.js';
 import webpackConfig from './webpack.config.js';
 import siteConfig from './siteConfig.js';
 
-const { isRelease, paths, isCompressing, ftp } = siteConfig;
+const { isRelease, paths, isCompressing, colors, ftp } = siteConfig;
 const { src, dest, series, parallel, watch, lastRun } = gulp;
 const sass = gulpSass(dartSass);
 
-export const getContent = async () => {
+// need to complete functionality
+// const onPipeObjectTransform = (file, enc, cb) => {
+// 	return new Transform({
+// 		objectMode: true,
+// 		transform(file, enc, cb) {
+// 			if (file.dirname !== file.base) file.dirname = file.base;
+// 			file.stat.isDirectory() ? cb() : cb(null, file);
+// 		},
+// 	});
+// };
+
+const getContent = async () => {
 	const langsArr = (await readdir(paths.root.src + paths.content.src)).map(file => path.parse(file).name),
 		rawJsonArr = [],
 		constantsArr = [],
@@ -48,7 +60,8 @@ export const getContent = async () => {
 
 export const markup = () => {
 	return src(paths.root.src + paths.markup.src)
-		.pipe(injectdata(() => getContent()))
+		.pipe(injectdata(getContent))
+		.pipe(injectdata({ colors }))
 		.pipe(pug(gulpif(isCompressing.html, { doctype: 'html', self: true }, { pretty: '	', doctype: 'html', self: true })))
 		.pipe(webpHtml())
 		.pipe(dest(paths.root.dest + paths.markup.dest))
@@ -74,13 +87,13 @@ export const scripts = () => {
 };
 
 export const media = () => {
-	return src(paths.root.src + paths.media.src + '.{jpg,jpeg,png,gif}')
+	return src(paths.root.src + paths.media.src)
 		.pipe(newer(paths.root.dest + paths.media.dest))
 		.pipe(webp())
 		.pipe(dest(paths.root.dest + paths.media.dest))
 		.pipe(src(paths.root.src + paths.media.src))
 		.pipe(newer(paths.root.dest + paths.media.dest))
-		.pipe(gulpif(isRelease, imagemin({ silent: false })))
+		.pipe(gulpif(isRelease, imagemin()))
 		.pipe(dest(paths.root.dest + paths.media.dest))
 		.pipe(gulpif(!isRelease, browsersync.stream()));
 };
@@ -92,15 +105,87 @@ export const fonts = () => {
 };
 
 export const resources = () => {
-	return src(paths.root.src + paths.resources.src, { dot: true }).pipe(dest(paths.root.dest + paths.resources.dest));
+	return src(paths.root.src + paths.resources.src, { dot: true })
+		.pipe(gulpif(isRelease, imagemin()))
+		.pipe(dest(paths.root.dest + paths.resources.dest));
+};
+
+export const favicon = cb => {
+	const markupFile = 'faviconData.json';
+	realFavicon.generateFavicon(
+		{
+			masterPicture: paths.root.src + paths.favicon.src,
+			dest: paths.root.dest + paths.favicon.dest,
+			iconsPath: '/',
+			design: {
+				ios: {
+					pictureAspect: 'noChange',
+					assets: {
+						ios6AndPriorIcons: false,
+						ios7AndLaterIcons: false,
+						precomposedIcons: false,
+						declareOnlyDefaultIcon: true,
+					},
+				},
+				desktopBrowser: {
+					design: 'raw',
+				},
+				windows: {
+					pictureAspect: 'noChange',
+					backgroundColor: '#6f2c91',
+					onConflict: 'override',
+					assets: {
+						windows80Ie10Tile: false,
+						windows10Ie11EdgeTiles: {
+							small: true,
+							medium: true,
+							big: true,
+							rectangle: true,
+						},
+					},
+				},
+				androidChrome: {
+					pictureAspect: 'noChange',
+					themeColor: '#6f2c91',
+					manifest: {
+						display: 'standalone',
+						orientation: 'notSet',
+						onConflict: 'override',
+						declared: true,
+					},
+					assets: {
+						legacyIcon: false,
+						lowResolutionIcons: false,
+					},
+				},
+				safariPinnedTab: {
+					pictureAspect: 'blackAndWhite',
+					threshold: 75,
+					themeColor: '#f2695c',
+				},
+			},
+			settings: {
+				scalingAlgorithm: 'Mitchell',
+				errorOnImageTooSmall: false,
+				readmeFile: false,
+				htmlCodeFile: false,
+				usePathAsIs: false,
+			},
+			markupFile,
+		},
+		async () => {
+			await unlink(markupFile);
+			cb();
+		}
+	);
 };
 
 export const clean = () => {
-	return del(paths.root.dest + '/**/*');
+	return del(paths.root.dest + '/**/*', { dot: true });
 };
 
 export const nmclean = () => {
-	return del(['node_modules', 'build', 'package-lock.json']);
+	return del(['node_modules', 'build', 'package-lock.json'], { dot: true });
 };
 
 export const deploy = () => {
@@ -125,7 +210,7 @@ export const watcher = () => {
 
 export const release = series(
 	clean,
-	parallel(markup, styles, scripts, fonts, media, resources),
+	parallel(markup, styles, scripts, fonts, media, resources, favicon),
 	gulpif(ftp.onRelease, deploy, async () => {})
 );
-export default series(clean, parallel(markup, styles, scripts, fonts, media, resources), parallel(watcher, server));
+export default series(clean, parallel(markup, styles, scripts, fonts, media, resources, favicon), parallel(watcher, server));
