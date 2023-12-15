@@ -1,0 +1,22 @@
+@function col($num: 6, $gap: 12px) {
+	@return calc(100% / 12 * #{$num} - #{$gap});
+}
+
+@function part($num: 5, $gap: $gap-main) {
+	@return calc(100% / #{$num} - (#{$gap} * (1 - (1 / #{$num}))));
+}
+
+@function col($num: 6, $gap: $gap-main) {
+	@return calc(100% / 12 * #{$num} - (#{$gap} * (1 - (1 / (12 / #{$num})))));
+}
+@function part($num: 5, $gap: $gap-main) {
+	@return calc(100% / #{$num} - (#{$gap + $gap} * (1 - (1 / #{$num}))));
+}
+
+@function color-main($a: 1, $l: 47%, $s: 100%, $h: 196) {
+	@return hsla($h, $s, $l, $a);
+}
+
+@function context-size($target, $context) {
+	@return calc(#{$target} / #{$context} * 100%);
+}
