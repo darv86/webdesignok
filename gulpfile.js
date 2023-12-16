@@ -11,7 +11,6 @@ import webp from 'gulp-webp';
 import webpHtml from 'gulp-webp-html-nosvg';
 import newer from 'gulp-newer';
 import gulpif from 'gulp-if';
-import injectdata from 'gulp-data';
 import font2woff2 from 'gulp-ttf2woff2';
 import realFavicon from 'gulp-real-favicon';
 import del from 'del';
@@ -30,18 +29,11 @@ const { isRelease, paths, isCompressing, colors, ftp } = siteConfig;
 const { src, dest, series, parallel, watch, lastRun } = gulp;
 const sass = gulpSass(dartSass);
 
-// need to complete functionality
-// const onPipeObjectTransform = (file, enc, cb) => {
-// 	return new Transform({
-// 		objectMode: true,
-// 		transform(file, enc, cb) {
-// 			if (file.dirname !== file.base) file.dirname = file.base;
-// 			file.stat.isDirectory() ? cb() : cb(null, file);
-// 		},
-// 	});
-// };
+// const startTransformStream = transform => new Transform({ objectMode: true, transform });
+// const okif = (condition, oktrue, okelse = startTransformStream((file, enc, cb) => cb())) => (condition ? oktrue : okelse);
 
-const getContent = async () => {
+let content;
+export const getContent = async () => {
 	const langsArr = (await readdir(paths.root.src + paths.content.src)).map(file => path.parse(file).name),
 		rawJsonArr = [],
 		constantsArr = [],
@@ -55,26 +47,25 @@ const getContent = async () => {
 			for (const lang of langsArr) constantsArr.push(`${constant}.${lang}`);
 			for (const lang of content) contentArr.push(lang.content);
 		});
-	return _.zipObjectDeep(constantsArr, contentArr);
+	content = _.zipObjectDeep(constantsArr, contentArr);
+	return content;
 };
 
 export const markup = () => {
 	return src(paths.root.src + paths.markup.src)
-		.pipe(injectdata(getContent))
-		.pipe(injectdata({ colors }))
-		.pipe(pug(gulpif(isCompressing.html, { doctype: 'html', self: true }, { pretty: '	', doctype: 'html', self: true })))
+		.pipe(pug({ pretty: isCompressing.html ? false : '	', data: { ...content, colors }, doctype: 'html', self: true }))
 		.pipe(webpHtml())
 		.pipe(dest(paths.root.dest + paths.markup.dest))
 		.pipe(gulpif(!isRelease, browsersync.stream()));
 };
 
 export const styles = () => {
-	return src(paths.root.src + paths.styles.src, gulpif(isRelease, {}, { sourcemaps: true }))
-		.pipe(sass(gulpif(isCompressing.css, { outputStyle: 'compressed' })).on('error', sass.logError))
+	return src(paths.root.src + paths.styles.src, isRelease ? {} : { sourcemaps: true })
+		.pipe(sass(isCompressing.css && { outputStyle: 'compressed' }).on('error', sass.logError))
 		.pipe(webpCss())
 		.pipe(gulpif(isRelease, autoprefixer({ grid: true, cascade: false })))
 		.pipe(gulpif(isRelease, groupMediaQueries()))
-		.pipe(dest(paths.root.dest + paths.styles.dest, gulpif(isRelease, {}, { sourcemaps: true })))
+		.pipe(dest(paths.root.dest + paths.styles.dest, isRelease ? {} : { sourcemaps: true }))
 		.pipe(gulpif(!isRelease, browsersync.stream()));
 };
 
@@ -210,7 +201,8 @@ export const watcher = () => {
 
 export const release = series(
 	clean,
+	getContent,
 	parallel(markup, styles, scripts, fonts, media, resources, favicon),
 	gulpif(ftp.onRelease, deploy, async () => {})
 );
-export default series(clean, parallel(markup, styles, scripts, fonts, media, resources, favicon), parallel(watcher, server));
+export default series(clean, getContent, parallel(markup, styles, scripts, fonts, media, resources, favicon), parallel(watcher, server));
