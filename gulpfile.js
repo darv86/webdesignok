@@ -205,4 +205,5 @@ export const release = series(
 	parallel(markup, styles, scripts, fonts, media, resources, favicon),
 	gulpif(ftp.onRelease, deploy, async () => {})
 );
+
 export default series(clean, getContent, parallel(markup, styles, scripts, fonts, media, resources, favicon), parallel(watcher, server));

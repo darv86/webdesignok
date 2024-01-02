@@ -1,4 +1,4 @@
-@import '../utils/_mixins';
+@use '../utils' as *;
 
 @include font-face('MuseoSansCyrl-700');
 
