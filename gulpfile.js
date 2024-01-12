@@ -29,15 +29,10 @@ const { isRelease, paths, isCompressing, colors, ftp } = siteConfig;
 const { src, dest, series, parallel, watch, lastRun } = gulp;
 const sass = gulpSass(dartSass);
 
-// const startTransformStream = transform => new Transform({ objectMode: true, transform });
-// const okif = (condition, oktrue, okelse = startTransformStream((file, enc, cb) => cb())) => (condition ? oktrue : okelse);
-
 let content;
 export const getContent = async () => {
 	const langsArr = (await readdir(paths.root.src + paths.content.src)).map(file => path.parse(file).name),
-		rawJsonArr = [],
-		constantsArr = [],
-		contentArr = [];
+		[rawJsonArr, constantsArr, contentArr] = [[], [], []];
 	for (const lang of langsArr) rawJsonArr.push(await csvtojson().fromFile(`${paths.root.src}${paths.content.src}/${lang}.csv`));
 	_(rawJsonArr)
 		.flattenDeep()
@@ -123,7 +118,7 @@ export const favicon = cb => {
 				},
 				windows: {
 					pictureAspect: 'noChange',
-					backgroundColor: '#6f2c91',
+					backgroundColor: colors.main,
 					onConflict: 'override',
 					assets: {
 						windows80Ie10Tile: false,
@@ -137,7 +132,7 @@ export const favicon = cb => {
 				},
 				androidChrome: {
 					pictureAspect: 'noChange',
-					themeColor: '#6f2c91',
+					themeColor: colors.main,
 					manifest: {
 						display: 'standalone',
 						orientation: 'notSet',
@@ -152,7 +147,7 @@ export const favicon = cb => {
 				safariPinnedTab: {
 					pictureAspect: 'blackAndWhite',
 					threshold: 75,
-					themeColor: '#f2695c',
+					themeColor: colors.second,
 				},
 			},
 			settings: {
