@@ -1,3 +1,4 @@
+// @ts-nocheck
 import gulp from 'gulp';
 import pug from 'gulp-pug';
 import * as dartSass from 'sass';
