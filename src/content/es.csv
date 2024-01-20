@@ -3,7 +3,7 @@ constant,content
 mainscreen.title.text1,Humano
 mainscreen.title.text2,Diseñador
 mainscreen.title.text3,Desarrollador
-mainscreen.desc,Me alegro de verte aquí. Mi nombre es Dima Radushev. Creo comunicaciones visuales con personas y para personas. Diseñé y desarrollé este sitio web para ayudarlo a encontrar información fácilmente sobre mis habilidades y servicios. Espero que sea un viaje útil para ti.
+mainscreen.desc,Me alegro de verte aquí. Mi nombre es Dima Radushev. Creo comunicaciones visuales con personas y personas. Diseñé y desarrollé este sitio web para ayudarlo a encontrar información fácilmente sobre mis habilidades y servicios. Espero que sea un viaje útil para ti.
 mainscreen.caption,Dima Radushev
 ,
 ,RESULTS
@@ -13,11 +13,46 @@ results.item1.title,Clientes felices
 results.item1.desc,59
 results.item2.title,Retroalimentación positiva
 results.item2.desc,53
-results.item3.title,Clientes de países
+results.item3.title,Países de los clientes
 results.item3.desc,6
 results.item4.title,Respuesta Rápida
-results.item4.desc,60 minutos
+results.item4.desc,60min
 results.item5.title,Total de proyectos
 results.item5.desc,129
 results.item6.title,Proyectos exitosos
 results.item6.desc,96%
+,
+,SERVICES
+services.title,Ordenar mis servicios
+services.desc,¿Tiene una idea para un negocio o proyecto propio? Simplemente elija el servicio que necesita y crearé una implementación visual y funcional.
+services.item1.title,Desarrollo web
+services.item1.desc1,Página de destino
+services.item1.desc2,Comercio electrónico
+services.item1.desc3,Sitio web de negocios
+services.item1.desc4,Sitio web de cartera
+services.item2.title,Diseño web
+services.item2.desc1,Diseño de UX/UI
+services.item2.desc2,Aplicación movil
+services.item2.desc3,Pancartas
+services.item2.desc4,Medios de comunicación social
+services.item3.title,Diseño gráfico
+services.item3.desc1,Logotipo
+services.item3.desc2,Identidad
+services.item3.desc3,Carteles
+services.item3.desc4,Presentación
+,
+,UI
+btn.contact,Contáctame
+btn.order,Pedido servicio
+btn.choose,Elija servicio
+btn.download,Descargar CV
+nav.home,Hogar
+nav.services,Servicios
+nav.portfolio,portafolio
+nav.skills,Habilidades
+nav.experience,Experiencia
+nav.education,Educación
+nav.contacts,Contactos
+,
+,TITLE
+title.index,Diseño & desarrollo web | WebdesignOK.com

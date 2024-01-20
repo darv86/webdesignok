@@ -16,8 +16,43 @@ results.item2.desc,53
 results.item3.title,Країни клієнтів
 results.item3.desc,6
 results.item4.title,Швидка відповідь
-results.item4.desc,60min
+results.item4.desc,60хв
 results.item5.title,Всього проектів
 results.item5.desc,129
 results.item6.title,Успішні проекти
 results.item6.desc,96%
+,
+,SERVICES
+services.title,Замовляйте мої послуги
+services.desc,"Маєте ідею для власного бізнесу чи проекту? Просто виберіть необхідну послугу, а я створю візуальну та функціональну реалізацію."
+services.item1.title,Веб розробка
+services.item1.desc1,Цільова сторінка
+services.item1.desc2,Електронна комерція
+services.item1.desc3,Вебсайт для бізнесу
+services.item1.desc4,Вебсайт портфоліо
+services.item2.title,Веб дизайн
+services.item2.desc1,UX/UI Дизайн
+services.item2.desc2,Мобільний додаток
+services.item2.desc3,Банер
+services.item2.desc4,Соціальні мережі
+services.item3.title,Графічний дизайн
+services.item3.desc1,Логотип
+services.item3.desc2,Айдентика
+services.item3.desc3,Плакат
+services.item3.desc4,Презентація
+,
+,UI
+btn.contact,Зв'яжіться зі мною
+btn.order,Замовляйте сервіс
+btn.choose,Виберіть сервіс
+btn.download,Завантажте резюме
+nav.home,Головна
+nav.services,Послуги
+nav.portfolio,Портфоліо
+nav.skills,Навички
+nav.experience,Досвід
+nav.education,Освіта
+nav.contacts,Контакти
+,
+,TITLE
+title.index,Веб дизайн & розробка | WebdesignOK.com
