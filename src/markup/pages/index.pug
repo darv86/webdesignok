@@ -15,10 +15,4 @@ block header
 	header.header
 		include ../blocks/nav
 block content
-	p.text.icon-arrow-slider !{self.mainscreen.caption.uk}
-	p.text !{self.results.desc.es}
-	p.text !{self.colors.main}
-	ul.list
-		img.list__item.header-img(src='/media/1contactsRadushev-min.jpg' alt="photo 1 of dima radushev")
-		img.list__item.header-img(src='/media/animation.gif' alt="photo 2 of dima radushev")
-		img.list__item.header-img(src='/media/3contactsRadushev-min.png' srcset='/media/3contactsRadushev-min@2x.png 2x' alt="photo 3 of dima radushev")
+	p.text= self.results.item5.title[curlang]
