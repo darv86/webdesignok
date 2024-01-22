@@ -21,7 +21,7 @@ export default {
 			watch: '/scripts/**/*.js',
 		},
 		fonts: {
-			src: '/fonts/**/*',
+			src: '/fonts/**/*.{woff2,woff,ttf,otf,svg}',
 			dest: '/fonts',
 			watch: '/fonts/**/*',
 		},
