@@ -3,6 +3,6 @@ nav.nav
 		for text, address in self.nav
 			li.nav__item
 				if address === 'home'
-					a.nav__link(href='/')= text[curlang]
+					a.nav__link.icon-home(href='/')= text[curlang]
 				else
-					a.nav__link(href=`/${address}.html`)= text[curlang]
+					a.nav__link(class=`icon-${address}` href=`/${address}.html`)= text[curlang]
