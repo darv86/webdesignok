@@ -1,8 +1,8 @@
 nav.nav
 	ul.nav__list
-		for text, address in self.nav
+		for text, name in self.nav
 			li.nav__item
-				if address === 'home'
+				if name === 'home'
 					a.nav__link.icon-home(href='/')= text[curlang]
 				else
-					a.nav__link(class=`icon-${address}` href=`/${address}.html`)= text[curlang]
+					a.nav__link(class=`icon-${name}`, href=`/${name}.html`)= text[curlang]
