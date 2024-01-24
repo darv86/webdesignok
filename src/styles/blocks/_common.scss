@@ -1,17 +1,20 @@
 @use '../utils' as *;
+@use 'sass:map' as m;
+@use 'sass:list' as l;
+@use 'sass:meta' as mm;
 
-@include font-face('MuseoSansCyrl-700');
+@import url($font-url);
+@include font-face($title-font700);
+
+// @debug mm.type-of(l.nth(m.keys($font-weghts), 2));
 
 .body {
 	background-color: #333;
+	font-family: $plain-font, 'Arial', 'sans-serif';
+	color: $gray40;
 }
 
 // .body__inner {}
-
-// .text {
-// 	font-family: 'Museo Sans Cyrl 700';
-// 	font-size: 1rem;
-// }
 
 .wrapper {
 	max-width: 1200;

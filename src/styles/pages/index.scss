@@ -1,42 +1,8 @@
-@use '../utils/mixins';
+@use '../utils/fonts';
 
 .text {
 	font-size: 40px;
-	font-family: sans-serif;
 	color: blue;
-	br {
-		display: none;
-	}
-}
-
-.text {
-	font-family: sans-serif;
-	font-size: 3rem;
-}
-
-.header {
-	height: 200px;
-	background: url('/media/mtiLogo240.png') center / 200px no-repeat;
-}
-.header-img {
-	width: 200px;
-}
-.list {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	padding: 40px;
-	.list__item {
-		font-size: 40px;
-		color: purple;
-		&:last-child::before {
-			content: '';
-			display: inline-block;
-			width: 40px;
-			height: 40px;
-			border-radius: 50%;
-			background-color: currentColor;
-		}
-	}
 }
 
 @media screen and (max-width: 767px) {
