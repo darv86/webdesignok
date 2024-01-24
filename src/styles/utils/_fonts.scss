@@ -1,0 +1,32 @@
+@mixin font-face($file-name, $weight: 400, $style: 'normal') {
+	@font-face {
+		font-family: $file-name;
+		font-style: $style;
+		font-weight: $weight;
+		font-display: swap;
+		src: local($file-name), url('/fonts/#{$file-name}.woff2') format('woff2'),
+			url('/fonts/#{$file-name}.woff') format('woff'),
+			url('/fonts/#{$file-name}.ttf') format('truetype'),
+			url('/fonts/#{$file-name}.otf') format('opentype'),
+			url('/fonts/#{$file-name}.svg') format('svg');
+	}
+}
+
+$font-url: 'https://fonts.googleapis.com/css2?family=Roboto&display=swap';
+
+$plain-font: 'Roboto';
+$title-font100: 'MuseoSansCyrl-100';
+$title-font300: 'MuseoSansCyrl-300';
+$title-font700: 'MuseoSansCyrl-700';
+
+$font-weights: (
+	thin: 100,
+	extralight: 200,
+	light: 300,
+	regular: 400,
+	medium: 500,
+	semibold: 600,
+	bold: 700,
+	extrabold: 800,
+	black: 900,
+);
