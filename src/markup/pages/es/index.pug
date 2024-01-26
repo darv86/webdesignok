@@ -1,21 +1,6 @@
-extends ../../base
+extends ../index
 
-append vars
+block vars
 	-
 		curlang = 'es';
-		pageTitle = 'Casa pajina';
-
-append styles
-	link(rel='stylesheet' href='/css/index.css')
-
-block header
-	header.header
-block content
-	p.text.icon-arrow-menu asds 11111113rsdfaadsf
-	p.text2  asds
-	p.text2  asds
-	ul.list
-		- let x = 1;
-		- for(let i = 1; i <= 4; i++)
-			li.list__item sdfgdsfg !{x++}
-	//- img.header-img(src='/images/png/photo-radushev-min.png' alt="photo of dima radushev")
+		pageTitle = self.title.index[curlang];
