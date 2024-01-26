@@ -1,0 +1,13 @@
+@use '../utils' as *;
+
+@mixin footer {
+	.footer {
+		margin-top: auto;
+		padding: 48px 0 60px;
+		background-color: $gray10;
+	}
+
+	.footer__logo {
+		filter: grayscale(100%) brightness(400%);
+	}
+}

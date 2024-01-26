@@ -1,21 +1,23 @@
 @use '../utils' as *;
+
 @use 'nav' as *;
+@use 'footer' as *;
 
 @import url($font-url);
 @include font-face($title-font700);
 
 .body {
-	min-height: 100vh;
 	background-color: white;
 	font-family: $plain-font, sans-serif;
 	font-size: calc(14px / 16px * 1rem);
+	line-height: 1.5;
 	color: $gray40;
 }
 
 .body__inner {
 	display: flex;
 	flex-direction: column;
-	padding: 0 12px;
+	min-height: 100vh;
 }
 
 .title {
@@ -29,9 +31,11 @@
 .wrapper {
 	width: 100%;
 	margin: 0 auto;
+	padding: 0 12px;
 }
 
 @include nav;
+@include footer;
 
 @media screen and (max-width: 767px) {
 }
