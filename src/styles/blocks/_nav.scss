@@ -1,0 +1,10 @@
+@use '../utils' as *;
+@use 'sass:color';
+
+@mixin nav {
+	.nav {
+		background-color: color.change($gray95, $alpha: 0.99);
+		border-right: 1px solid $gray90;
+		border-bottom: 1px solid $gray90;
+	}
+}

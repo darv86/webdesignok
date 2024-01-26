@@ -1,29 +1,37 @@
 @use '../utils' as *;
-@use 'sass:map' as m;
-@use 'sass:list' as l;
-@use 'sass:meta' as mm;
+@use 'nav' as *;
 
 @import url($font-url);
 @include font-face($title-font700);
 
-// @debug mm.type-of(l.nth(m.keys($font-weghts), 2));
-
 .body {
-	background-color: #333;
-	font-family: $plain-font, 'Arial', 'sans-serif';
+	min-height: 100vh;
+	background-color: white;
+	font-family: $plain-font, sans-serif;
+	font-size: calc(14px / 16px * 1rem);
 	color: $gray40;
 }
 
-// .body__inner {}
-
-.wrapper {
-	max-width: 1200;
-	margin: 0 auto;
-	padding: 0 32px;
+.body__inner {
+	display: flex;
+	flex-direction: column;
+	padding: 0 12px;
 }
 
+.title {
+	font-family: $title-font700, sans-serif;
+}
+
+.subtitle {
+	font-family: $title-font100, sans-serif;
+}
+
+.wrapper {
+	width: 100%;
+	margin: 0 auto;
+}
+
+@include nav;
+
 @media screen and (max-width: 767px) {
-	.wrapper {
-		padding: 0 16px;
-	}
 }
