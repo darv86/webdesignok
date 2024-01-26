@@ -1,7 +1,7 @@
 block vars
 	include vars.pug
 
-html.html(lang = curlang)
+html.html(lang=curlang)
 	head
 		block meta
 			meta(charset='UTF-8')
@@ -21,12 +21,11 @@ html.html(lang = curlang)
 			link(rel='manifest' href='/site.webmanifest')
 		block styles
 			link(rel='stylesheet' href='/css/main.css')
-		title !{pageTitle}
+		title= pageTitle
 	body.body
 		.body__inner
 			block header
 			block content
 			block footer
-				footer.footer
 		block scripts
 			script(src='/js/main.js')
