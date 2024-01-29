@@ -1,8 +1,20 @@
 nav.nav
-	ul.nav__list
-		for text, name in self.nav
-			li.nav__item
+	a.nav-logo-link(href='/')
+		img.nav-logo-link__img(src='/media/logo-l-Radushev.svg' alt='Dima Radushev logo')
+	button.nav-toggler
+		.nav-toggler__lines
+
+	ul.nav-list.nav-menu
+		each text, name in self.nav
+			li.nav-list__item
 				if name === 'home'
-					a.nav__link.icon-home(href='/')= text[curlang]
+					a.nav-list__link.icon-home(href='/')= text[curlang]
 				else
-					a.nav__link(class=`icon-${name}`, href=`/${name}.html`)= text[curlang]
+					a.nav-list__link(class=`icon-${name}` href=`/${name}.html`)= text[curlang]
+
+	address.nav-contact-info
+		ul.nav-list
+			li.nav-list__item
+				a.nav-list__link.icon-phone(href=`tel:${self.info.phone[curlang]}`)= self.info.phone[curlang]
+			li.nav-list__item
+				a.nav-list__link.icon-mail(href=`mailto:${self.info.email[curlang]}`)= self.info.email[curlang]
