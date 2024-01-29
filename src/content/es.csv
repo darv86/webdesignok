@@ -8,7 +8,7 @@ mainscreen.caption,Dima Radushev
 ,
 ,RESULTS
 results.title,Resultar en números
-results.desc,"Estos números son reflejo de mi actividad, actitud y pasión que llevé a través de todos los proyectos en los que estuve involucrado unos años."
+results.desc,"Estos números son un reflejo de mi actividad, actitud y pasión que llevé a través de todos los proyectos en los que estuve involucrado unos años."
 results.item1.title,Clientes felices
 results.item1.desc,59
 results.item2.title,Retroalimentación positiva
@@ -56,3 +56,8 @@ nav.contacts,Contactos
 ,
 ,TITLE
 title.index,Diseño & desarrollo web | WebdesignOK.com
+,
+,INFO
+info.phone,+38(093)8366030
+info.email,hi@webdesignok.com
+info.name,Dima Radushev
