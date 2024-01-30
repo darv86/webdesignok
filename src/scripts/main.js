@@ -5,20 +5,18 @@
 
 const navToggler = document.querySelector('.nav-toggler');
 navToggler.addEventListener('click', function (e) {
-	this.hasAttribute('data-opened')
-		? this.removeAttribute('data-opened')
-		: this.setAttribute('data-opened', '');
+	this.hasAttribute('data-isopen')
+		? this.removeAttribute('data-isopen')
+		: this.setAttribute('data-isopen', '');
 });
-
 window.addEventListener('click', function (e) {
 	const nav = e.target;
 	if (nav instanceof HTMLElement && !nav.closest('.nav')) {
-		navToggler.removeAttribute('data-opened');
+		navToggler.removeAttribute('data-isopen');
 	}
 });
-
 window.addEventListener('keyup', function (e) {
-	if (navToggler.hasAttribute('data-opened') && e.code === 'Escape') {
-		navToggler.removeAttribute('data-opened');
+	if (navToggler.hasAttribute('data-isopen') && e.code === 'Escape') {
+		navToggler.removeAttribute('data-isopen');
 	}
 });
