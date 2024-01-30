@@ -87,7 +87,7 @@ export const media = () => {
 
 export const fonts = () => {
 	return src(paths.root.src + paths.fonts.src)
-		.pipe(gulpif(font => font.extname !== '.woff', font2woff2({ ignoreExt: true, clone: true })))
+		.pipe(gulpif(font => font.extname === '.ttf' || font.extname === '.otf', font2woff2({ ignoreExt: true, clone: true })))
 		.pipe(dest(paths.root.dest + paths.fonts.dest));
 };
 
