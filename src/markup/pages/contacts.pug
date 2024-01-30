@@ -2,13 +2,22 @@ extends ../base
 
 append vars
 	-
-		curlang = "en",
-		pageTitle = 'Contacts page';
+		curpage = 'contacts';
+		pageTitle = self.title.contacts[curlang];
+
+append styles
+	link(rel='stylesheet' href='/css/pages/contacts.css')
+
+append scripts
+	script(src='/js/contacts.js')
 
 block header
 	header.header
 		include ../blocks/nav
+
 block content
-	p.text sdsafsadf
-	p.text
-	img.header-img(alt="photo 1 of dima radushev" src='/images/1contactsRadushev-min.jpg')
+	//- img(src='/media/gymDevicesKeyview.jpg' srcset='/media/gymDevicesKeyview@2.jpg 2x')
+
+block footer
+	include ../blocks/footer
+
