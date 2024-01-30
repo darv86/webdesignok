@@ -8,12 +8,12 @@ mainscreen.caption,Dima Radushev
 ,
 ,RESULTS
 results.title,Resultar en números
-results.desc,"Estos números son un reflejo de mi actividad, actitud y pasión que llevé a través de todos los proyectos en los que estuve involucrado unos años."
+results.desc,"Estos números son reflejo de mi actividad, actitud y pasión que llevé a través de todos los proyectos en los que estuve involucrado unos años."
 results.item1.title,Clientes felices
 results.item1.desc,59
 results.item2.title,Retroalimentación positiva
 results.item2.desc,53
-results.item3.title,Países de los clientes
+results.item3.title,Países de clientes
 results.item3.desc,6
 results.item4.title,Respuesta Rápida
 results.item4.desc,60min
@@ -56,6 +56,7 @@ nav.contacts,Contactos
 ,
 ,TITLE
 title.index,Diseño & desarrollo web | WebdesignOK.com
+title.contacts,Contactos de Dima Radushev
 ,
 ,INFO
 info.phone,+38(093)8366030
