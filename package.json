@@ -38,6 +38,12 @@
 				"options": {
 					"printWidth": 1000
 				}
+			},
+			{
+				"files": "_reset.scss",
+				"options": {
+					"requirePragma": true
+				}
 			}
 		]
 	},
