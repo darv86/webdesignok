@@ -1,5 +1,5 @@
 block vars
-	include vars.pug
+	include vars
 
 html.html(lang=curlang)
 	head
@@ -24,6 +24,7 @@ html.html(lang=curlang)
 		title= pageTitle
 	body.body
 		.body__inner
+			include blocks/nav
 			block header
 			block content
 			block footer
