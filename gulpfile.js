@@ -68,7 +68,7 @@ export const styles = () => {
 export const scripts = () => {
 	return src(paths.root.src + paths.scripts.src)
 		.pipe(named())
-		.pipe(webpack(webpackConfig))
+		.pipe(gulpif(isRelease, webpack(webpackConfig)))
 		.pipe(dest(paths.root.dest + paths.scripts.dest))
 		.pipe(gulpif(!isRelease, browsersync.stream()));
 };
