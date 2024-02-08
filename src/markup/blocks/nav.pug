@@ -1,20 +1,64 @@
 nav.nav
-	a.nav-logo-link(href='/')
+	a.nav-logo-link(href=basedir)
 		img.nav-logo-link__img(src='/media/logo-l-Radushev.svg' alt='Dima Radushev logo')
 	button.nav-toggler
 		.nav-toggler__lines
 
-	ul.nav-list.nav-menu
-		each text, name in self.nav
-			li.nav-list__item
-				if name === 'home'
-					a.nav-list__link.icon-home(href='/')= text[curlang]
-				else
-					a.nav-list__link(class=`icon-${name}` href=`/${name}.html`)= text[curlang]
+	.nav-menu
+		each menuItemText, menuItemName in self.nav
+			if menuItemName === 'home'
+				a.nav__link.icon-home(
+					class={'nav__link--active': curpage === '/'}
+					href=basedir
+				)= menuItemText[curlang]
+			else
+				a.nav__link(
+					class=[`icon-${menuItemName}`, {'nav__link--active': curpage === menuItemName}]
+					href=`${basedir}${menuItemName}.html`
+				)= menuItemText[curlang]
 
 	address.nav-contact-info
-		ul.nav-list
-			li.nav-list__item
-				a.nav-list__link.icon-phone(href=`tel:${self.info.phone[curlang]}`)= self.info.phone[curlang]
-			li.nav-list__item
-				a.nav-list__link.icon-mail(href=`mailto:${self.info.email[curlang]}`)= self.info.email[curlang]
+		a.nav__link.icon-phone(href=`tel:${self.info.phone[curlang]}`)= self.info.phone[curlang]
+		a.nav__link.icon-mail(href=`mailto:${self.info.email[curlang]}`)= self.info.email[curlang]
+
+	.nav-langs
+		.nav-langs-select(data-select)
+			.nav-langs-select__showww(data-show)
+			.nav-langs-select__optionsss
+				.nav-langs-select__option(data-option data-value=1 data-selected) first
+				.nav-langs-select__option(data-option data-value=2) second
+					.sumdiv.dfa not option1
+					.sumdiv2
+						p(data-option) text
+						p(data-option data-selected data-value) text2
+						p(data-option data-selected) text3
+					.sumdiv3 not option2
+				.nav-langs-select__option(data-option data-value=3 data-selected) third
+				.nav-langs-select__option(data-option data-value=4) fourth
+				.nav-langs-select__option(data-option data-value=1 data-selected) first
+				.nav-langs-select__option(data-option data-value=2) second
+					.sumdiv.dfa not option3
+					.sumdiv2
+						p(data-option) text
+						p(data-option data-selected data-value) text2
+						p(data-option data-selected) text3
+					.sumdiv3
+				.nav-langs-select__option(data-option data-value=3 data-selected) third
+				.nav-langs-select__option(data-option data-value=4) fourth
+
+				//- each transl, lang in self.langs
+					a.nav-langs__link(
+						data-option
+						data-value=lang
+						data-selected=(lang === curlang) ? true : false
+						href=`/${lang === deflang ? '' : lang + '/'}${curpage === '/' ? '' : curpage + '.html'}`
+					)= transl
+
+	//- .nav-langs
+		button.nav-langs__btn= self.langs[curlang]
+		.nav-langs__links
+			each transl, lang in self.langs
+				if lang !== curlang
+					a.nav-langs__link(
+						href=`/${lang === deflang ? '' : lang + '/'}${curpage === '/' ? '' : curpage + '.html'}`
+					)= transl

@@ -3,12 +3,20 @@
 
 @mixin nav {
 	.nav {
-		position: relative;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 999;
 		isolation: isolate;
+		height: 100%;
+		width: max-content;
 		padding: 24px 0 40px;
 		background-color: color.change($gray95, $alpha: 0.99);
 		border-right: 1px solid $gray90;
 		border-bottom: 1px solid $gray90;
+		backdrop-filter: blur(8px);
+		overflow: auto;
+		font-size: 1rem;
 	}
 
 	.nav-logo-link {
@@ -23,7 +31,7 @@
 		top: 0;
 		right: 0;
 		margin: 28px 24px 24px 24px;
-		&[data-opened] {
+		&[data-isopen] {
 			&::after {
 				content: none;
 			}
@@ -53,7 +61,7 @@
 			$gray50 calc(49% + 1px),
 			transparent calc(49% + 1px)
 		);
-		:where(button[data-opened]) & {
+		:where(button[data-isopen]) & {
 			background-image: none;
 		}
 		&::before,
@@ -66,14 +74,78 @@
 		}
 	}
 
-	.nav-list__link {
+	.nav-menu {
+		margin-bottom: 28px;
+	}
+
+	.nav__link {
 		display: flex;
 		align-items: center;
 		gap: 24px;
+		padding: 12px 24px;
+		color: $gray50;
+		&--active,
+		&:focus-visible {
+			background-color: color.change($violet, $alpha: 0.1);
+			color: $violet;
+		}
 		&::before {
 			width: 1em;
-			font-size: 24px;
+			font-size: calc(24px / 16px * 1rem);
 			text-align: center;
+		}
+	}
+
+	.nav-contact-info {
+		margin-bottom: 28px;
+	}
+
+	.nav-langs {
+		display: flex;
+		flex-direction: column;
+		padding: 0 24px;
+	}
+
+	.nav-langs__btn {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		&::after {
+			content: '';
+			transform-origin: center;
+			transform: rotate(90deg);
+			transition: 0.4s;
+			border-top: calc(5px / 18px * 1em) solid transparent;
+			border-left: calc(10px / 18px * 1em) solid;
+			border-bottom: calc(5px / 18px * 1em) solid transparent;
+			line-height: 1;
+		}
+	}
+
+	.nav-langs-select {
+		display: flex;
+		flex-direction: column;
+	}
+	.nav-langs-select__options {
+		display: flex;
+		flex-direction: column;
+	}
+
+	@media (pointer: coarse) {
+		.nav__link {
+			&:active {
+				background-color: color.change($violet, $alpha: 0.1);
+				color: $violet;
+			}
+		}
+
+		.nav-langs__btn {
+			&:focus {
+				color: $violet;
+				&::after {
+					transform: rotate(-90deg);
+				}
+			}
 		}
 	}
 }
