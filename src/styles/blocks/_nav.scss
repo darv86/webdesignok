@@ -106,12 +106,20 @@
 		padding: 0 24px;
 	}
 
+	// .nav-langs-select { }
+
 	.nav-langs__btn {
 		display: flex;
-		align-items: center;
 		gap: 1rem;
+		&[data-isopen] {
+			color: $violet;
+			&::after {
+				transform: rotate(-90deg);
+			}
+		}
 		&::after {
 			content: '';
+			display: inline-block;
 			transform-origin: center;
 			transform: rotate(90deg);
 			transition: 0.4s;
@@ -122,10 +130,6 @@
 		}
 	}
 
-	.nav-langs-select {
-		display: flex;
-		flex-direction: column;
-	}
 	.nav-langs-select__options {
 		display: flex;
 		flex-direction: column;
@@ -136,15 +140,6 @@
 			&:active {
 				background-color: color.change($violet, $alpha: 0.1);
 				color: $violet;
-			}
-		}
-
-		.nav-langs__btn {
-			&:focus {
-				color: $violet;
-				&::after {
-					transform: rotate(-90deg);
-				}
 			}
 		}
 	}

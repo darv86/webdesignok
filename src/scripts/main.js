@@ -9,27 +9,28 @@ navToggler.addEventListener('click', function (e) {
 		? this.removeAttribute('data-isopen')
 		: this.setAttribute('data-isopen', '');
 });
-window.addEventListener('click', function (e) {
-	const nav = e.target;
-	if (nav instanceof HTMLElement && !nav.closest('.nav')) {
+navToggler.addEventListener('keyup', function (e) {
+	// @ts-ignore
+	if (navToggler.hasAttribute('data-isopen') && e.code === 'Escape') {
 		navToggler.removeAttribute('data-isopen');
 	}
 });
-window.addEventListener('keyup', function (e) {
-	if (navToggler.hasAttribute('data-isopen') && e.code === 'Escape') {
+window.addEventListener('click', function (e) {
+	const nav = e.target;
+	if (nav instanceof Element && !nav.closest('.nav')) {
 		navToggler.removeAttribute('data-isopen');
 	}
 });
 
 class Selector {
 	static #idCache = [];
+	#elementCache = new Map();
 
 	/**
 	 * @param {Element} select
 	 * @param {Object} [settings={}]
 	 */
 	constructor(select, settings = {}) {
-		// const {showElement, shownLabel, shownInput, optionsBox} = settings
 		this.settings = settings;
 		this.select = select;
 	}
@@ -50,109 +51,227 @@ class Selector {
 		return id;
 	}
 
-	/**
-	 * @param {Element} element - html element
-	 * @returns {Array.<Element>}
-	 */
-	#getOptions(element) {
-		const options = [];
-
-		if (element.hasAttribute('data-option')) options.push(element);
-		for (const child of element.children) options.push(...this.#getOptions(child));
-
-		return options;
+	/** @returns {Array.<Element>} */
+	#getOptions() {
+		return Array.from(document.querySelectorAll('[data-option]'));
 	}
 
-	/**
-	 * @returns {Array.<Element>}
-	 */
+	/** @returns {Array.<Element>} */
 	#getSelected() {
-		return this.#getOptions(this.select).filter(option => option.hasAttribute('data-selected'));
+		return this.#getOptions().filter(option => option.hasAttribute('data-selected'));
+	}
+
+	#setOpener() {
+		this.select.addEventListener('isopen', e => {
+			const thisis = e.currentTarget;
+			const target = e.target;
+
+			console.log(target);
+		});
 	}
 
 	/**
-	 * @param {( Element|Array.<Element> )} selected
+	 * @param {Element} element
+	 * @returns {Element}
 	 */
-	#showSelected(selected) {
-		const selectedOptions = selected instanceof Element ? [selected] : [...selected];
-		let showElement = this.select.querySelector('[data-show]');
+	#setShowerElement(element) {
+		const button = document.createElement('button');
+		const selectedBox = this.#setShowerResult();
+		const showerElement = element || button;
+		const showerElementBtn = showerElement.tagName === 'BUTTON' ? showerElement : button;
+		const showerElementBtnClassName = this.settings.showerElementBtn?.className;
 
-		if (!showElement) {
-			showElement = document.createElement('div');
-			showElement.classList.add(this.settings.showElement.className);
-			this.select.prepend(showElement);
+		if (!showerElementBtn.classList.length) {
+			showerElementBtnClassName && showerElementBtn.classList.add(showerElementBtnClassName);
 		}
 
-		for (const selectedOption of selectedOptions) {
-			if (selectedOption.hasAttribute('data-value')) {
-			}
-			const input = document.createElement('input');
-			const inputId = this.#getIdFromString(selectedOption.className);
-			const inputAttrs = {
-				['id']: `${inputId}`,
-				['value']: selectedOption.hasAttribute('data-value')
-					? selectedOption.getAttribute('data-value')
-					: null,
-				['hidden']: '',
-			};
-			for (const [attrName, attrValue] of Object.entries(inputAttrs)) {
-				if (attrValue !== null && attrValue !== undefined) {
-					input.setAttribute(attrName, attrValue);
-				}
-
-				if (this.settings.shownInput.className) {
-					input.classList.add(this.settings.shownInput.className);
-				}
-			}
-
-			const label = document.createElement('label');
-			label.setAttribute('for', `${inputId}`);
-			label.textContent = selectedOption.textContent;
-
-			if (this.settings.shownLabel.className) {
-				label.classList.add(this.settings.shownLabel.className);
-			}
-
-			showElement.append(input);
-			showElement.append(label);
+		if (showerElement !== showerElementBtn) {
+			showerElement.append(showerElementBtn);
 		}
+
+		showerElementBtn.setAttribute('data-shower-btn', '');
+		showerElementBtn.append(selectedBox);
+
+		showerElementBtn.addEventListener('click', e => {
+			/** @type {Element} */
+			// @ts-ignore
+			const thisis = e.currentTarget;
+
+			if (thisis.hasAttribute('data-isopen')) {
+				thisis.removeAttribute('data-isopen');
+			} else {
+				thisis.setAttribute('data-isopen', '');
+				thisis.dispatchEvent(new CustomEvent('isopen', { bubbles: true }));
+			}
+		});
+
+		if (showerElement.hasAttribute('data-shower')) return selectedBox;
+
+		showerElement.setAttribute('data-shower', '');
+
+		this.select.prepend(showerElement);
+
+		return selectedBox;
+	}
+
+	#setShowerResult() {
+		const showerResult = document.createElement('div');
+		const showerResultClassName = this.settings.showerResult?.className;
+
+		showerResultClassName && showerResult.classList.add(showerResultClassName);
+		showerResult.setAttribute('data-shower-result', '');
+
+		return showerResult;
 	}
 
 	#setOptionsBox() {
 		const topLevelOption = this.select.querySelector('[data-option]');
+		const optionBoxClassName = this.settings.optionBox?.className;
 
-		if (!topLevelOption.parentElement.hasAttribute('data-select')) return;
+		if (!topLevelOption.parentElement.hasAttribute('data-select')) {
+			topLevelOption.parentElement.setAttribute('data-options', '');
+
+			return;
+		}
 
 		const optionsBox = document.createElement('div');
-		optionsBox.classList.add(this.settings.optionsBox.className);
+
+		optionBoxClassName && optionsBox.classList.add(optionBoxClassName);
+		optionsBox.setAttribute('data-options', '');
+
 		this.select.append(optionsBox);
 
 		const options = Array.from(this.select.children).filter(option =>
 			option.hasAttribute('data-option')
 		);
+
 		optionsBox.append(...options);
 	}
 
+	#setElementCache() {
+		const options = this.#getOptions();
+		const labelClassName = this.settings.shownLabel?.className;
+		const inputClassName = this.settings.shownInput?.className;
+
+		for (const option of options) {
+			if (option.hasAttribute('data-value')) {
+				const input = document.createElement('input');
+				const inputId = this.#getIdFromString(option.className);
+				const inputAttrs = {
+					['id']: `${inputId}`,
+					['value']: option.getAttribute('data-value'),
+					['hidden']: '',
+				};
+
+				for (const [attrName, attrValue] of Object.entries(inputAttrs)) {
+					if (attrValue !== null && attrValue !== undefined) {
+						input.setAttribute(attrName, attrValue);
+					}
+
+					inputClassName && input.classList.add(inputClassName);
+				}
+
+				const label = document.createElement('label');
+
+				label.setAttribute('for', `${inputId}`);
+				label.textContent = option.textContent;
+				labelClassName && label.classList.add(labelClassName);
+
+				if (this.#elementCache.has(option) || option.tagName === 'LINK') continue;
+
+				this.#elementCache.set(option, { label, input });
+			} else {
+				const span = document.createElement('span');
+
+				span.textContent = option.textContent;
+				labelClassName && span.classList.add(labelClassName);
+
+				if (this.#elementCache.has(option) || option.tagName === 'LINK') continue;
+
+				this.#elementCache.set(option, { span });
+			}
+		}
+	}
+
+	/**
+	 * @param {Array.<Element>} selectedOptions
+	 * @param {Element} showerElement
+	 */
+	#insertSelected(selectedOptions, showerElement) {
+		for (const selectedOption of selectedOptions) {
+			if (selectedOption.hasAttribute('data-value')) {
+				showerElement.append(this.#elementCache.get(selectedOption).label);
+				showerElement.append(this.#elementCache.get(selectedOption).input);
+			} else {
+				showerElement.append(this.#elementCache.get(selectedOption).span);
+			}
+		}
+	}
+
+	/** @param {( Element|Array.<Element> )} selected */
+	#showSelected(selected) {
+		const selectedOptions = selected instanceof Element ? [selected] : [...selected];
+		const showerElement = this.#setShowerElement(this.select.querySelector('[data-shower]'));
+		this.#insertSelected(selectedOptions, showerElement);
+	}
+
+	#setSelectedPicker() {
+		this.select.addEventListener('click', e => {
+			/** @type {Element} */
+			// @ts-ignore
+			const select = e.currentTarget;
+			/** @type {Element} */
+			// @ts-ignore
+			const option = e.target;
+			const selectedBox = select.querySelector('[data-shower-result]');
+
+			if (!option.hasAttribute('data-option') || option.tagName === 'LINK') return;
+
+			if (!this.settings.multiple) {
+				if (option.closest('[data-isopen]')) {
+					option.dispatchEvent(new CustomEvent('isopen', { bubbles: true }));
+				}
+
+				for (const option of this.#getSelected()) option.removeAttribute('data-selected');
+			}
+
+			selectedBox.innerHTML = '';
+
+			option.hasAttribute('data-selected') && [...this.#getSelected()].length > 1
+				? option.removeAttribute('data-selected')
+				: option.setAttribute('data-selected', '');
+
+			this.#insertSelected(this.#getSelected(), selectedBox);
+		});
+	}
+
 	init() {
+		this.#setOpener();
+		this.#setElementCache();
 		this.#showSelected(this.#getSelected());
 		this.#setOptionsBox();
+		this.#setSelectedPicker();
 	}
 }
 
 const select = document.querySelector('.nav-langs-select');
 const selector = new Selector(select, {
-	showElement: {
-		className: 'nav-langs-select__show',
-	},
-	shownLabel: {
-		className: 'shown-label',
-	},
-	shownInput: {
-		className: '',
-	},
-	optionsBox: {
-		className: 'nav-langs-select__options',
-	},
+	// multiple: true,
+	// showerElementBtn: {
+	// 	className: 'shower-btn',
+	// },
+	// showerResult: {
+	// 	className: 'selected-box',
+	// },
+	// shownLabel: {
+	// 	className: 'shown-label',
+	// },
+	// shownInput: {
+	// 	className: 'shown-iput',
+	// },
+	// optionsBox: {
+	// 	className: 'nav-langs-select__options',
+	// },
 });
 
 selector.init();

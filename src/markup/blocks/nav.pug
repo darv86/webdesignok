@@ -2,7 +2,7 @@ nav.nav
 	a.nav-logo-link(href=basedir)
 		img.nav-logo-link__img(src='/media/logo-l-Radushev.svg' alt='Dima Radushev logo')
 	button.nav-toggler
-		.nav-toggler__lines
+		span.nav-toggler__lines
 
 	.nav-menu
 		each menuItemText, menuItemName in self.nav
@@ -23,42 +23,34 @@ nav.nav
 
 	.nav-langs
 		.nav-langs-select(data-select)
-			.nav-langs-select__showww(data-show)
+			//- button.nav-langs__btn(data-shower)
+			//- .nav-langs-select__showww(data-shower)
 			.nav-langs-select__optionsss
-				.nav-langs-select__option(data-option data-value=1 data-selected) first
+				span(data-option data-selected) placeholder
+				.nav-langs-select__option(data-option data-value=1 ) first
 				.nav-langs-select__option(data-option data-value=2) second
 					.sumdiv.dfa not option1
 					.sumdiv2
 						p(data-option) text
-						p(data-option data-selected data-value) text2
-						p(data-option data-selected) text3
+						p(data-option  data-value) text2
+						p(data-option) text3
 					.sumdiv3 not option2
-				.nav-langs-select__option(data-option data-value=3 data-selected) third
+				.nav-langs-select__option(data-option data-value=3 ) third
 				.nav-langs-select__option(data-option data-value=4) fourth
-				.nav-langs-select__option(data-option data-value=1 data-selected) first
+				.nav-langs-select__option(data-option data-value=1 ) first
 				.nav-langs-select__option(data-option data-value=2) second
 					.sumdiv.dfa not option3
 					.sumdiv2
 						p(data-option) text
-						p(data-option data-selected data-value) text2
-						p(data-option data-selected) text3
+						p(data-option  data-value) text2
+						p(data-option) text3
 					.sumdiv3
-				.nav-langs-select__option(data-option data-value=3 data-selected) third
+				.nav-langs-select__option(data-option data-value=3 ) third
 				.nav-langs-select__option(data-option data-value=4) fourth
 
-				//- each transl, lang in self.langs
-					a.nav-langs__link(
-						data-option
-						data-value=lang
-						data-selected=(lang === curlang) ? true : false
-						href=`/${lang === deflang ? '' : lang + '/'}${curpage === '/' ? '' : curpage + '.html'}`
-					)= transl
-
-	//- .nav-langs
-		button.nav-langs__btn= self.langs[curlang]
-		.nav-langs__links
-			each transl, lang in self.langs
-				if lang !== curlang
-					a.nav-langs__link(
-						href=`/${lang === deflang ? '' : lang + '/'}${curpage === '/' ? '' : curpage + '.html'}`
-					)= transl
+			//- each transl, lang in self.langs
+				a.nav-langs__link(
+					data-option
+					=(lang === curlang) ? true : false
+					href=`/${lang === deflang ? '' : lang + '/'}${curpage === '/' ? '' : curpage + '.html'}`
+				)= transl
