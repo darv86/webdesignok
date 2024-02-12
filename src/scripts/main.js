@@ -16,8 +16,11 @@ navToggler.addEventListener('keyup', function (e) {
 	}
 });
 window.addEventListener('click', function (e) {
+	/** @type {Element} */
+	// @ts-ignore
 	const nav = e.target;
-	if (nav instanceof Element && !nav.closest('.nav')) {
+
+	if (!nav.closest('.nav')) {
 		navToggler.removeAttribute('data-isopen');
 	}
 });
@@ -53,7 +56,7 @@ class Selector {
 
 	/** @returns {Array.<Element>} */
 	#getOptions() {
-		return Array.from(document.querySelectorAll('[data-option]'));
+		return Array.from(this.select.querySelectorAll('[data-option]'));
 	}
 
 	/** @returns {Array.<Element>} */
@@ -62,11 +65,39 @@ class Selector {
 	}
 
 	#setOpener() {
-		this.select.addEventListener('isopen', e => {
-			const thisis = e.currentTarget;
+		const showerBtn = this.select.querySelector('[data-shower-btn]');
+		const optionsBox = this.select.querySelector('[data-options]');
+
+		addEventListener('click', e => {
+			/** @type {Element} */
+			// @ts-ignore
 			const target = e.target;
 
-			console.log(target);
+			if (!target.closest('[data-options]')) {
+				showerBtn.removeAttribute('data-isopen');
+				optionsBox.removeAttribute('data-isopen');
+			}
+		});
+
+		this.select.addEventListener('isclose', e => {
+			showerBtn.removeAttribute('data-isopen');
+			optionsBox.removeAttribute('data-isopen');
+		});
+
+		showerBtn.addEventListener('click', e => {
+			/** @type {Element} */
+			// @ts-ignore
+			const thisis = e.currentTarget;
+
+			e.stopPropagation();
+
+			if (thisis.hasAttribute('data-isopen')) {
+				thisis.removeAttribute('data-isopen');
+				optionsBox.removeAttribute('data-isopen');
+			} else {
+				thisis.setAttribute('data-isopen', '');
+				optionsBox.setAttribute('data-isopen', '');
+			}
 		});
 	}
 
@@ -91,19 +122,6 @@ class Selector {
 
 		showerElementBtn.setAttribute('data-shower-btn', '');
 		showerElementBtn.append(selectedBox);
-
-		showerElementBtn.addEventListener('click', e => {
-			/** @type {Element} */
-			// @ts-ignore
-			const thisis = e.currentTarget;
-
-			if (thisis.hasAttribute('data-isopen')) {
-				thisis.removeAttribute('data-isopen');
-			} else {
-				thisis.setAttribute('data-isopen', '');
-				thisis.dispatchEvent(new CustomEvent('isopen', { bubbles: true }));
-			}
-		});
 
 		if (showerElement.hasAttribute('data-shower')) return selectedBox;
 
@@ -161,6 +179,7 @@ class Selector {
 					['id']: `${inputId}`,
 					['value']: option.getAttribute('data-value'),
 					['hidden']: '',
+					['disabled']: '',
 				};
 
 				for (const [attrName, attrValue] of Object.entries(inputAttrs)) {
@@ -216,23 +235,24 @@ class Selector {
 	}
 
 	#setSelectedPicker() {
-		this.select.addEventListener('click', e => {
+		const optionsBox = this.select.querySelector('[data-options]');
+
+		optionsBox.addEventListener('click', e => {
+			// this.select.addEventListener('click', e => {
 			/** @type {Element} */
 			// @ts-ignore
 			const select = e.currentTarget;
 			/** @type {Element} */
 			// @ts-ignore
 			const option = e.target;
-			const selectedBox = select.querySelector('[data-shower-result]');
+			const selectedBox = this.select.querySelector('[data-shower-result]');
 
 			if (!option.hasAttribute('data-option') || option.tagName === 'LINK') return;
 
 			if (!this.settings.multiple) {
-				if (option.closest('[data-isopen]')) {
-					option.dispatchEvent(new CustomEvent('isopen', { bubbles: true }));
-				}
-
 				for (const option of this.#getSelected()) option.removeAttribute('data-selected');
+
+				option.dispatchEvent(new CustomEvent('isclose', { bubbles: true }));
 			}
 
 			selectedBox.innerHTML = '';
@@ -246,10 +266,10 @@ class Selector {
 	}
 
 	init() {
-		this.#setOpener();
 		this.#setElementCache();
 		this.#showSelected(this.#getSelected());
 		this.#setOptionsBox();
+		this.#setOpener();
 		this.#setSelectedPicker();
 	}
 }

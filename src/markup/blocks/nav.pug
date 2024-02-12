@@ -23,34 +23,11 @@ nav.nav
 
 	.nav-langs
 		.nav-langs-select(data-select)
-			//- button.nav-langs__btn(data-shower)
-			//- .nav-langs-select__showww(data-shower)
-			.nav-langs-select__optionsss
-				span(data-option data-selected) placeholder
-				.nav-langs-select__option(data-option data-value=1 ) first
-				.nav-langs-select__option(data-option data-value=2) second
-					.sumdiv.dfa not option1
-					.sumdiv2
-						p(data-option) text
-						p(data-option  data-value) text2
-						p(data-option) text3
-					.sumdiv3 not option2
-				.nav-langs-select__option(data-option data-value=3 ) third
-				.nav-langs-select__option(data-option data-value=4) fourth
-				.nav-langs-select__option(data-option data-value=1 ) first
-				.nav-langs-select__option(data-option data-value=2) second
-					.sumdiv.dfa not option3
-					.sumdiv2
-						p(data-option) text
-						p(data-option  data-value) text2
-						p(data-option) text3
-					.sumdiv3
-				.nav-langs-select__option(data-option data-value=3 ) third
-				.nav-langs-select__option(data-option data-value=4) fourth
-
-			//- each transl, lang in self.langs
+			button.nav-langs__btn(data-shower)
+			each transl, lang in self.langs
 				a.nav-langs__link(
 					data-option
-					=(lang === curlang) ? true : false
+					data-value=lang
+					data-selected=(lang === curlang) ? true : false
 					href=`/${lang === deflang ? '' : lang + '/'}${curpage === '/' ? '' : curpage + '.html'}`
 				)= transl
