@@ -101,16 +101,17 @@
 	}
 
 	.nav-langs {
-		display: flex;
-		flex-direction: column;
+		position: relative;
+		isolation: isolate;
 		padding: 0 24px;
 	}
 
-	// .nav-langs-select { }
-
 	.nav-langs__btn {
 		display: flex;
+		align-items: center;
 		gap: 1rem;
+		width: 100%;
+		// background-color: $gray95;
 		&[data-isopen] {
 			color: $violet;
 			&::after {
@@ -120,7 +121,6 @@
 		&::after {
 			content: '';
 			display: inline-block;
-			transform-origin: center;
 			transform: rotate(90deg);
 			transition: 0.4s;
 			border-top: calc(5px / 18px * 1em) solid transparent;
@@ -130,9 +130,25 @@
 		}
 	}
 
-	.nav-langs-select__options {
+	.nav-langs__options {
+		position: absolute;
+		top: 0;
+		right: 24px;
+		left: 24px;
 		display: flex;
 		flex-direction: column;
+		gap: 0.5em;
+		transform: translateY(0%);
+		clip-path: rect(0 100% 0 0);
+		transition: clip-path 0.4s, transform 0.4s;
+		&[data-isopen] {
+			transform: translateY(calc(-100% - 0.5em));
+			clip-path: rect(0 100% 100% 0);
+		}
+	}
+
+	.nav-langs__option {
+		background-color: goldenrod;
 	}
 
 	@media (pointer: coarse) {

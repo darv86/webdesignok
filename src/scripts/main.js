@@ -274,7 +274,7 @@ class Selector {
 	}
 }
 
-const select = document.querySelector('.nav-langs-select');
+const select = document.querySelector('.nav-langs');
 const selector = new Selector(select, {
 	// multiple: true,
 	// showerElementBtn: {

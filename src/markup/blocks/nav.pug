@@ -21,13 +21,13 @@ nav.nav
 		a.nav__link.icon-phone(href=`tel:${self.info.phone[curlang]}`)= self.info.phone[curlang]
 		a.nav__link.icon-mail(href=`mailto:${self.info.email[curlang]}`)= self.info.email[curlang]
 
-	.nav-langs
-		.nav-langs-select(data-select)
-			button.nav-langs__btn(data-shower)
+	.nav-langs(data-select)
+		button.nav-langs__btn(data-shower)
+		.nav-langs__options
 			each transl, lang in self.langs
-				a.nav-langs__link(
+				a.nav-langs__option(
 					data-option
-					data-value=lang
 					data-selected=(lang === curlang) ? true : false
+					hidden=(lang === curlang) ? true : false
 					href=`/${lang === deflang ? '' : lang + '/'}${curpage === '/' ? '' : curpage + '.html'}`
 				)= transl
