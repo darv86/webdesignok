@@ -74,12 +74,18 @@ class Selector {
 			const target = e.target;
 
 			if (!target.closest('[data-options]')) {
+				this.select.removeAttribute('data-isopen');
 				showerBtn.removeAttribute('data-isopen');
 				optionsBox.removeAttribute('data-isopen');
 			}
 		});
 
 		this.select.addEventListener('isclose', e => {
+			/** @type {Element} */
+			// @ts-ignore
+			const thisis = e.currentTarget;
+
+			thisis.removeAttribute('data-isopen');
 			showerBtn.removeAttribute('data-isopen');
 			optionsBox.removeAttribute('data-isopen');
 		});
@@ -92,9 +98,11 @@ class Selector {
 			e.stopPropagation();
 
 			if (thisis.hasAttribute('data-isopen')) {
+				this.select.removeAttribute('data-isopen');
 				thisis.removeAttribute('data-isopen');
 				optionsBox.removeAttribute('data-isopen');
 			} else {
+				this.select.setAttribute('data-isopen', '');
 				thisis.setAttribute('data-isopen', '');
 				optionsBox.setAttribute('data-isopen', '');
 			}
