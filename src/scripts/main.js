@@ -3,27 +3,64 @@
 
 // import Promise from 'core-js-pure/actual/promise/index.js'
 
-const navToggler = document.querySelector('.nav-toggler');
-navToggler.addEventListener('click', function (e) {
-	this.hasAttribute('data-isopen')
-		? this.removeAttribute('data-isopen')
-		: this.setAttribute('data-isopen', '');
-});
-navToggler.addEventListener('keyup', function (e) {
-	// @ts-ignore
-	if (navToggler.hasAttribute('data-isopen') && e.code === 'Escape') {
-		navToggler.removeAttribute('data-isopen');
+class Naviator {
+	/**
+	 * @param {Element} nav
+	 * @param {Element} toggler
+	 * @param {Object} [settings={}]
+	 */
+	constructor(nav, toggler, settings = {}) {
+		this.nav = nav;
+		this.toggler = toggler;
+		this.settings = settings;
 	}
-});
-window.addEventListener('click', function (e) {
-	/** @type {Element} */
-	// @ts-ignore
-	const nav = e.target;
 
-	if (!nav.closest('.nav')) {
-		navToggler.removeAttribute('data-isopen');
+	#setOpener() {
+		this.toggler.addEventListener('click', e => {
+			/** @type {Element} */
+			// @ts-ignore
+			const thisis = e.currentTarget;
+
+			if (thisis.hasAttribute('data-isopen')) {
+				this.nav.removeAttribute('data-isopen');
+				thisis.removeAttribute('data-isopen');
+			} else {
+				this.nav.setAttribute('data-isopen', '');
+				thisis.setAttribute('data-isopen', '');
+			}
+		});
+		this.toggler.addEventListener('keyup', e => {
+			/** @type {Element} */
+			// @ts-ignore
+			const thisis = e.currentTarget;
+
+			// @ts-ignore
+			if (thisis.hasAttribute('data-isopen') && e.code === 'Escape') {
+				thisis.removeAttribute('data-isopen');
+				this.nav.removeAttribute('data-isopen');
+			}
+		});
+		window.addEventListener('click', e => {
+			/** @type {Element} */
+			// @ts-ignore
+			const nav = e.target;
+
+			if (!nav.closest('.nav')) {
+				this.toggler.removeAttribute('data-isopen');
+				this.nav.removeAttribute('data-isopen');
+			}
+		});
 	}
-});
+
+	init() {
+		this.#setOpener();
+	}
+}
+
+const nav = document.querySelector('.nav');
+const navToggler = document.querySelector('.nav-toggler');
+const naviator = new Naviator(nav, navToggler);
+naviator.init();
 
 class Selector {
 	static #idCache = [];
@@ -282,23 +319,5 @@ class Selector {
 }
 
 const select = document.querySelector('.nav-langs');
-const selector = new Selector(select, {
-	// multiple: true,
-	// showerElementBtn: {
-	// 	className: 'shower-btn',
-	// },
-	// showerResult: {
-	// 	className: 'selected-box',
-	// },
-	// shownLabel: {
-	// 	className: 'shown-label',
-	// },
-	// shownInput: {
-	// 	className: 'shown-iput',
-	// },
-	// optionsBox: {
-	// 	className: 'nav-langs-select__options',
-	// },
-});
-
+const selector = new Selector(select);
 selector.init();
