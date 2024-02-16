@@ -1,33 +1,34 @@
 nav.nav
-	a.nav-logo-link(href=basedir)
-		img.nav-logo-link__img(src='/media/logo-l-Radushev.svg' alt='Dima Radushev logo')
-	button.nav-toggler
-		span.nav-toggler__lines
+	.nav__body
+		a.nav-logo-link(href=basedir)
+			img.nav-logo-link__img(src='/media/logo-l-Radushev.svg' alt='Dima Radushev logo')
+		button.nav-toggler
+			span.nav-toggler__lines
 
-	.nav-menu
-		each menuItemText, menuItemName in self.nav
-			if menuItemName === 'home'
-				a.nav__link.icon-home(
-					class={'nav__link--active': curpage === '/'}
-					href=basedir
-				)= menuItemText[curlang]
-			else
-				a.nav__link(
-					class=[`icon-${menuItemName}`, {'nav__link--active': curpage === menuItemName}]
-					href=`${basedir}${menuItemName}.html`
-				)= menuItemText[curlang]
+		.nav-menu
+			each menuItemText, menuItemName in self.nav
+				if menuItemName === 'home'
+					a.nav__link.icon-home(
+						class={'nav__link--active': curpage === '/'}
+						href=basedir
+					)= menuItemText[curlang]
+				else
+					a.nav__link(
+						class=[`icon-${menuItemName}`, {'nav__link--active': curpage === menuItemName}]
+						href=`${basedir}${menuItemName}.html`
+					)= menuItemText[curlang]
 
-	address.nav-contact-info
-		a.nav__link.icon-phone(href=`tel:${self.info.phone[curlang]}`)= self.info.phone[curlang]
-		a.nav__link.icon-mail(href=`mailto:${self.info.email[curlang]}`)= self.info.email[curlang]
+		address.nav-contact-info
+			a.nav__link.icon-phone(href=`tel:${self.info.phone[curlang]}`)= self.info.phone[curlang]
+			a.nav__link.icon-mail(href=`mailto:${self.info.email[curlang]}`)= self.info.email[curlang]
 
-	.nav-langs(data-select)
-		button.nav-langs__btn(data-shower)
-		.nav-langs__options
-			each transl, lang in self.langs
-				a.nav-langs__option(
-					data-option
-					data-selected=(lang === curlang) ? true : false
-					hidden=(lang === curlang) ? true : false
-					href=`/${lang === deflang ? '' : lang + '/'}${curpage === '/' ? '' : curpage + '.html'}`
-				)= transl
+		.nav-langs(data-select)
+			button.nav-langs__btn(data-shower)
+			.nav-langs__options
+				each transl, lang in self.langs
+					a.nav-langs__option(
+						data-option
+						data-selected=(lang === curlang) ? true : false
+						hidden=(lang === curlang) ? true : false
+						href=`/${lang === deflang ? '' : lang + '/'}${curpage === '/' ? '' : curpage + '.html'}`
+					)= transl

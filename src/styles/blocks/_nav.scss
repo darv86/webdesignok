@@ -2,6 +2,10 @@
 @use 'sass:color';
 
 @mixin nav {
+	$pinline: 24px;
+	$pblock: 12px;
+	$dur: 0.4s;
+
 	.nav {
 		position: fixed;
 		top: 0;
@@ -15,8 +19,12 @@
 		border-right: 1px solid $gray90;
 		border-bottom: 1px solid $gray90;
 		backdrop-filter: blur(8px);
-		overflow: auto;
+		overflow-y: auto;
 		font-size: 1rem;
+	}
+
+	.nav__body {
+		overflow-y: hidden;
 	}
 
 	.nav-logo-link {
@@ -82,7 +90,7 @@
 		display: flex;
 		align-items: center;
 		gap: 24px;
-		padding: 12px 24px;
+		padding: $pblock $pinline;
 		color: $gray50;
 		&--active,
 		&:focus-visible {
@@ -103,7 +111,6 @@
 	.nav-langs {
 		position: relative;
 		isolation: isolate;
-		padding: 0 24px;
 	}
 
 	.nav-langs__btn {
@@ -111,18 +118,23 @@
 		align-items: center;
 		gap: 1rem;
 		width: 100%;
-		// background-color: $gray95;
+		padding: $pblock $pinline;
+		transition: $dur;
 		&[data-isopen] {
+			background-color: $gray90;
 			color: $violet;
 			&::after {
 				transform: rotate(-90deg);
 			}
 		}
+		&:focus-visible {
+			color: $violet;
+		}
 		&::after {
 			content: '';
 			display: inline-block;
 			transform: rotate(90deg);
-			transition: 0.4s;
+			transition: $dur;
 			border-top: calc(5px / 18px * 1em) solid transparent;
 			border-left: calc(10px / 18px * 1em) solid;
 			border-bottom: calc(5px / 18px * 1em) solid transparent;
@@ -133,22 +145,24 @@
 	.nav-langs__options {
 		position: absolute;
 		top: 0;
-		right: 24px;
-		left: 24px;
+		right: 0;
+		left: 0;
 		display: flex;
 		flex-direction: column;
-		gap: 0.5em;
-		transform: translateY(0%);
+		background-color: $gray90;
 		clip-path: rect(0 100% 0 0);
-		transition: clip-path 0.4s, transform 0.4s;
+		transition: translate $dur, clip-path $dur;
 		&[data-isopen] {
-			transform: translateY(calc(-100% - 0.5em));
+			translate: 0 -100%;
 			clip-path: rect(0 100% 100% 0);
 		}
 	}
 
 	.nav-langs__option {
-		background-color: goldenrod;
+		padding: $pblock $pinline;
+		&:focus-visible {
+			color: $violet;
+		}
 	}
 
 	@media (pointer: coarse) {
