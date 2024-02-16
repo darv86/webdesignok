@@ -67,6 +67,9 @@ class Selector {
 	#setOpener() {
 		const showerBtn = this.select.querySelector('[data-shower-btn]');
 		const optionsBox = this.select.querySelector('[data-options]');
+		const options = this.select.querySelectorAll('[data-option]');
+
+		Array.from(options).map(el => el.setAttribute('tabindex', '-1'));
 
 		addEventListener('click', e => {
 			/** @type {Element} */
@@ -74,37 +77,33 @@ class Selector {
 			const target = e.target;
 
 			if (!target.closest('[data-options]')) {
-				this.select.removeAttribute('data-isopen');
-				showerBtn.removeAttribute('data-isopen');
-				optionsBox.removeAttribute('data-isopen');
+				[this.select, showerBtn, optionsBox].map(el => {
+					el.removeAttribute('data-isopen');
+				});
+				Array.from(options).map(el => el.setAttribute('tabindex', '-1'));
 			}
 		});
 
 		this.select.addEventListener('isclose', e => {
-			/** @type {Element} */
-			// @ts-ignore
-			const thisis = e.currentTarget;
-
-			thisis.removeAttribute('data-isopen');
-			showerBtn.removeAttribute('data-isopen');
-			optionsBox.removeAttribute('data-isopen');
+			[this.select, showerBtn, optionsBox].map(el => {
+				el.removeAttribute('data-isopen');
+			});
+			Array.from(options).map(el => el.setAttribute('tabindex', '-1'));
 		});
 
 		showerBtn.addEventListener('click', e => {
-			/** @type {Element} */
-			// @ts-ignore
-			const thisis = e.currentTarget;
-
 			e.stopPropagation();
 
-			if (thisis.hasAttribute('data-isopen')) {
-				this.select.removeAttribute('data-isopen');
-				thisis.removeAttribute('data-isopen');
-				optionsBox.removeAttribute('data-isopen');
+			if (showerBtn.hasAttribute('data-isopen')) {
+				[this.select, showerBtn, optionsBox].map(el => {
+					el.removeAttribute('data-isopen');
+				});
+				Array.from(options).map(el => el.setAttribute('tabindex', '-1'));
 			} else {
-				this.select.setAttribute('data-isopen', '');
-				thisis.setAttribute('data-isopen', '');
-				optionsBox.setAttribute('data-isopen', '');
+				[this.select, showerBtn, optionsBox].map(el => {
+					el.setAttribute('data-isopen', '');
+				});
+				Array.from(options).map(el => el.removeAttribute('tabindex'));
 			}
 		});
 	}
