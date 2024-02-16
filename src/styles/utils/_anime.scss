@@ -1,0 +1,17 @@
+@mixin overflow($state: hidden) {
+	@if $state != hidden and $state != visible {
+		@error 'Only "hidden" or "visible" arguments are possible';
+	}
+
+	@keyframes #{if($state == hidden, hidden, visible)} {
+		from {
+			overflow: if($state != hidden, hidden, visible);
+		}
+		#{if($state == hidden, 99%, 1%)} {
+			overflow: visible;
+		}
+		to {
+			overflow: if($state == hidden, hidden, visible);
+		}
+	}
+}
