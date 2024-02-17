@@ -74,7 +74,7 @@ export const scripts = () => {
 };
 
 export const media = () => {
-	return src(paths.root.src + paths.media.src)
+	return src([`${paths.root.src}${paths.media.src[0]}`, `!${paths.root.src}${paths.media.src[1]}`])
 		.pipe(newer(paths.root.dest + paths.media.dest))
 		.pipe(webp())
 		.pipe(dest(paths.root.dest + paths.media.dest))

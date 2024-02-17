@@ -23,7 +23,7 @@ export default {
 		fonts: {
 			src: '/fonts/**/*.{woff2,woff,ttf,otf,svg}',
 			dest: '/fonts',
-			watch: '/fonts/**/*',
+			watch: '/fonts/**',
 		},
 		content: {
 			src: '/content',
@@ -32,14 +32,14 @@ export default {
 		},
 		media: {
 			// src: '/media/**/*.{jpg,jpeg,png,webp,ico,gif,svg}',
-			src: '/media/**/*',
+			src: ['/media/**', '/media/stock/**'], // stock ignored
 			dest: '/media',
-			watch: '/media/**/*',
+			watch: '/media/**',
 		},
 		resources: {
-			src: '/resources/**/*',
+			src: '/resources/**',
 			dest: '',
-			watch: '/resources/**/*',
+			watch: '/resources/**',
 		},
 		favicon: {
 			src: '/resources/favicon.svg',
@@ -47,7 +47,7 @@ export default {
 			watch: null,
 		},
 		ftp: {
-			src: 'build/**/*',
+			src: 'build/**',
 			dest: '/io.webdesignok.com',
 			watch: null,
 		},
