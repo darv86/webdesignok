@@ -12,13 +12,14 @@
 	font-size: calc(14px / 16px * 1rem);
 	line-height: 1.5;
 	color: $gray40;
+	text-rendering: optimizeLegibility;
 }
 
 .body__inner {
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh;
+	min-height: 100dvh;
 }
 
 .title {

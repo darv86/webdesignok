@@ -27,7 +27,9 @@ nav.nav
 			.nav-langs__options
 				each transl, lang in self.langs
 					a.nav-langs__option(
+						class=`flag-${lang}`
 						data-option
+						data-value= lang
 						data-selected=(lang === curlang) ? true : false
 						hidden=(lang === curlang) ? true : false
 						href=`/${lang === deflang ? '' : lang + '/'}${curpage === '/' ? '' : curpage + '.html'}`

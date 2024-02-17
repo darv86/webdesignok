@@ -319,5 +319,9 @@ class Selector {
 }
 
 const select = document.querySelector('.nav-langs');
-const selector = new Selector(select);
+const selector = new Selector(select, {
+	shownLabel: {
+		className: 'icon-flags',
+	},
+});
 selector.init();

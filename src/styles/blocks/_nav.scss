@@ -13,14 +13,17 @@
 		z-index: 999;
 		isolation: isolate;
 		height: 100%;
-		width: max-content;
 		padding: 24px 0 40px;
 		background-color: color.change($gray95, $alpha: 0.99);
 		border-right: 1px solid $gray90;
 		border-bottom: 1px solid $gray90;
 		backdrop-filter: blur(8px);
 		overflow-y: auto;
+		transition: $dur;
 		font-size: 1rem;
+		&[data-isopen] {
+			transform-origin: top left;
+		}
 	}
 
 	.nav__body {
@@ -41,7 +44,7 @@
 		margin: 28px 24px 24px 24px;
 		&[data-isopen] {
 			&::after {
-				content: none;
+				scale: 0;
 			}
 		}
 		&::after {
@@ -51,6 +54,7 @@
 			position: absolute;
 			top: -6px;
 			right: -6px;
+			transition: scale $dur;
 			width: 8px;
 			height: 8px;
 			border-radius: 50%;
@@ -60,9 +64,10 @@
 	}
 
 	.nav-toggler__lines {
+		$gap: 9px;
 		display: flex;
 		flex-direction: column;
-		gap: 9px;
+		gap: $gap;
 		background-image: linear-gradient(
 			transparent 49%,
 			$gray50 49%,
@@ -70,7 +75,18 @@
 			transparent calc(49% + 1px)
 		);
 		:where(button[data-isopen]) & {
+			gap: 0px;
 			background-image: none;
+			&::before,
+			&::after {
+				translate: 0 calc($gap / 2);
+			}
+			&::before {
+				rotate: -45deg;
+			}
+			&::after {
+				rotate: 45deg;
+			}
 		}
 		&::before,
 		&::after {
@@ -78,6 +94,8 @@
 			flex-shrink: 0;
 			width: 24px;
 			height: 1px;
+			transform-origin: calc(50% + 0.5px);
+			transition: rotate $dur;
 			background-color: $gray50;
 		}
 	}
@@ -98,7 +116,7 @@
 			color: $violet;
 		}
 		&::before {
-			width: 1em;
+			width: calc(24px / 16px * 1rem);
 			font-size: calc(24px / 16px * 1rem);
 			text-align: center;
 		}
@@ -124,7 +142,7 @@
 			background-color: $gray90;
 			color: $violet;
 			&::after {
-				transform: rotate(-90deg);
+				rotate: -90deg;
 			}
 		}
 		&:focus-visible {
@@ -133,7 +151,7 @@
 		&::after {
 			content: '';
 			display: inline-block;
-			transform: rotate(90deg);
+			rotate: 90deg;
 			transition: $dur;
 			border-top: calc(5px / 18px * 1em) solid transparent;
 			border-left: calc(10px / 18px * 1em) solid;
@@ -159,9 +177,25 @@
 	}
 
 	.nav-langs__option {
+		$langs: 'en', 'es', 'uk';
 		padding: $pblock $pinline;
+		display: flex;
+		align-items: center;
+		gap: 24px;
+		&[hidden] {
+			display: none;
+		}
 		&:focus-visible {
 			color: $violet;
+		}
+		&::before {
+			height: calc(24px / 16px * 1rem);
+			aspect-ratio: 1;
+		}
+		@each $lang in $langs {
+			&.flag-#{$lang}::before {
+				content: url('../media/flag-#{$lang}.svg');
+			}
 		}
 	}
 
