@@ -23,7 +23,7 @@ nav.nav
 			a.nav__link.icon-mail(href=`mailto:${self.info.email[curlang]}`)= self.info.email[curlang]
 
 		.nav-langs(data-select)
-			button.nav-langs__btn(data-shower)
+			button.nav-langs__btn(class=`flag-${curlang}` data-shower)
 			.nav-langs__options
 				each transl, lang in self.langs
 					a.nav-langs__option(

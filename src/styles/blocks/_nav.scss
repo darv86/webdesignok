@@ -2,6 +2,8 @@
 @use 'sass:color';
 
 @mixin nav {
+	$langs: 'en', 'es', 'uk';
+	$gapinline: calc(24px / 16px * 1rem);
 	$pinline: 24px;
 	$pblock: 12px;
 	$dur: 0.4s;
@@ -107,7 +109,7 @@
 	.nav__link {
 		display: flex;
 		align-items: center;
-		gap: 24px;
+		gap: $gapinline;
 		padding: $pblock $pinline;
 		color: $gray50;
 		&--active,
@@ -131,10 +133,16 @@
 		isolation: isolate;
 	}
 
+	[class*='flag-']::before {
+		height: calc(24px / 16px * 1rem);
+		aspect-ratio: 1;
+		line-height: 1;
+	}
+
 	.nav-langs__btn {
 		display: flex;
 		align-items: center;
-		gap: 1rem;
+		gap: $gapinline;
 		width: 100%;
 		padding: $pblock $pinline;
 		transition: $dur;
@@ -150,13 +158,17 @@
 		}
 		&::after {
 			content: '';
-			display: inline-block;
 			rotate: 90deg;
-			transition: $dur;
 			border-top: calc(5px / 18px * 1em) solid transparent;
 			border-left: calc(10px / 18px * 1em) solid;
 			border-bottom: calc(5px / 18px * 1em) solid transparent;
+			transition: $dur;
 			line-height: 1;
+		}
+		@each $lang in $langs {
+			&.flag-#{$lang}::before {
+				content: url('../media/flag-#{$lang}.svg');
+			}
 		}
 	}
 
@@ -177,20 +189,15 @@
 	}
 
 	.nav-langs__option {
-		$langs: 'en', 'es', 'uk';
 		padding: $pblock $pinline;
 		display: flex;
 		align-items: center;
-		gap: 24px;
+		gap: $gapinline;
 		&[hidden] {
 			display: none;
 		}
 		&:focus-visible {
 			color: $violet;
-		}
-		&::before {
-			height: calc(24px / 16px * 1rem);
-			aspect-ratio: 1;
 		}
 		@each $lang in $langs {
 			&.flag-#{$lang}::before {
