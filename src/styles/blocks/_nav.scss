@@ -18,7 +18,6 @@ $dur: 0.4s;
 		background-color: color.change($gray95, $alpha: 0.99);
 		border-right: 1px solid $gray90;
 		border-bottom: 1px solid $gray90;
-		backdrop-filter: blur(8px);
 		overflow-y: auto;
 		transition: padding $dur;
 		font-size: 1rem;
