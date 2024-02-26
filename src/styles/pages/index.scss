@@ -1,12 +1,1 @@
-@use '../utils/fonts';
-
-.text {
-	font-size: 40px;
-	color: blue;
-}
-
-@media screen and (max-width: 767px) {
-	.list {
-		display: flex;
-	}
-}
+@use '../blocks/index/header';
