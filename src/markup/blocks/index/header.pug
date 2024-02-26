@@ -1,0 +1,20 @@
+header.header.header-index
+	.wrapper
+		.header-index__body
+			h1.header-index__title.title
+				span.header-index__title-word= self.mainscreen.title.text1[curlang]
+				span.header-index__title-word= self.mainscreen.title.text2[curlang]
+				span.header-index__title-word= self.mainscreen.title.text3[curlang]
+
+			p.header-index__desc= self.mainscreen.desc[curlang]
+
+			.header-index__buttons
+				a.header-index__btn-main.btn.btn-main(href=`${basedir}contacts/`)= self.btn.contact[curlang]
+				a.header-index__btn-second.btn.btn-second(
+					href=`/media/DesignerCV.pdf`
+					download='Dima-Radushev-designer-developer-cv'
+				)= self.btn.download[curlang]
+
+			figure.header-index__figure
+				img.img(src='/media/photo-radushev-min.png')
+				figcaption.header-index__figcaption= self.info.name[curlang]
