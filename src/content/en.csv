@@ -16,11 +16,11 @@ results.item2.desc,53
 results.item3.title,Clients countries
 results.item3.desc,6
 results.item4.title,Fast reply
-results.item4.desc,60min
+results.item4.desc,60<sup>min</sup>
 results.item5.title,Total projects
 results.item5.desc,129
 results.item6.title,Successful projects
-results.item6.desc,96%
+results.item6.desc,96<sup>%</sup>
 , 
 ,SERVICES
 services.title,Order my services
