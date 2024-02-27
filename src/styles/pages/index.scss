@@ -1,3 +1,5 @@
 @use '../blocks/index/header' as *;
+@use '../blocks/index/results' as *;
 
 @include header;
+@include results;
