@@ -6,6 +6,10 @@
 @import url($font-url);
 @include font-face($title-font700);
 
+[hidden] {
+	display: none;
+}
+
 .body {
 	background-color: white;
 	font-family: $plain-font, sans-serif;
@@ -13,6 +17,9 @@
 	line-height: 1.5;
 	color: $gray40;
 	text-rendering: optimizeLegibility;
+	&:has(.nav[data-isopen]) {
+		overflow: hidden;
+	}
 }
 
 .body__inner {
@@ -22,22 +29,85 @@
 	min-height: 100dvh;
 }
 
-.title {
-	font-family: $title-font700, sans-serif;
-}
-
-.subtitle {
-	font-family: $title-font100, sans-serif;
-}
-
 .wrapper {
 	width: 100%;
 	margin: 0 auto;
 	padding: 0 12px;
 }
 
+.btn {
+	flex-shrink: 0;
+	font-family: $title-font700, sans-serif;
+	font-size: calc(18px / 16px * 1rem);
+	line-height: 1;
+	text-align: center;
+	text-wrap: nowrap;
+}
+
+.btn-1 {
+	padding: 12px 48px;
+	background-color: $gray10;
+	border-radius: 2px;
+	transition: background-color 0.2s;
+	color: white;
+}
+
+.btn-2 {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin: 0 auto;
+	color: $violet;
+	&::before {
+		content: '';
+		border-top: calc(5px / 18px * 1em) solid transparent;
+		border-left: calc(10px / 18px * 1em) solid;
+		border-bottom: calc(5px / 18px * 1em) solid transparent;
+	}
+}
+
+.img {
+	display: block;
+	width: 100%;
+}
+
+.title {
+	font-family: $title-font700, sans-serif;
+	color: $gray10;
+}
+
+.title-1 {
+	font-size: calc(32px / 16px * 1rem);
+	line-height: 1;
+	text-transform: uppercase;
+}
+
+.subtitle {
+	font-family: $title-font100, sans-serif;
+}
+
+.section-bg {
+	background-color: $gray98;
+	border-top: 1px solid $gray95;
+	border-bottom: 1px solid $gray95;
+}
+
 @include nav;
 @include footer;
+
+@media (pointer: coarse) {
+	.btn-1 {
+		&:active {
+			background-color: $violet;
+		}
+	}
+
+	.btn-2 {
+		&:active {
+			text-decoration: underline;
+		}
+	}
+}
 
 @media screen and (max-width: 767px) {
 }

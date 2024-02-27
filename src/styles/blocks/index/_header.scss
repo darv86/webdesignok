@@ -1,0 +1,38 @@
+@use '../../utils' as *;
+
+@mixin header {
+	.header-index {
+		padding-top: 7vh;
+	}
+
+	.header-index__title {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 24px;
+		text-align: center;
+	}
+
+	.header-index__desc {
+		margin-bottom: 36px;
+		line-height: 2;
+		&::before {
+			content: '';
+			display: block;
+			height: 1px;
+			width: 40%;
+			margin: 0 auto 12px;
+			background-image: linear-gradient($red, $violet);
+		}
+	}
+
+	.header-index__buttons {
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
+		margin-bottom: 48px;
+	}
+
+	.header-index__btn {
+		// width: 100%;
+	}
+}

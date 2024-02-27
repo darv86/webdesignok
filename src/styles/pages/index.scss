@@ -1,1 +1,3 @@
-@use '../blocks/index/header';
+@use '../blocks/index/header' as *;
+
+@include header;

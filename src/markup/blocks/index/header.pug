@@ -1,7 +1,7 @@
-header.header.header-index
+header.header.header-index.section-bg
 	.wrapper
 		.header-index__body
-			h1.header-index__title.title
+			h1.header-index__title.title.title-1
 				span.header-index__title-word= self.mainscreen.title.text1[curlang]
 				span.header-index__title-word= self.mainscreen.title.text2[curlang]
 				span.header-index__title-word= self.mainscreen.title.text3[curlang]
@@ -9,12 +9,12 @@ header.header.header-index
 			p.header-index__desc= self.mainscreen.desc[curlang]
 
 			.header-index__buttons
-				a.header-index__btn-main.btn.btn-main(href=`${basedir}contacts/`)= self.btn.contact[curlang]
-				a.header-index__btn-second.btn.btn-second(
+				a.header-index__btn.btn.btn-1(href=`${basedir}contacts/`)= self.btn.contact[curlang]
+				a.header-index__btn.btn.btn-2(
 					href=`/media/DesignerCV.pdf`
 					download='Dima-Radushev-designer-developer-cv'
 				)= self.btn.download[curlang]
 
 			figure.header-index__figure
 				img.img(src='/media/photo-radushev-min.png')
-				figcaption.header-index__figcaption= self.info.name[curlang]
+				figcaption.header-index__figcaption(hidden)= self.info.name[curlang]
