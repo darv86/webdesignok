@@ -1,4 +1,49 @@
 @use '../../utils' as *;
 
 @mixin results {
+	.section-results {
+		text-align: center;
+	}
+
+	.results-list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 48px 24px;
+	}
+
+	.results-item {
+		$dur: 0.3s;
+		display: flex;
+		flex-direction: column;
+		border-bottom: 1px solid $gray90;
+		&::before {
+			margin-bottom: 24px;
+			font-size: 65px;
+			color: $gray50;
+		}
+		&::after {
+			content: '';
+			height: 1px;
+			width: 0;
+			margin: 24px auto 0;
+			background-color: $gray50;
+			transform-origin: center;
+			transition: width $dur;
+		}
+		@media (pointer: fine) {
+			&:hover::after {
+				width: 100%;
+			}
+		}
+	}
+
+	.results-item__subtitle {
+		margin-bottom: 20px;
+		overflow-wrap: anywhere;
+	}
+
+	.results-item__desc {
+		margin-top: auto;
+		text-transform: none;
+	}
 }
