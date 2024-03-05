@@ -7,6 +7,11 @@ $pinline: 24px;
 $pblock: 12px;
 $dur: 0.4s;
 
+@mixin -nav-link-highlight {
+	background-color: color.change($violet, $alpha: 0.1);
+	color: $violet;
+}
+
 @mixin nav {
 	.nav {
 		position: fixed;
@@ -146,13 +151,22 @@ $dur: 0.4s;
 	.nav__link {
 		&--active,
 		&:focus-visible {
-			background-color: color.change($violet, $alpha: 0.1);
-			color: $violet;
+			@include -nav-link-highlight;
 		}
 		&::before {
 			width: 1em;
 			font-size: calc(24px / 16px * 1em);
 			text-align: center;
+		}
+		@media (pointer: coarse) {
+			&:active {
+				@include -nav-link-highlight;
+			}
+		}
+		@media (pointer: fine) {
+			&:hover {
+				@include -nav-link-highlight;
+			}
 		}
 	}
 
@@ -224,15 +238,6 @@ $dur: 0.4s;
 		@each $lang in $langs {
 			&.flag-#{$lang}::before {
 				content: url('../media/flag-#{$lang}.svg');
-			}
-		}
-	}
-
-	@media (pointer: coarse) {
-		.nav__link {
-			&:active {
-				background-color: color.change($violet, $alpha: 0.1);
-				color: $violet;
 			}
 		}
 	}
