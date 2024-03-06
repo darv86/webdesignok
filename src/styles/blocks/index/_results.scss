@@ -39,7 +39,8 @@
 
 	.results-item__subtitle {
 		margin-bottom: 20px;
-		overflow-wrap: anywhere;
+		hyphens: auto;
+		// overflow-wrap: anywhere;
 	}
 
 	.results-item__desc {
