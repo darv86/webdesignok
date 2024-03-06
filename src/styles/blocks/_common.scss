@@ -18,9 +18,6 @@
 	line-height: 1.5;
 	color: $gray40;
 	text-rendering: optimizeLegibility;
-	&:has(.nav[data-isopen]) {
-		overflow: hidden;
-	}
 }
 
 .body__inner {

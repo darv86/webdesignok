@@ -21,6 +21,7 @@ $-dur: 0.4s;
 		border-right: 1px solid $gray90;
 		border-bottom: 1px solid $gray90;
 		overflow-y: auto;
+		overscroll-behavior: contain;
 		transition: padding $-dur;
 		font-size: 1rem;
 		color: $gray50;
