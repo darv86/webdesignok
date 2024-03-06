@@ -30,6 +30,11 @@
 	min-height: 100dvh;
 }
 
+.img {
+	display: block;
+	width: 100%;
+}
+
 .wrapper {
 	width: 100%;
 	margin: 0 auto;
@@ -75,11 +80,6 @@
 			text-decoration: underline;
 		}
 	}
-}
-
-.img {
-	display: block;
-	width: 100%;
 }
 
 .title {
