@@ -2,6 +2,28 @@
 section.section-services.section.section-bg
 	.wrapper
 		.section__body
-			h2.section__title.title.title-2.title-line= self.services.title[curlang]
+			h2.section-services__title.section__title.title.title-2.title-line= self.services.title[curlang]
 
-			p.section__desc= self.services.desc[curlang]
+			p.section-services__desc.section__desc= self.services.desc[curlang]
+
+			//- .circle
+			//- .triangle
+			//- .rectangle
+			//- .rectangle1
+
+			ul.services-list
+				- const imgsName = { item1: 'devService', item2: 'webService', item3: 'designService' }
+				each item, key in self.services
+					if key.startsWith('item')
+						li.services-item(class=`services-${key}`)
+							.services-item__img-box
+								img.services-item__img.img(src=`/media/${imgsName[key]}.png` loading='lazy' alt=`image of ${key}`)
+
+							h3.services-item__title.title.title-3= item.title[curlang]
+
+							ul.services-item__desc-list
+								each desc, key in item
+									if key.startsWith('desc')
+										li.services-item__desc.subtitle= desc[curlang]
+
+							a.services-item__btn.btn.btn-1(href=`${basedir}contacts.html`)= self.btn.choose[curlang]
