@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @mixin visually-hidden {
 	position: absolute;
 	width: 1px;
@@ -10,3 +12,72 @@
 	opacity: 0;
 	visibility: hidden;
 }
+
+@mixin shape {
+	content: '';
+	display: inline-flex;
+	flex-shrink: 0;
+	align-self: flex-start;
+	aspect-ratio: 1;
+	line-height: 0;
+}
+
+@mixin shape-render($shape, $border-width: 2px) {
+	@if $shape == 'circle' {
+		background-image: radial-gradient(
+			circle closest-side,
+			transparent calc(100% - $border-width),
+			currentColor calc(100% - $border-width) 100%,
+			transparent 0
+		);
+		mask-image: radial-gradient(
+			circle closest-side,
+			currentColor calc(100% - $border-width) 100%,
+			transparent 0
+		);
+	} @else if $shape == 'triangle' {
+		background-image: linear-gradient(
+				math.atan(2),
+				transparent calc(calc(100% / 3 * 2) - $border-width),
+				currentColor calc(calc(100% / 3 * 2) - $border-width) calc(100% / 3 * 2),
+				transparent 0
+			),
+			linear-gradient(
+				math.atan(-2),
+				transparent calc(calc(100% / 3 * 2) - $border-width),
+				currentColor calc(calc(100% / 3 * 2) - $border-width) calc(100% / 3 * 2),
+				transparent 0
+			),
+			linear-gradient(transparent calc(100% - $border-width), currentColor 0);
+		mask-image: conic-gradient(
+			from 90deg at 50% 0,
+			transparent math.atan(2),
+			currentColor math.atan(2) calc(180deg - math.atan(2)),
+			transparent 0
+		);
+	} @else if $shape == 'rectangle' {
+		background-image: linear-gradient(
+				to right,
+				currentColor $border-width,
+				transparent $border-width calc(100% - $border-width),
+				currentColor 0
+			),
+			linear-gradient(
+				to bottom,
+				currentColor $border-width,
+				transparent $border-width calc(100% - $border-width),
+				currentColor 0
+			);
+	}
+}
+
+// Calculate the length of the diagonal (hypotenuse) using the Pythagorean theorem: ( \text{diagonal} = \sqrt{\text{width}^2 + \text{height}^2} ).
+// Find the ratio of the height to the diagonal; this is the sine of the angle.
+// Use the arcsine function to find the angle in radians and then convert it to degrees.
+// For example, if you have a rectangle with a width of 1 unit and a height of 2 units, the steps would be:
+
+// Diagonal: ( \sqrt{1^2 + 2^2} = \sqrt{5} )
+// Sine of the angle: ( \frac{2}{\sqrt{5}} )
+// Angle in radians: ( \sin^{-1}\left(\frac{2}{\sqrt{5}}\right) )
+// Convert to degrees: ( \left(\sin^{-1}\left(\frac{2}{\sqrt{5}}\right)\right) \times \frac{180}{\pi} )
+// This will give you the angle in degrees between the diagonal and the width of the rectangle. However, this still uses a trigonometric function, albeit not the atan function.
