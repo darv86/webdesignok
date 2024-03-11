@@ -1,3 +1,5 @@
+$dur: 0.3s;
+
 @mixin overflow($state: hidden) {
 	@if $state != hidden and $state != visible {
 		@error 'Only "hidden" or "visible" arguments are possible';
