@@ -41,6 +41,17 @@ services.item3.desc2,Identidad
 services.item3.desc3,Carteles
 services.item3.desc4,Presentación
 ,
+,ADVANTAGES
+advantages.title,Mira mis ventajas
+advantages.desc,"Mi principal ventaja es un enfoque centrado en el ser humano en producción y comunicación. Como resultado, da lugar a todas las ventajas."
+advantages.item1.desc,Servicio de calidad
+advantages.item2.desc,Respeto por los clientes
+advantages.item3.desc,Píxel perfecto
+advantages.item4.desc,Siempre en contacto
+advantages.item5.desc,Fecha límite de la reunión
+advantages.item6.desc,Resultado con el amor
+,
+,
 ,UI
 btn.contact,Contáctame
 btn.order,Pedido servicio

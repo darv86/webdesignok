@@ -1,4 +1,5 @@
 constant,content
+,Page: INDEX
 ,MAIN SCREEN
 mainscreen.title.text1,Human
 mainscreen.title.text2,Designer
@@ -40,6 +41,16 @@ services.item3.desc1,Logotype
 services.item3.desc2,Identity
 services.item3.desc3,Posters
 services.item3.desc4,Presentation
+,
+,ADVANTAGES
+advantages.title,Check out my advantages
+advantages.desc,"My main advantage is a human-centered approach in production and communication. As a result, it gives rise to all others advantages."
+advantages.item1.desc,Quality service
+advantages.item2.desc,Respect for clients 
+advantages.item3.desc,Pixel perfect
+advantages.item4.desc,Always in touch
+advantages.item5.desc,Meeting deadline
+advantages.item6.desc,Result with love
 ,
 ,UI
 btn.contact,Contact me

@@ -1,4 +1,5 @@
 constant,content
+,Page: INDEX
 ,MAIN SCREEN
 mainscreen.title.text1,Людина
 mainscreen.title.text2,Визайнер
@@ -40,6 +41,16 @@ services.item3.desc1,Логотип
 services.item3.desc2,Айдентика
 services.item3.desc3,Плакат
 services.item3.desc4,Презентація
+,
+,ADVANTAGES
+advantages.title,Ознайомтесь з моїми перевагами
+advantages.desc,"Моя головна перевага - це людиноцентричний підхід при розробці та комуніції. Як результат, це породжує всі інші переваги."
+advantages.item1.desc,Якісні послуги
+advantages.item2.desc,Повага до клієнтів
+advantages.item3.desc,Піксель перфект
+advantages.item4.desc,Завжди на зв’язку
+advantages.item5.desc,Дотримуюсь дедлайнів
+advantages.item6.desc,Результат з любов'ю
 ,
 ,UI
 btn.contact,Зв'яжіться зі мною
