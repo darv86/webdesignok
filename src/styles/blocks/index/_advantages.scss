@@ -1,0 +1,8 @@
+@use '../../utils' as *;
+
+@mixin advantages {
+	.advantages-list {
+		display: flex;
+		flex-wrap: wrap;
+	}
+}

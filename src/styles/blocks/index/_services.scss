@@ -2,7 +2,6 @@
 @use 'sass:color';
 @use 'sass:string';
 @use 'sass:list';
-@use 'sass:map';
 
 $-services-items: (
 	'item1': (
@@ -26,14 +25,6 @@ $-services-items: (
 );
 
 @mixin services {
-	.section-services__title {
-		text-align: center;
-	}
-
-	.section-services__desc {
-		text-align: center;
-	}
-
 	.services-list {
 		display: flex;
 		justify-content: center;

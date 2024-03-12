@@ -1,7 +1,9 @@
 @use '../blocks/index/header' as *;
 @use '../blocks/index/results' as *;
 @use '../blocks/index/services' as *;
+@use '../blocks/index/advantages' as *;
 
 @include header;
 @include results;
 @include services;
+@include advantages;
