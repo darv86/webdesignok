@@ -18,7 +18,6 @@
 	line-height: 1.5;
 	color: $gray40;
 	text-rendering: optimizeLegibility;
-	text-wrap: balance;
 }
 
 .body__inner {
@@ -85,6 +84,7 @@
 	line-height: 1;
 	text-transform: uppercase;
 	color: $gray10;
+	text-wrap: balance;
 }
 
 .title-1 {
@@ -115,6 +115,7 @@
 	font-family: $title-font100, sans-serif;
 	font-size: calc(20.4px / 16px * 1rem);
 	line-height: 1;
+	text-wrap: balance;
 }
 
 .section {
@@ -123,6 +124,9 @@
 
 .section__title {
 	display: inline-block;
+	position: relative;
+	left: 50%;
+	translate: -50%;
 	margin-bottom: 24px;
 	text-align: center;
 }

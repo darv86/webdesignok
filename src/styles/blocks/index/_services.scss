@@ -36,6 +36,7 @@ $-services-items: (
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		width: 100%;
 	}
 
 	@each $key-item, $item in $-services-items {
