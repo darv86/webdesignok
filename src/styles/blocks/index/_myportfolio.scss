@@ -1,0 +1,14 @@
+@use '../../utils' as *;
+
+@mixin myportfolio {
+	.myportfolio-list {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 24px;
+	}
+
+	.myportfolio-item {
+		@media (pointer: fine) {
+		}
+	}
+}

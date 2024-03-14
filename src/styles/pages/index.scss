@@ -2,8 +2,10 @@
 @use '../blocks/index/results' as *;
 @use '../blocks/index/services' as *;
 @use '../blocks/index/advantages' as *;
+@use '../blocks/index/myportfolio' as *;
 
 @include header;
 @include results;
 @include services;
 @include advantages;
+@include myportfolio;
