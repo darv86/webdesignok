@@ -1,14 +1,48 @@
 @use '../../utils' as *;
+@use 'sass:color';
 
 @mixin myportfolio {
 	.myportfolio-list {
 		display: grid;
 		grid-template-columns: 1fr;
-		gap: 24px;
+		gap: 48px;
 	}
 
 	.myportfolio-item {
+		border: 1px solid $gray90;
+		border-radius: 2px;
+		overflow: hidden;
+		text-align: center;
 		@media (pointer: fine) {
 		}
+	}
+
+	.myportfolio-item__figure {
+		position: relative;
+		isolation: isolate;
+	}
+
+	.myportfolio-item__img {
+		height: 256px;
+		object-fit: cover;
+		object-position: top;
+	}
+
+	.myportfolio-item__figcaption {
+		position: relative;
+		z-index: 1;
+		margin-top: -88px;
+		padding: 48px;
+		background-color: color.change(white, $alpha: 0.92);
+		backdrop-filter: blur(5px);
+	}
+
+	.myportfolio-item__title {
+		display: inline-block;
+		margin-bottom: 12px;
+	}
+
+	.myportfolio-item__desc {
+		margin-bottom: 24px;
 	}
 }
