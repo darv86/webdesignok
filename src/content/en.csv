@@ -52,6 +52,28 @@ advantages.item4.desc,Always in touch
 advantages.item5.desc,Meeting deadline
 advantages.item6.desc,Result with love
 ,
+,MYPORTFOLIO
+myportfolio.title,Watch my portfolio
+myportfolio.desc,Here you can find some projects I was involved. Visit page with details to find more information about the project you like.
+myportfolio.item1.title,Axas project
+myportfolio.item1.desc,Landing page web design for a startup application development company.
+myportfolio.item2.title,Gym devices
+myportfolio.item2.desc,Web design for an e-commerce project that specializes in sports equipment.
+myportfolio.item3.title,Auto boutique
+myportfolio.item3.desc,Landing page web design for a company which provides detailing services.
+myportfolio.item4.title,LAZ factory
+myportfolio.item4.desc,Promo website design for one of the largest manufacturers of public transport.
+,
+,MYCLIENTS
+myclients.title,Meet my clients
+myclients.desc,Represent to you with honor brands and companies I worked with. They are professionals and leaders in their sectors of business.
+myclients.specializing.title,I'm specializing on industries:
+myclients.specializing.item1,Transport
+myclients.specializing.item2,Education
+myclients.specializing.item3,Entertainment
+myclients.specializing.item4,HoReCa
+myclients.specializing.item5,IT industry
+,
 ,UI
 btn.contact,Contact me
 btn.order,Order service

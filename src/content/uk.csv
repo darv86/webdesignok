@@ -52,6 +52,28 @@ advantages.item4.desc,Завжди на зв’язку
 advantages.item5.desc,Дотримуюсь дедлайнів
 advantages.item6.desc,Результат з любов'ю
 ,
+,MYPORTFOLIO
+myportfolio.title,Дивіться моє портфоліо
+myportfolio.desc,"Тут ви можете знайти деякі проекти, де я брав участь. Відвідайте сторінку з деталями, щоб знайти більше інформації про проект, який вам подобається."
+myportfolio.item1.title,Проект Axas
+myportfolio.item1.desc,Веб дизайн цільової сторінки для стартап-компанії з розробки додатків.
+myportfolio.item2.title,Gym devices
+myportfolio.item2.desc,"Веб дизайн для проекту електронної комерції, що спеціалізується на спортивному обладнанні."
+myportfolio.item3.title,Авто бутік
+myportfolio.item3.desc,"Веб дизайн цільової сторінки для компанії, яка надає послуги детейлингу."
+myportfolio.item4.title,ЛАЗ завод
+myportfolio.item4.desc,Веб дизайн промо сайту для одного з найбільших виробників громадського транспорту.
+,
+,MYCLIENTS
+myclients.title,Зустрічайте моїх клієнтів
+myclients.desc,"З честю представляю бренди та компанії, з якими я працював. Вони є професіоналами та лідерами у своїх галузях."
+myclients.specializing.title,Я спеціалізуюся на галузях:
+myclients.specializing.item1,Транспорт
+myclients.specializing.item2,Освіта
+myclients.specializing.item3,Розваги
+myclients.specializing.item4,HoReCa
+myclients.specializing.item5,ІТ індустрія
+,
 ,UI
 btn.contact,Зв'яжіться зі мною
 btn.order,Замовляйте сервіс
