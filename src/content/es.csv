@@ -3,33 +3,33 @@ constant,content
 mainscreen.title.text1,Humano
 mainscreen.title.text2,Diseñador
 mainscreen.title.text3,Desarrollador
-mainscreen.desc,Me alegro de verte aquí. Mi nombre es Dima Radushev. Creo comunicaciones visuales con personas y personas. Diseñé y desarrollé este sitio web para ayudarlo a encontrar información fácilmente sobre mis habilidades y servicios. Espero que sea un viaje útil para ti.
+mainscreen.desc,Me alegro de verte aquí. Mi nombre es Dima Radushev. Creo comunicaciones visuales con personas y para personas. Diseñé y desarrollé este sitio web para ayudarlo a encontrar información fácilmente sobre mis habilidades y servicios. Espero que te resulte útil el viaje.
 mainscreen.caption,Dima Radushev
 ,
 ,RESULTS
-results.title,Resultar en números
-results.desc,"Estos números son reflejo de mi actividad, actitud y pasión que llevé a través de todos los proyectos en los que estuve involucrado unos años."
+results.title,Resultado en números
+results.desc,"Estos números son reflejo de mi actividad, actitud y pasión que llevé a través de todos los proyectos en los que estuve involucrado durante algunos años."
 results.item1.title,Clientes felices
 results.item1.desc,59
 results.item2.title,Retroalimentación positiva
 results.item2.desc,53
-results.item3.title,Países de los clientes
+results.item3.title,Países clientes
 results.item3.desc,6
 results.item4.title,Respuesta Rápida
 results.item4.desc,60<sup>min</sup>
-results.item5.title,Total de proyectos
+results.item5.title,Proyectos totales
 results.item5.desc,129
 results.item6.title,Proyectos exitosos
 results.item6.desc,96<sup>%</sup>
 ,
 ,SERVICES
-services.title,Ordenar mis servicios
-services.desc,¿Tiene una idea para un negocio o proyecto propio? Simplemente elija el servicio que necesita y crearé una implementación visual y funcional.
+services.title,Ordene mis servicios
+services.desc,¿Tienes una idea para un negocio o proyecto propio? Simplemente elige el servicio que necesitas y crearé una implementación visual y funcional.
 services.item1.title,Desarrollo web
 services.item1.desc1,Página de destino
 services.item1.desc2,Comercio electrónico
-services.item1.desc3,Sitio web de negocios
-services.item1.desc4,Sitio web de cartera
+services.item1.desc3,Sitio web empresarial
+services.item1.desc4,Sitio web del portafolio
 services.item2.title,Diseño web
 services.item2.desc1,Diseño de UX/UI
 services.item2.desc2,Aplicación movil
@@ -38,49 +38,54 @@ services.item2.desc4,Medios de comunicación social
 services.item3.title,Diseño gráfico
 services.item3.desc1,Logotipo
 services.item3.desc2,Identidad
-services.item3.desc3,Carteles
+services.item3.desc3,Pósters
 services.item3.desc4,Presentación
 ,
 ,ADVANTAGES
 advantages.title,Mira mis ventajas
-advantages.desc,"Mi principal ventaja es un enfoque centrado en el ser humano en producción y comunicación. Como resultado, da lugar a todas las ventajas."
+advantages.desc,"Mi principal ventaja es un enfoque centrado en las personas en producción y comunicación. Como resultado, da lugar a todas las demás ventajas."
 advantages.item1.desc,Servicio de calidad
-advantages.item2.desc,Respeto por los clientes
+advantages.item2.desc,Respeto por los clientes.
 advantages.item3.desc,Píxel perfecto
 advantages.item4.desc,Siempre en contacto
-advantages.item5.desc,Fecha límite de la reunión
-advantages.item6.desc,Resultado con el amor
+advantages.item5.desc,Fecha límite de reunión
+advantages.item6.desc,Resultado con amor
 ,
 ,MYPORTFOLIO
-myportfolio.title,Mira mi cartera
-myportfolio.desc,Aquí puedes encontrar algunos proyectos en los que estuve involucrado. Visite la página con detalles para encontrar más información sobre el proyecto que le guste.
+myportfolio.title,Mira mi portafolio
+myportfolio.desc,Aquí puedes encontrar algunos proyectos en los que participé. Visita la página con detalles para encontrar más información sobre el proyecto que te gusta.
 myportfolio.item1.title,Proyecto Axas
-myportfolio.item1.desc,Diseño web de la página de destino para una empresa de desarrollo de aplicaciones de inicio.
+myportfolio.item1.desc,Diseño web de landing page para una startup de desarrollo de aplicaciones.
 myportfolio.item2.title,Gym devices
-myportfolio.item2.desc,Diseño web para un proyecto de comercio electrónico que se especializa en equipos deportivos.
+myportfolio.item2.desc,Diseño web para un proyecto de comercio electrónico especializado en equipamiento deportivo.
 myportfolio.item3.title,Auto boutique
-myportfolio.item3.desc,Diseño web de la página de destino para una empresa que proporciona servicios de detalle.
-myportfolio.item4.title,Fábrica de LAZ
-myportfolio.item4.desc,Diseño de sitios web promocionales para uno de los fabricantes más grandes de transporte público.
+myportfolio.item3.desc,Diseño de página web de aterrizaje para una empresa que brinda servicios de detallado.
+myportfolio.item4.title,Fábrica LAZ
+myportfolio.item4.desc,Diseño de sitio web promocional para uno de los mayores fabricantes de transporte público.
 ,
 ,MYCLIENTS
-myclients.title,Conoce a mis clientes
-myclients.desc,Representa a ti con marcas de honor y empresas con las que trabajé. Son profesionales y líderes en sus sectores de negocios.
+myclients.title,conocer a mis clientes
+myclients.desc,Representarles con honor las marcas y empresas con las que trabajé. Son profesionales y líderes en sus sectores de actividad.
 myclients.specializing.title,Me estoy especializando en industrias:
 myclients.specializing.item1,Transporte
 myclients.specializing.item2,Educación
 myclients.specializing.item3,Entretenimiento
 myclients.specializing.item4,HoReCa
-myclients.specializing.item5,Industria de TI
+myclients.specializing.item5,industria de TI
 ,
 ,UI
 btn.contact,Contáctame
 btn.order,Pedido servicio
 btn.choose,Elija servicio
 btn.download,Descargar CV
+btn.view,Ver proyecto
 nav.home,Inicio 
 nav.services,Servicios
-nav.portfolio,portafolio
+nav.portfolio,Portafolio
+nav.portfolio.axas-project,Proyecto Axas
+nav.portfolio.gym-devices,Gym devices
+nav.portfolio.auto-boutique,Auto boutique
+nav.portfolio.laz-factory,Fábrica LAZ
 nav.skills,Habilidades
 nav.experience,Experiencia
 nav.education,Educación

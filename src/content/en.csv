@@ -79,9 +79,14 @@ btn.contact,Contact me
 btn.order,Order service
 btn.choose,Choose service
 btn.download,Download CV
+btn.view,View project
 nav.home,Home
 nav.services,Services
 nav.portfolio,Portfolio
+nav.portfolio.axas-project,Axas project
+nav.portfolio.gym-devices,Gym devices
+nav.portfolio.auto-boutique,Auto boutique
+nav.portfolio.laz-factory,LAZ factory
 nav.skills,Skills
 nav.experience,Experience
 nav.education,Education

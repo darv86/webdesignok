@@ -32,14 +32,14 @@ services.item1.desc2,Електронна комерція
 services.item1.desc3,Вебсайт для бізнесу
 services.item1.desc4,Вебсайт портфоліо
 services.item2.title,Веб дизайн
-services.item2.desc1,UX/UI Дизайн
+services.item2.desc1,UX/UI дизайн
 services.item2.desc2,Мобільний додаток
 services.item2.desc3,Банер
 services.item2.desc4,Соціальні мережі
 services.item3.title,Графічний дизайн
 services.item3.desc1,Логотип
 services.item3.desc2,Айдентика
-services.item3.desc3,Плакат
+services.item3.desc3,Плакати
 services.item3.desc4,Презентація
 ,
 ,ADVANTAGES
@@ -48,7 +48,7 @@ advantages.desc,"Моя головна перевага - це людиноце�
 advantages.item1.desc,Якісні послуги
 advantages.item2.desc,Повага до клієнтів
 advantages.item3.desc,Піксель перфект
-advantages.item4.desc,Завжди на зв’язку
+advantages.item4.desc,Завжди на зв'язку
 advantages.item5.desc,Дотримуюсь дедлайнів
 advantages.item6.desc,Результат з любов'ю
 ,
@@ -79,13 +79,18 @@ btn.contact,Зв'яжіться зі мною
 btn.order,Замовляйте сервіс
 btn.choose,Виберіть сервіс
 btn.download,Завантажте резюме
+btn.view,Загрузка...
 nav.home,Головна
 nav.services,Послуги
 nav.portfolio,Портфоліо
-nav.skills,Навички
-nav.experience,Досвід
-nav.education,Освіта
-nav.contacts,Контакти
+nav.portfolio.axas-project,Проект Axas
+nav.portfolio.gym-devices,Gym devices
+nav.portfolio.auto-boutique,Авто бутік
+nav.portfolio.laz-factory,ЛАЗ завод
+nav.skills,Загрузка...
+nav.experience,Загрузка...
+nav.education,Загрузка...
+nav.contacts,Загрузка...
 langs,Українська
 ,
 ,TITLE
