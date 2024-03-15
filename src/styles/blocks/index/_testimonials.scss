@@ -1,0 +1,8 @@
+@use '../../utils' as *;
+
+@mixin testimonials {
+	.testimonials-slider {
+		background-color: blue;
+		padding: 24px;
+	}
+}

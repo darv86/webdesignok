@@ -4,6 +4,7 @@
 @use '../blocks/index/advantages' as *;
 @use '../blocks/index/myportfolio' as *;
 @use '../blocks/index/myclients' as *;
+@use '../blocks/index/testimonials' as *;
 
 @include header;
 @include results;
@@ -11,3 +12,4 @@
 @include advantages;
 @include myportfolio;
 @include myclients;
+@include testimonials;
