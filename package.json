@@ -32,6 +32,10 @@
 		"printWidth": 100,
 		"singleQuote": true,
 		"arrowParens": "avoid",
+		"pugAttributeSeparator": "as-needed",
+		"plugins": [
+			"@prettier/plugin-pug"
+		],
 		"overrides": [
 			{
 				"files": "gulpfile.js",
@@ -50,6 +54,7 @@
 	"devDependencies": {
 		"@babel/core": "^7.17.9",
 		"@babel/preset-env": "^7.16.11",
+		"@prettier/plugin-pug": "^3.0.0",
 		"babel-loader": "^8.2.5",
 		"browser-sync": "^2.27.9",
 		"csvtojson": "^2.0.10",
