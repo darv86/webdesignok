@@ -1,0 +1,25 @@
+section.section-myclients.section
+	.wrapper
+		.section__body
+			h2.section-myclients__title.section__title.title.title-2.title-line= self.myclients.title[curlang]
+
+			p.section-myclients__desc.section__desc= self.myclients.desc[curlang]
+
+			ul.myclients-list
+				- const myclientsImgsName = ['lazLogo240', 'ctgLogo240', 'mtiLogo240', 'sibisLogo240', 'homeLogo240', 'nicepageLogo240'];
+				each name, i in myclientsImgsName
+					li.myclients-item
+						img.myclients-img.img(
+							src=`/media/${name}.png`
+							alt=`logo of the ${name.slice(0, name.indexOf('Logo240')).toUpperCase()} company`
+							title=`${name.slice(0, name.indexOf('Logo240')).toUpperCase()} logo`
+							loading='lazy'
+						)
+
+			article.specializing
+				h3.specializing__title.title.title-3= self.myclients.specializing.title[curlang]
+
+				ul.specializing-list
+					each item, key in self.myclients.specializing
+						if key.startsWith('item')
+							li.specializing-item.subtitle.shape(class=`specializing-${key}`)= item[curlang]

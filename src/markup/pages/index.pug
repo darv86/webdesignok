@@ -1,12 +1,12 @@
 extends ../base
 
-append vars
+block append vars
 	- pageTitle = self.title.index[curlang];
 
-append styles
+block append styles
 	link(rel='stylesheet' href='/css/pages/index.css')
 
-append scripts
+block append scripts
 	script(src='/js/index.js')
 
 block header
@@ -17,3 +17,4 @@ block content
 	include ../blocks/index/services
 	include ../blocks/index/advantages
 	include ../blocks/index/myportfolio
+	include ../blocks/index/myclients

@@ -86,13 +86,13 @@
 .title {
 	font-family: $title-font700, sans-serif;
 	line-height: 1;
-	text-transform: uppercase;
 	color: $gray10;
 	text-wrap: balance;
 }
 
 .title-1 {
 	font-size: calc(32px / 16px * 1rem);
+	text-transform: uppercase;
 }
 
 .title-2 {
@@ -101,7 +101,6 @@
 
 .title-3 {
 	font-size: calc(18px / 16px * 1rem);
-	text-transform: uppercase;
 }
 
 .title-line {
@@ -144,6 +143,23 @@
 	background-color: $gray98;
 	border-top: 1px solid $gray95;
 	border-bottom: 1px solid $gray95;
+}
+
+.shape {
+	display: flex;
+	align-items: center;
+	&::before {
+		@include shape;
+		flex-shrink: 0;
+		width: 24px;
+		transition: translate $dur;
+	}
+	@media (pointer: fine) {
+		&:hover::before {
+			background-color: currentColor;
+			translate: 0 -3px;
+		}
+	}
 }
 
 @include nav;

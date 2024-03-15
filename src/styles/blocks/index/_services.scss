@@ -64,6 +64,7 @@ $-services-items: (
 
 	.services-item__title {
 		margin-bottom: 24px;
+		text-transform: uppercase;
 	}
 
 	.services-item__desc-list {
@@ -74,21 +75,7 @@ $-services-items: (
 	}
 
 	.services-item__desc {
-		display: flex;
 		gap: 12px;
-		align-items: center;
-		&::before {
-			@include shape;
-			flex-shrink: 0;
-			width: 24px;
-			transition: translate $dur;
-		}
-		@media (pointer: fine) {
-			&:hover::before {
-				background-color: currentColor;
-				translate: 0 -3px;
-			}
-		}
 	}
 
 	.services-item__btn {

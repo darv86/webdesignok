@@ -3,9 +3,11 @@
 @use '../blocks/index/services' as *;
 @use '../blocks/index/advantages' as *;
 @use '../blocks/index/myportfolio' as *;
+@use '../blocks/index/myclients' as *;
 
 @include header;
 @include results;
 @include services;
 @include advantages;
 @include myportfolio;
+@include myclients;

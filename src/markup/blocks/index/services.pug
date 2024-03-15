@@ -6,18 +6,22 @@ main.section-services.section.section-bg
 			p.section-services__desc.section__desc= self.services.desc[curlang]
 
 			ul.services-list
-				- const servicesImgsName = { item1: 'devService', item2: 'webService', item3: 'designService' }
+				- const servicesImgsName = { item1: 'devService', item2: 'webService', item3: 'designService' };
 				each item, key in self.services
 					if key.startsWith('item')
 						li.services-item(class=`services-${key}`)
 							.services-item__img-box
-								img.services-item__img.img(src=`/media/${servicesImgsName[key]}.png` loading='lazy' alt=`image of ${key}`)
+								img.services-item__img.img(
+									src=`/media/${servicesImgsName[key]}.png`
+									loading='lazy'
+									alt=`image of ${key}`
+								)
 
 							h3.services-item__title.title.title-3= item.title[curlang]
 
 							ul.services-item__desc-list
 								each desc, key in item
 									if key.startsWith('desc')
-										li.services-item__desc.subtitle(class=`services-item__${key}`)= desc[curlang]
+										li.services-item__desc.subtitle.shape(class=`services-item__${key}`)= desc[curlang]
 
 							a.services-item__btn.btn.btn-1(href=`${basedir}contacts.html`)= self.btn.choose[curlang]
