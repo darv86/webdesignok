@@ -16,7 +16,7 @@ export default {
 			watch: '/styles/**/*.{scss,sass}',
 		},
 		scripts: {
-			src: '/scripts/*.js',
+			src: ['/scripts/*.js', '/scripts/pages/**/*.js'],
 			dest: '/js',
 			watch: '/scripts/**/*.js',
 		},

@@ -66,9 +66,9 @@ export const styles = () => {
 };
 
 export const scripts = () => {
-	return src(paths.root.src + paths.scripts.src)
-		.pipe(named())
-		.pipe(gulpif(isRelease, webpack(webpackConfig)))
+	return src([paths.root.src + paths.scripts.src[0], paths.root.src + paths.scripts.src[1]], { base: 'src/scripts/' })
+		.pipe(named(file => path.relative(file.base, file.path).slice(0, -3)))
+		.pipe(webpack(webpackConfig))
 		.pipe(dest(paths.root.dest + paths.scripts.dest))
 		.pipe(gulpif(!isRelease, browsersync.stream()));
 };
@@ -163,7 +163,7 @@ export const favicon = cb => {
 		async () => {
 			await unlink(markupFile);
 			cb();
-		}
+		},
 	);
 };
 
@@ -199,7 +199,7 @@ export const release = series(
 	clean,
 	getContent,
 	parallel(markup, styles, scripts, fonts, media, resources, favicon),
-	gulpif(ftp.onRelease, deploy, async () => {})
+	gulpif(ftp.onRelease, deploy, async () => {}),
 );
 
 export default series(clean, getContent, parallel(markup, styles, scripts, fonts, media, resources, favicon), parallel(watcher, server));

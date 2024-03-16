@@ -1,4 +1,3 @@
-// ts-nocheck
 'use strict';
 
 // import Promise from 'core-js-pure/actual/promise/index.js'
@@ -204,7 +203,7 @@ class Selector {
 		this.select.append(optionsBox);
 
 		const options = Array.from(this.select.children).filter(option =>
-			option.hasAttribute('data-option')
+			option.hasAttribute('data-option'),
 		);
 
 		optionsBox.append(...options);
