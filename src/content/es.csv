@@ -73,6 +73,20 @@ myclients.specializing.item3,Entretenimiento
 myclients.specializing.item4,HoReCa
 myclients.specializing.item5,industria de IT
 ,
+,TESTIMONIALS
+testimonials.title,Testimonios
+testimonials.desc,Mi orgullo y mi gloria son mis clientes y sus testimonios. Gracias chicos por todas las palabras y oportunidades que me brindaron.
+testimonials.item1.title,Veronika Timofeeva
+testimonials.item1.caption,Cofundador de la revista de moda
+testimonials.item1.desc,"¡Gracias Dima por el trabajo realizado! ¡Por la atención a cada detalle, por las infinitas ediciones, por el tacto en la comunicación y el enfoque creativo! :) Este es un tipo de persona que ama su trabajo)"
+testimonials.item2.title,Rustam Khakimov
+testimonials.item2.caption,Dueño de negocio de muebles
+testimonials.item2.desc,"¡Estoy muy satisfecho con el trabajo de Dmitry! Sin más preguntas, de un vistazo, ¡Dmitry completó la tarea de crear un prototipo de sitio web en un plazo de 2 días! Velocidad, calidad, atención al cliente y la capacidad de profundizar en los detalles: ¡lo mejor! Recomiendo trabajar con Dima. ¡Definitivamente no te arrepentirás!"
+testimonials.item3.title,Oleg Dudko
+testimonials.item3.caption,CEO de Nicepage
+testimonials.item3.desc,Un profesional competente comprendió inmediatamente la tarea y ayudó a identificar varios problemas de usabilidad. Actitud muy cuidadosa incluso con las tareas más simples. ¡Gran trabajo! ¡Recomendado!
+,
+,
 ,UI
 btn.contact,Contáctame
 btn.order,Pedido servicio

@@ -74,12 +74,25 @@ myclients.specializing.item3,Розваги
 myclients.specializing.item4,HoReCa
 myclients.specializing.item5,ІТ індустрія
 ,
+,TESTIMONIALS
+testimonials.title,Відгуки
+testimonials.desc,"Моя гордість і моя слава - це мої клієнти та їхні відгуки. Спасибі, всім, за всі ваші слова і можливості, які ви мені дали."
+testimonials.item1.title,Вероніка Тимофєєва
+testimonials.item1.caption,Співзасновник модного журналу
+testimonials.item1.desc,"Дякую, Дмитру, за виконану роботу! За увагу до кожної деталі, за нескінченні правки, за такт у спілкуванні та креативний підхід!:) Це така людина, яка любить свою роботу)"
+testimonials.item2.title,Рустам Хакімов
+testimonials.item2.caption,Власник меблевого бізнесу
+testimonials.item2.desc,"Я дуже задоволений як Дмитро попрацював! Без зайвих запитань - з першого погляду - Дмитро виконав завдання зі створення прототипу сайту за 2 дні! Швидкість, якість, клієнтоорієнтованість і вміння занурюватися в деталі - просто на висоті! Рекомендую працювати з Дімою. Ви точно не пошкодуєте!!!"
+testimonials.item3.title,Олег Дудко
+testimonials.item3.caption,Генеральний директор Nicepage
+testimonials.item3.desc,Грамотний фахівець відразу розібрався із завданням і допоміг виявити кілька проблем юзабіліті. Дуже уважне ставлення навіть до найпростіших справ. Чудова робота! Рекомендую!
+,
 ,UI
 btn.contact,Зв'яжіться зі мною
 btn.order,Замовляйте сервіс
 btn.choose,Виберіть сервіс
 btn.download,Завантажте резюме
-btn.view,Загрузка...
+btn.view,Переглянути проект
 nav.home,Головна
 nav.services,Послуги
 nav.portfolio,Портфоліо
@@ -87,10 +100,10 @@ nav.portfolio.axas-project,Проект Axas
 nav.portfolio.gym-devices,Gym devices
 nav.portfolio.auto-boutique,Авто бутік
 nav.portfolio.laz-factory,ЛАЗ завод
-nav.skills,Загрузка...
-nav.experience,Загрузка...
-nav.education,Загрузка...
-nav.contacts,Загрузка...
+nav.skills,Навички
+nav.experience,Досвід
+nav.education,Освіта
+nav.contacts,Контакти
 langs,Українська
 ,
 ,TITLE

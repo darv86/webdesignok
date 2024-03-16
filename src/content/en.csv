@@ -74,6 +74,19 @@ myclients.specializing.item3,Entertainment
 myclients.specializing.item4,HoReCa
 myclients.specializing.item5,IT industry
 ,
+,TESTIMONIALS
+testimonials.title,Testimonials
+testimonials.desc,"My pride and my glory are my clients and their testimonials. Thanks, guys, for all your words and opportunities, that you gave me."
+testimonials.item1.title,Veronika Timofeeva
+testimonials.item1.caption,Co-founder of fashion magazine
+testimonials.item1.desc,"Thanks, Dima, for the work done! For the attention to every detail, for the endless edits, for tact in communication and creative approach!:) This is kind of person, who loves his work)"
+testimonials.item2.title,Rustam Khakimov
+testimonials.item2.caption,Furniture business owner
+testimonials.item2.desc,"I am very pleased with how Dmitry work done! Without extra questions - at a glance - Dmitry completed the task of creating a website prototype in a 2 days deadline! Speed, quality, customer focus and the ability to dive into the details - just on top! I recommend working with Dima. You definitely will not regret!!!"
+testimonials.item3.title,Oleg Dudko
+testimonials.item3.caption,CEO of Nicepage
+testimonials.item3.desc,"A competent professional, immediately figured out the task and helped identify several usability problems. Very careful attitude to even the simplest tasks. Great job! Recommended!"
+,
 ,UI
 btn.contact,Contact me
 btn.order,Order service
