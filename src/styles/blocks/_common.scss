@@ -126,11 +126,8 @@
 }
 
 .section__title {
-	display: inline-block;
-	position: relative;
-	left: 50%;
-	translate: -50%;
-	margin-bottom: 24px;
+	max-width: max-content;
+	margin: 0 auto 24px;
 	text-align: center;
 }
 
