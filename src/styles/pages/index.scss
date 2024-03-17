@@ -5,6 +5,7 @@
 @use '../blocks/index/myportfolio' as *;
 @use '../blocks/index/myclients' as *;
 @use '../blocks/index/testimonials' as *;
+@use 'scroll-snap-slider/dist/scroll-snap-slider';
 
 @include header;
 @include results;

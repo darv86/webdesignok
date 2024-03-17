@@ -1,4 +1,6 @@
 // @ts-nocheck
+// import { Transform } from 'node:stream';
+import path from 'node:path';
 import gulp from 'gulp';
 import pug from 'gulp-pug';
 import * as dartSass from 'sass';
@@ -20,8 +22,6 @@ import ftpConnection from 'vinyl-ftp';
 import named from 'vinyl-named';
 import csvtojson from 'csvtojson';
 import { readdir, unlink } from 'node:fs/promises';
-// import { Transform } from 'node:stream';
-import path from 'node:path';
 import _ from 'lodash/lodash.min.js';
 import webpackConfig from './webpack.config.js';
 import siteConfig from './siteConfig.js';
@@ -55,9 +55,10 @@ export const markup = () => {
 		.pipe(gulpif(!isRelease, browsersync.stream()));
 };
 
+// .pipe(sass({ importers: [new dartSass.NodePackageImporter()] }).on('error', sass.logError))
 export const styles = () => {
 	return src(paths.root.src + paths.styles.src, isRelease ? {} : { sourcemaps: true })
-		.pipe(sass(isCompressing.css && { outputStyle: 'compressed' }).on('error', sass.logError))
+		.pipe(sass(isCompressing.css ? { outputStyle: 'compressed', includePaths: ['./node_modules'] } : { includePaths: ['./node_modules'] }).on('error', sass.logError))
 		.pipe(webpCss())
 		.pipe(gulpif(isRelease, autoprefixer({ grid: true, cascade: false })))
 		.pipe(gulpif(isRelease, groupMediaQueries()))
