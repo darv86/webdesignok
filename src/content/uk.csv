@@ -106,11 +106,19 @@ nav.education,Освіта
 nav.contacts,Контакти
 langs,Українська
 ,
+,FOOTER
+footer.credits,Дизайн і розробка Дмитром Радушевим
+footer.services.title,Послуги
+footer.aboutme.title,Про мене
+footer.contacts.title,Контакти
+,
+,
 ,TITLE
-title.index,Веб дизайн & розробка | WebdesignOK.com
+title.index,Веб дизайн & розробка
 title.contacts,Контакти Дмитра Радушева
 ,
 ,INFO
 info.phone,+38(093)8366030
 info.email,hi@webdesignok.com
 info.name,Дмитро Радушев
+info.url,webdesignOK.com

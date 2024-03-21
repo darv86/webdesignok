@@ -106,11 +106,20 @@ nav.education,Educación
 nav.contacts,Contactos
 langs,Español
 ,
+,FOOTER
+footer.credits,Diseñado y desarrollado por Dima Radushev
+footer.services.title,Servicios
+footer.aboutme.title,Acerca de mí
+footer.contacts.title,Contactos
+,
+,
+,
 ,TITLE
-title.index,Diseño & desarrollo web | WebdesignOK.com
+title.index,Web diseño & Desarrollo
 title.contacts,Contactos de Dima Radushev
 ,
 ,INFO
 info.phone,+38(093)8366030
 info.email,hi@webdesignok.com
 info.name,Dima Radushev
+info.url,webdesignOK.com
