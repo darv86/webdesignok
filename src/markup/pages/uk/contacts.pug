@@ -1,0 +1,7 @@
+extends ../contacts
+
+block append vars
+	-
+		curlang = 'uk';
+		basedir = `/${curlang}/`;
+		pageTitle = self.title.contacts[curlang];

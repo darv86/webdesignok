@@ -1,0 +1,7 @@
+extends ../index
+
+block append vars
+	-
+		curlang = 'uk';
+		basedir = `/${curlang}/`;
+		pageTitle = self.title.index[curlang];
