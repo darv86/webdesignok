@@ -21,7 +21,7 @@ html.html(lang=curlang)
 			link(rel='manifest' href='/site.webmanifest')
 		block styles
 			link(rel='stylesheet' href='/css/main.css')
-		title= pageTitle
+		title= `${pageTitle} | ${self.info.url[curlang]}`
 	body.body
 		.body__inner
 			include blocks/nav
