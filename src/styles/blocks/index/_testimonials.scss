@@ -1,12 +1,24 @@
 @use '../../utils' as *;
 
+$-slider-p: 24px;
+
 @mixin testimonials {
 	.testimonials-slider {
 		margin-bottom: 24px;
-		padding: 24px;
+		padding: $-slider-p;
 		border: 1px solid $gray90;
 		border-radius: 2px;
 		background-color: white;
+	}
+
+	.testimonials-slider__item {
+		width: 100%;
+		scroll-margin: $-slider-p;
+		opacity: 0.1;
+		transition: opacity $dur;
+		&.is-current {
+			opacity: 1;
+		}
 	}
 
 	.testimonials-item__img {
@@ -36,12 +48,24 @@
 	}
 
 	.testimonials-slider__bullet {
+		overflow: hidden;
 		width: 24px;
 		aspect-ratio: 1;
 		border-radius: 50%;
 		background-color: $gray90;
-		&[is-current] {
-			background-color: $violet;
+		line-height: 0;
+	}
+
+	.testimonials-slider__bullet-btn {
+		opacity: 0;
+		transition: opacity $dur;
+		width: 100%;
+		aspect-ratio: 1;
+		border-radius: 50%;
+		background-color: $violet;
+		font-size: 0;
+		&.is-current {
+			opacity: 1;
 		}
 	}
 }

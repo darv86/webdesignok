@@ -5,11 +5,11 @@ section.section-testimonials.section.section-bg
 
 			p.section-testimonials__desc.section__desc= self.testimonials.desc[curlang]
 
-			ul.testimonials-slider
+			ul.testimonials-slider.snap-slider(data-snap-slider='testimonials')
 				- const testimonialsImgsName = { item1: 'veronikaTimpfeevaClient', item2: 'rustamKhakimovClient', item3: 'olegDudkoClient' };
 				each item, key in self.testimonials
 					if key.startsWith('item')
-						li.testimonials-slider__item
+						li.testimonials-slider__item.snap-slide(class=`testimonials-slider__${key}`)
 							article.testimonials-item
 								img.testimonials-item__img.img(
 									src=`/media/${testimonialsImgsName[key]}.jpg`
@@ -21,7 +21,8 @@ section.section-testimonials.section.section-bg
 
 								p.testimonials-item__desc.subtitle= item.desc[curlang]
 
-			ul.testimonials-slider__bullets
+			ul.testimonials-slider__bullets.snap-slider-nav(data-snap-slider-nav='testimonials')
+				- let i = 1;
 				each item, key in self.testimonials
 					if key.startsWith('item')
-						il.testimonials-slider__bullet
+						il.testimonials-slider__bullet: button.testimonials-slider__bullet-btn.snap-indicator
