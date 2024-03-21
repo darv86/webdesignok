@@ -1,3 +1,3 @@
-// import '../libs/okLib.js';
+import { autoplaySnapSlider } from '../libs/snap-slider.js';
 
-console.log('call from index.js');
+autoplaySnapSlider();
