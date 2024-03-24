@@ -95,6 +95,9 @@ btn.download,Download CV
 btn.view,View project
 nav.home,Home
 nav.services,Services
+nav.services.web-design,Web design
+nav.services.web-development,Web development
+nav.services.graphic-design,Graphic design
 nav.portfolio,Portfolio
 nav.portfolio.axas-project,Axas project
 nav.portfolio.gym-devices,Gym devices
@@ -124,3 +127,9 @@ info.phone,+38(093)8366030
 info.email,hi@webdesignok.com
 info.name,Dima Radushev
 info.url,webdesignOK.com
+info.facebook,facebook.com/dimarad86
+info.pinterest,pinterest.com/dimaradushev
+info.skype,Darv86
+info.telegram,@DimaRadushev
+info.behance,behance.net/dimarad
+info.github,github.com/darv86

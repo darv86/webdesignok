@@ -95,6 +95,9 @@ btn.download,Завантажте резюме
 btn.view,Переглянути проект
 nav.home,Головна
 nav.services,Послуги
+nav.services.web-design,Веб дизайн
+nav.services.web-development,Веб розробка
+nav.services.graphic-design,Графічний дизайн
 nav.portfolio,Портфоліо
 nav.portfolio.axas-project,Проект Axas
 nav.portfolio.gym-devices,Gym devices
@@ -122,3 +125,9 @@ info.phone,+38(093)8366030
 info.email,hi@webdesignok.com
 info.name,Дмитро Радушев
 info.url,webdesignOK.com
+info.facebook,facebook.com/dimarad86
+info.pinterest,pinterest.com/dimaradushev
+info.skype,Darv86
+info.telegram,@DimaRadushev
+info.behance,behance.net/dimarad
+info.github,github.com/darv86
