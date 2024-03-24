@@ -1,5 +1,45 @@
 footer.footer
 	.wrapper
 		.footer__body
-			.footer__credentials.credentials
-				img.footer__logo(src='/media/logo-s-Radushev.svg')
+			.footer-credentials
+				figure.footer-figure
+					img.footer-logo(src='/media/logo-s-Radushev.svg' alt='logo of Dima Radushev')
+					figcaption.footer-figcaption= self.title.index[curlang]
+				p.footer-credits= `${self.footer.credits[curlang]} ©`
+					time.footer-year= new Date().getFullYear()
+
+			section.footer-services.footer-section
+				h3.footer-section__title.title.title-3.title-line= self.footer.services.title[curlang]
+				.footer-section__links
+					each service, key in self.nav.services
+						if typeof service !== 'string'
+							a.footer-section__link(href=`${basedir}services/#${key}`)= service[curlang]
+
+			section.footer-aboutme.footer-section
+				h3.footer-section__title.title.title-3.title-line= self.footer.aboutme.title[curlang]
+				.footer-section__links
+					a.footer-section__link(href=`${basedir}skills/`)= self.nav.skills[curlang]
+					a.footer-section__link(href=`${basedir}education/`)= self.nav.education[curlang]
+					a.footer-section__link(href=`${basedir}experience/`)= self.nav.experience[curlang]
+
+			section.footer-contacts.footer-section
+				h3.footer-section__title.title.title-3.title-line= self.footer.contacts.title[curlang]
+				.contacts-links
+					a.contacts-link.icon-phone(href=`tel:${self.info.phone[curlang]}`)= self.info.phone[curlang]
+					a.contacts-link.icon-mail(href=`mailto:${self.info.email[curlang]}`)= self.info.email[curlang]
+				.socials-links
+					a.socials-link.icon-facebook(
+						href=`https://www.${self.info.facebook[curlang]}`
+						rel='nofollow noreferrer noopener'
+						target='_blank'
+					)
+					a.socials-link.icon-behance(
+						href=`https://www.${self.info.behance[curlang]}`
+						rel='nofollow noreferrer noopener'
+						target='_blank'
+					)
+					a.socials-link.icon-github(
+						href=`https://www.${self.info.github[curlang]}`
+						rel='nofollow noreferrer noopener'
+						target='_blank'
+					)
