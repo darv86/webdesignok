@@ -13,6 +13,7 @@ section.section-testimonials.section.section-bg
 							article.testimonials-item
 								img.testimonials-item__img.img(
 									src=`/media/${testimonialsImgsName[key]}.jpg`
+									loading='lazy'
 									alt=`photo of a client ${key.slice(-1)}`
 								)
 								h2.testimonials-item__title.title.title-3= item.title[curlang]

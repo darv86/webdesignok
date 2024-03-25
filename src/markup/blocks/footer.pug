@@ -3,7 +3,11 @@ footer.footer
 		.footer__body
 			.footer-credentials
 				figure.footer-figure
-					img.footer-logo(src='/media/logo-s-Radushev.svg' alt='logo of Dima Radushev')
+					img.footer-logo(
+						src='/media/logo-s-Radushev.svg'
+						loading='lazy'
+						alt='logo of Dima Radushev'
+					)
 					figcaption.footer-figcaption= self.title.index[curlang]
 				p.footer-credits= `${self.footer.credits[curlang]} ©`
 					time.footer-year= new Date().getFullYear()
