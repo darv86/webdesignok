@@ -9,13 +9,10 @@ nav.nav
 		.nav-menu
 			each menuItemText, menuItemName in self.nav
 				if menuItemName === 'home'
-					a.nav__item.nav__link.icon-home(
-						class={'nav__link--active': curpage === '/'}
-						href=basedir
-					)= menuItemText[curlang]
+					a.nav__item.nav__link.icon-home(class={ 'nav__link--active': curpage === '/' } href=basedir)= menuItemText[curlang]
 				else
 					a.nav__item.nav__link(
-						class=[`icon-${menuItemName}`, {'nav__link--active': curpage === menuItemName}]
+						class=[`icon-${menuItemName}`, { 'nav__link--active': curpage === menuItemName }]
 						href=`${basedir}${menuItemName}.html`
 					)= menuItemText[curlang]
 
@@ -30,7 +27,7 @@ nav.nav
 					a.nav__item.nav-langs__option(
 						class=`flag-${lang}`
 						data-option
-						data-selected=(lang === curlang) ? true : false
-						hidden=(lang === curlang) ? true : false
+						data-selected=lang === curlang ? true : false
+						hidden=lang === curlang ? true : false
 						href=`/${lang === deflang ? '' : lang + '/'}${curpage === '/' ? '' : curpage + '.html'}`
 					)= transl

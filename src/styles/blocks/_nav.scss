@@ -16,38 +16,25 @@ $-dur: 0.4s;
 		left: 0;
 		z-index: 999;
 		isolation: isolate;
-		padding: 24px 0;
+		padding: 18px 0;
 		background-color: color.change($gray95, $alpha: 0.99);
 		border-right: 1px solid $gray90;
 		border-bottom: 1px solid $gray90;
-		overflow-y: auto;
 		overscroll-behavior: contain;
 		transition: padding $-dur;
-		font-size: 1rem;
+		font-size: 0;
 		color: $gray50;
 		&[data-isopen] {
+			overflow-y: auto;
 			height: 100%;
 			padding: 24px 0 40px;
-			.nav__body {
-				overflow-y: hidden;
-			}
-			.nav__logo-link {
-				width: 89px;
-				opacity: 1;
-			}
-			.nav__item {
-				gap: calc(24px / 16px * 1rem);
-				padding: 12px 24px;
-				opacity: 1;
-				font-size: inherit;
-			}
-			.nav__header {
-				margin-bottom: 48px;
-			}
-			.nav-menu,
-			.nav-contact-info {
-				margin-bottom: 36px;
-			}
+			font-size: 1rem;
+		}
+	}
+
+	.nav__body {
+		:where([data-isopen]) & {
+			overflow-y: hidden;
 		}
 	}
 
@@ -57,33 +44,35 @@ $-dur: 0.4s;
 		align-items: start;
 		margin-bottom: 0;
 		padding: 0 18px;
+		transition: margin $-dur;
+		:where([data-isopen]) & {
+			margin-bottom: 48px;
+		}
 	}
 
 	.nav__logo-link {
+		overflow: hidden;
 		display: block;
 		width: 0;
-		opacity: 0;
-		transition: width $-dur, opacity $-dur;
+		transition: width $-dur;
 		line-height: 0;
+		:where([data-isopen]) & {
+			width: 89px;
+		}
 	}
 
 	.nav__logo-img {
-		width: 100%;
-	}
-
-	.nav__item {
-		display: flex;
-		align-items: center;
-		gap: 0;
-		padding: 0;
-		opacity: 0;
-		transition: gap $-dur, padding $-dur, opacity $-dur, font-size $-dur;
-		font-size: 0;
+		height: 0;
+		transition: height $-dur;
+		:where([data-isopen]) & {
+			height: 100%;
+		}
 	}
 
 	.nav-toggler {
 		isolation: isolate;
 		position: relative;
+		aspect-ratio: 1;
 		&[data-isopen] {
 			&::after {
 				scale: 0;
@@ -94,7 +83,7 @@ $-dur: 0.4s;
 			display: block;
 			box-sizing: content-box;
 			position: absolute;
-			top: -6px;
+			top: 0;
 			right: -6px;
 			width: 8px;
 			height: 8px;
@@ -119,10 +108,6 @@ $-dur: 0.4s;
 		:where(button[data-isopen]) & {
 			gap: 0px;
 			background-image: none;
-			&::before,
-			&::after {
-				translate: 0 $gap;
-			}
 			&::before {
 				rotate: -45deg;
 			}
@@ -142,8 +127,29 @@ $-dur: 0.4s;
 		}
 	}
 
+	.nav__item {
+		display: flex;
+		align-items: center;
+		gap: 0;
+		padding: 0;
+		opacity: 0;
+		transition:
+			gap $-dur,
+			padding $-dur,
+			opacity $-dur,
+			font-size $-dur;
+		:where([data-isopen]) & {
+			gap: calc(24px / 16px * 1rem);
+			padding: 12px 24px;
+			opacity: 1;
+		}
+	}
+
 	.nav-menu {
 		margin-bottom: 0;
+		:where([data-isopen]) & {
+			margin-bottom: 36px;
+		}
 	}
 
 	.nav__link {
@@ -170,6 +176,9 @@ $-dur: 0.4s;
 
 	.nav-contact-info {
 		margin-bottom: 0;
+		:where([data-isopen]) & {
+			margin-bottom: 36px;
+		}
 	}
 
 	.nav-langs {
@@ -219,7 +228,9 @@ $-dur: 0.4s;
 		flex-direction: column;
 		background-color: $gray90;
 		clip-path: rect(0 100% 0 0);
-		transition: translate $-dur, clip-path $-dur;
+		transition:
+			translate $-dur,
+			clip-path $-dur;
 		&[data-isopen] {
 			translate: 0 -100%;
 			clip-path: rect(0 100% 100% 0);
@@ -237,6 +248,69 @@ $-dur: 0.4s;
 			&.flag-#{$lang}::before {
 				content: url('../media/flag-#{$lang}.svg');
 			}
+		}
+	}
+
+	@media only screen and (min-width: 1280px) {
+	}
+
+	@media only screen and (min-width: 1280px) {
+		.nav {
+			min-height: 100dvh;
+			padding: 24px 0;
+			&[data-isopen] {
+			}
+		}
+
+		.nav__body {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+		}
+
+		.nav__header {
+			flex-direction: column;
+			gap: 32px;
+			margin-bottom: 24px;
+		}
+
+		.nav__logo-link {
+			width: 36px;
+			:where([data-isopen]) & {
+				width: 89px;
+			}
+		}
+
+		.nav__logo-img {
+			height: 100%;
+		}
+
+		.nav-toggler {
+			align-self: center;
+			transition: align-self $-dur;
+			:where([data-isopen]) & {
+				align-self: flex-end;
+			}
+		}
+
+		.nav__item {
+			padding: 12px 24px;
+			opacity: 1;
+		}
+
+		.nav__link {
+			&::before {
+				width: calc(24px / 16px * 1rem);
+				font-size: calc(24px / 16px * 1rem);
+			}
+		}
+		.nav-contact-info {
+			margin-top: auto;
+		}
+
+		[class*='flag-']::before {
+			width: calc(24px / 16px * 1rem);
+			line-height: 0;
 		}
 	}
 }
