@@ -1,22 +1,22 @@
 /**
- * @param {Element} element - html element for snap slider init
- * @param {Object} slider - instance of SnapSlider
+ * @param {Object} snapSlider - instance of SnapSlider
  * @param {Number} [delay=6000] - delay ms, default: 6000
  */
-export function autoplaySnapSlider(element, slider, delay = 6000) {
+export function autoplaySnapSlider(snapSlider, delay = 6000) {
+	const slider = snapSlider.container;
 	let autoplayTimer;
 
 	startAutoplay();
 
-	slider.on('change.focusin', stopAutoplay);
-	slider.on('change.scroll', stopAutoplay);
-	element.addEventListener('click', () => (autoplayTimer ? stopAutoplay() : startAutoplay()));
-	element.addEventListener('mouseenter', stopAutoplay);
-	element.addEventListener('mouseleave', startAutoplay);
+	snapSlider.on('change.focusin', stopAutoplay);
+	snapSlider.on('change.scroll', stopAutoplay);
+	slider.addEventListener('click', () => (autoplayTimer ? stopAutoplay() : startAutoplay()));
+	slider.addEventListener('mouseenter', stopAutoplay);
+	slider.addEventListener('mouseleave', startAutoplay);
 
 	function startAutoplay() {
 		if (autoplayTimer) return;
-		autoplayTimer = setInterval(() => slider.goto('next'), delay);
+		autoplayTimer = setInterval(() => snapSlider.goto('next'), delay);
 	}
 
 	function stopAutoplay() {
