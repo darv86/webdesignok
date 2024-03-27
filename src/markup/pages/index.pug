@@ -3,6 +3,12 @@ extends ../base
 block append vars
 	- pageTitle = self.title.index[curlang];
 
+block append meta
+	meta(
+		name='description'
+		content='Dima Radushev provides web design and wed development services'
+	)
+
 block append styles
 	link(rel='stylesheet' href='/css/pages/index.css')
 
