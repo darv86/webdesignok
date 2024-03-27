@@ -1,0 +1,54 @@
+@use '../utils' as *;
+
+@mixin aside {
+	.aside {
+		position: fixed;
+		top: 0;
+		right: 0;
+		z-index: 998;
+		display: flex;
+		flex-direction: column;
+		height: 100dvh;
+		padding: 7dvh 24px;
+	}
+
+	.aside__item {
+		transition:
+			background-color $dur,
+			translate $dur;
+		display: grid;
+		place-items: center;
+		aspect-ratio: 1;
+		border: 1px solid $gray90;
+		border-radius: 50%;
+		color: $gray90;
+		@media (pointer: fine) {
+			&:hover {
+				translate: 0 -3px;
+				background-color: $gray10;
+			}
+		}
+	}
+
+	.aside-socials {
+		display: grid;
+		gap: 12px;
+	}
+
+	.aside-socials-link {
+		font-size: 32px;
+	}
+
+	.aside-scrolltop {
+		margin-top: auto;
+		&::before {
+			content: '';
+			rotate: 135deg;
+			translate: 0 -25%;
+			width: 12px;
+			aspect-ratio: 1;
+			border-top: 2px solid $gray90;
+			border-right: 2px solid $gray90;
+		}
+	}
+}
