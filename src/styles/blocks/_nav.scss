@@ -26,7 +26,7 @@ $-dur: 0.4s;
 		color: $gray50;
 		&[data-isopen] {
 			overflow-y: auto;
-			height: 100%;
+			max-height: 100%;
 			padding: 24px 0 40px;
 			font-size: 1rem;
 		}
@@ -252,12 +252,9 @@ $-dur: 0.4s;
 		}
 	}
 
-	@media only screen and (min-width: 1280px) {
-	}
-
-	@media only screen and (min-width: 1280px) {
+	@media (min-width: 1280px) {
 		.nav {
-			min-height: 100dvh;
+			display: flex;
 			height: 100%;
 			padding: 24px 0 40px;
 		}
@@ -265,7 +262,6 @@ $-dur: 0.4s;
 		.nav__body {
 			display: flex;
 			flex-direction: column;
-			height: 100%;
 		}
 
 		.nav__header {
@@ -296,6 +292,15 @@ $-dur: 0.4s;
 		.nav__item {
 			padding: 12px 24px;
 			opacity: 1;
+			span {
+				transition: opacity $dur;
+				opacity: 0;
+			}
+			:where([data-isopen]) & {
+				span {
+					opacity: 1;
+				}
+			}
 		}
 
 		.nav__link,
