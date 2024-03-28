@@ -9,16 +9,20 @@ nav.nav
 		.nav-menu
 			each menuItemText, menuItemName in self.nav
 				if menuItemName === 'home'
-					a.nav__item.nav__link.icon-home(class={ 'nav__link--active': curpage === '/' } href=basedir)= menuItemText[curlang]
+					a.nav__item.nav__link.icon-home(class={ 'nav__link--active': curpage === '/' } href=basedir)
+						span.nav__item-span= menuItemText[curlang]
 				else
 					a.nav__item.nav__link(
 						class=[`icon-${menuItemName}`, { 'nav__link--active': curpage === menuItemName }]
 						href=`${basedir}${menuItemName}.html`
-					)= menuItemText[curlang]
+					)
+						span.nav__item-span= menuItemText[curlang]
 
 		address.nav-contact-info
-			a.nav__item.nav__link.icon-phone(href=`tel:${self.info.phone[curlang]}`)= self.info.phone[curlang]
-			a.nav__item.nav__link.icon-mail(href=`mailto:${self.info.email[curlang]}`)= self.info.email[curlang]
+			a.nav__item.nav__link.icon-phone(href=`tel:${self.info.phone[curlang]}`)
+				span.nav__item-span= self.info.phone[curlang]
+			a.nav__item.nav__link.icon-mail(href=`mailto:${self.info.email[curlang]}`)
+				span.nav__item-span= self.info.email[curlang]
 
 		.nav-langs(data-select)
 			button.nav__item.nav-langs__btn(class=`flag-${curlang}` data-shower)
@@ -30,4 +34,5 @@ nav.nav
 						data-selected=lang === curlang ? true : false
 						hidden=lang === curlang ? true : false
 						href=`/${lang === deflang ? '' : lang + '/'}${curpage === '/' ? '' : curpage + '.html'}`
-					)= transl
+					)
+						span.nav__item-span= transl
