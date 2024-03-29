@@ -1,3 +1,18 @@
+$bp: (
+	'phone1/3': 280px,
+	'phone2/3': 320px,
+	'phone3/3': 540px,
+	'tablet1/3': 720px,
+	'tablet2/3': 1024px,
+	'tablet3/3': 1280px,
+	'laptop1/3': 1366px,
+	'laptop2/3': 1440px,
+	'laptop3/3': 1600px,
+	'desktop1/3': 1920px,
+	'desktop2/3': 2560px,
+	'desktop3/3': 3840px,
+);
+
 @function part($num, $gap) {
 	// @return calc(100% / #{$num} - #{$gap} * (1 - (1 / #{$num})));
 	@return calc(100% / $num - $gap + $gap / $num);
@@ -6,10 +21,6 @@
 @function col($num, $gap, $cols: 12) {
 	// @return calc(100% / $cols * #{$num} - #{$gap} * (1 - (1 / (#{$cols} / #{$num}))));
 	@return calc(100% / $cols * $num - $gap * (1 - $num / $cols));
-}
-
-@function color-main($a: 1, $l: 47%, $s: 100%, $h: 196) {
-	@return hsla($h, $s, $l, $a);
 }
 
 @function context-size($target, $context) {
