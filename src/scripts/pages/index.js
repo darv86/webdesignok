@@ -1,3 +1,5 @@
+'use strict';
+
 import SnapSlider from '@tannerhodges/snap-slider';
 import { autoplaySnapSlider } from '../libs/snap-slider.js';
 

@@ -1,6 +1,8 @@
 @use '../utils' as *;
+@use 'sass:map';
 
 @use 'nav' as *;
+@use 'aside' as *;
 @use 'footer' as *;
 
 @import url($font-url);
@@ -26,6 +28,7 @@
 
 .body__inner {
 	position: relative;
+	overflow-x: hidden;
 	display: flex;
 	flex-direction: column;
 	min-height: 100dvh;
@@ -37,9 +40,11 @@
 }
 
 .wrapper {
+	--pinline: 12px;
 	width: 100%;
+	max-width: calc(1120px + var(--pinline) * 2);
 	margin: 0 auto;
-	padding: 0 12px;
+	padding: 0 var(--pinline);
 }
 
 .btn {
@@ -91,7 +96,7 @@
 }
 
 .title-1 {
-	font-size: calc(32px / 16px * 1rem);
+	font-size: calc(28.8px / 16px * 1rem);
 	text-transform: uppercase;
 }
 
@@ -160,7 +165,17 @@
 }
 
 @include nav;
+@include aside;
 @include footer;
 
-@media screen and (max-width: 767px) {
+@media (min-width: map.get($bp, 'tablet2/3')) {
+	.wrapper {
+		--pinline: 80px;
+	}
+}
+
+@media (min-width: map.get($bp, 'tablet3/3')) {
+	.title-1 {
+		font-size: calc(44.8px / 16px * 1rem);
+	}
 }

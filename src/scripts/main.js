@@ -1,4 +1,5 @@
 'use strict';
+
 // import Promise from 'core-js-pure/actual/promise/index.js'
 import { Naviator } from './blocks/nav.js';
 import { Selector } from './blocks/select.js';

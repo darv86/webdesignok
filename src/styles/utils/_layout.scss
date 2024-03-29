@@ -1,8 +1,8 @@
 $bp: (
-	'phone1/3': 280px,
-	'phone2/3': 320px,
-	'phone3/3': 540px,
-	'tablet1/3': 720px,
+	'mobile1/3': 280px,
+	'mobile2/3': 320px,
+	'mobile3/3': 540px,
+	'tablet1/3': 768px,
 	'tablet2/3': 1024px,
 	'tablet3/3': 1280px,
 	'laptop1/3': 1366px,
@@ -10,7 +10,7 @@ $bp: (
 	'laptop3/3': 1600px,
 	'desktop1/3': 1920px,
 	'desktop2/3': 2560px,
-	'desktop3/3': 3840px,
+	'desktop3/3': 384,
 );
 
 @function part($num, $gap) {

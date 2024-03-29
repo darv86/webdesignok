@@ -11,10 +11,10 @@ header.header-index.header.section-bg
 			.header-index__buttons
 				a.header-index__btn.btn.btn-1(href=`${basedir}contacts/`)= self.btn.contact[curlang]
 				a.header-index__btn.btn.btn-2(
-					href=`/media/DesignerCV.pdf`
+					href='/media/DesignerCV.pdf'
 					download='Dima-Radushev-designer-developer-cv'
 				)= self.btn.download[curlang]
 
 			figure.header-index__figure
-				img.img(src='/media/photo-radushev-min.png')
+				img.header-index__img(src='/media/photo-radushev-min.png' alt='photo of Dima Radushev')
 				figcaption.header-index__figcaption(hidden)= self.info.name[curlang]
