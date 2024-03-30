@@ -49,25 +49,24 @@
 
 	@media (min-width: map.get($bp, 'tablet1/3')) {
 		.header-index__body {
-			display: grid;
-			grid-template-columns: repeat(12, 1fr);
-			grid-template-rows: repeat(2, auto);
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
 			align-content: space-between;
+			align-items: center;
 			gap: 48px;
 			height: 100%;
 		}
 
 		.header-index__title {
-			grid-column: 1 / 6;
-			align-self: center;
 			margin: 0;
+			width: col(5, 48px);
 			text-align: left;
 		}
 
 		.header-index__desc {
 			position: relative;
-			grid-column: 6 / -1;
-			justify-self: end;
+			width: col(7, 48px);
 			max-width: 570px;
 			margin: 0;
 			padding: 24px 0 24px 48px;
@@ -82,16 +81,14 @@
 		}
 
 		.header-index__buttons {
-			grid-column: 1 / 7;
-			align-self: center;
-			justify-self: start;
+			justify-content: flex-start;
 			margin: 0;
+			width: col(6, 48px);
 		}
 
 		.header-index__figure {
+			width: col(6, 48px);
 			position: relative;
-			grid-column: 7 / -1;
-			align-self: end;
 		}
 	}
 
