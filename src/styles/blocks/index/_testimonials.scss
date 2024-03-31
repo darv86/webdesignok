@@ -1,11 +1,14 @@
 @use '../../utils' as *;
-
-$-slider-p: 24px;
+@use 'sass:map';
 
 @mixin testimonials {
+	:root {
+		--slider-pinline: 24px;
+	}
+
 	.testimonials-slider {
 		margin-bottom: 24px;
-		padding: $-slider-p;
+		padding: 24px var(--slider-pinline);
 		border: 1px solid $gray90;
 		border-radius: 2px;
 		background-color: white;
@@ -13,7 +16,7 @@ $-slider-p: 24px;
 
 	.testimonials-slider__item {
 		width: 100%;
-		scroll-margin: $-slider-p;
+		scroll-margin: var(--slider-pinline);
 		opacity: 0.1;
 		transition: opacity $dur;
 		&.is-current {
@@ -44,28 +47,47 @@ $-slider-p: 24px;
 	.testimonials-slider__bullets {
 		display: flex;
 		justify-content: center;
-		gap: 48px;
+		align-items: center;
+		gap: 12px;
 	}
 
 	.testimonials-slider__bullet {
-		overflow: hidden;
-		width: 24px;
-		aspect-ratio: 1;
-		border-radius: 50%;
-		background-color: $gray90;
 		line-height: 0;
 	}
 
 	.testimonials-slider__bullet-btn {
-		opacity: 0;
-		transition: opacity $dur;
-		width: 100%;
+		transition:
+			scale $dur,
+			background-color $dur;
+		width: 12px;
 		aspect-ratio: 1;
 		border-radius: 50%;
-		background-color: $violet;
+		background-color: $gray90;
 		font-size: 0;
+		line-height: 0;
 		&.is-current {
-			opacity: 1;
+			scale: calc(14px / 12px);
+			background-color: $violet;
+		}
+	}
+
+	@media (min-width: map.get($bp, 'tablet1/3')) {
+		:root {
+			--slider-pinline: 48px;
+		}
+
+		.testimonials-slider {
+			padding: 48px var(--slider-pinline) 60px;
+		}
+	}
+
+	@media (min-width: map.get($bp, 'tablet2/3')) {
+		:root {
+			--slider-pinline: 194px;
+		}
+
+		.testimonials-slider {
+			padding: 48px var(--slider-pinline) 72px;
 		}
 	}
 }

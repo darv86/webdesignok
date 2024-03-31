@@ -1,4 +1,5 @@
 @use '../utils' as *;
+@use 'sass:map';
 
 @mixin footer {
 	.footer {
@@ -18,8 +19,6 @@
 			background-color: $violet;
 		}
 	}
-
-	// .footer__body { }
 
 	.footer-credentials {
 		display: flex;
@@ -53,17 +52,90 @@
 
 	.footer-section {
 		display: none;
-		// color: $gray90;
 	}
 
-	// .footer-section__title {
-	// 	max-width: max-content;
-	// 	margin-bottom: 24px;
-	// 	color: white;
-	// 	&::after {
-	// 		margin: 12px 0 0;
-	// 	}
-	// }
+	@media (min-width: map.get($bp, 'tablet2/3')) {
+		.footer {
+			padding: 96px 0 112px;
+		}
 
-	// .footer-section__link { }
+		.footer-body {
+			display: flex;
+			justify-content: space-between;
+			gap: 24px;
+		}
+
+		.footer-credentials {
+			align-items: flex-start;
+		}
+
+		.footer-credits {
+			text-align: left;
+		}
+
+		.footer-section {
+			display: block;
+			color: $gray90;
+		}
+
+		.footer-section-title {
+			max-width: max-content;
+			margin-bottom: 24px;
+			color: white;
+			&::after {
+				margin: 12px 0 0;
+			}
+		}
+
+		.footer-section-links {
+			display: grid;
+			gap: 14px;
+		}
+
+		.footer-section-link {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			line-height: 1;
+			@media (pointer: fine) {
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		.footer-nav-link {
+			&::before {
+				content: '';
+				border-top: calc(5px / 14px * 1em) solid transparent;
+				border-left: calc(10px / 14px * 1em) solid;
+				border-bottom: calc(5px / 14px * 1em) solid transparent;
+			}
+		}
+
+		.footer-contacts-link {
+			&::before {
+				font-size: 16px;
+			}
+		}
+
+		.footer-socials-links {
+			display: flex;
+			justify-content: space-between;
+			gap: 12px;
+		}
+
+		.footer-socials-link {
+			transition: border-color $dur;
+			border: 1px solid transparent;
+			border-radius: 50%;
+			font-size: 32px;
+			line-height: 0;
+			@media (pointer: fine) {
+				&:hover {
+					border-color: currentColor;
+				}
+			}
+		}
+	}
 }

@@ -16,6 +16,7 @@ $-dur: 0.4s;
 		left: 0;
 		z-index: 999;
 		isolation: isolate;
+		will-change: contents;
 		padding: 18px 0;
 		background-color: color.change($gray95, $alpha: 0.99);
 		border-right: 1px solid $gray90;

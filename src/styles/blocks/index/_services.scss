@@ -2,6 +2,7 @@
 @use 'sass:color';
 @use 'sass:string';
 @use 'sass:list';
+@use 'sass:map';
 
 $-services-items: (
 	'item1': (
@@ -80,5 +81,26 @@ $-services-items: (
 
 	.services-item__btn {
 		width: 100%;
+	}
+
+	@media (min-width: map.get($bp, 'tablet1/3')) {
+		.services-item {
+			width: col(6, 48px);
+		}
+
+		.services-item__btn {
+			margin-top: auto;
+		}
+	}
+
+	@media (min-width: map.get($bp, 'tablet2/3')) {
+		.services-list {
+			justify-content: space-between;
+			gap: 24px;
+		}
+
+		.services-item {
+			width: col(3, 24px);
+		}
 	}
 }

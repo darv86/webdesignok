@@ -1,6 +1,7 @@
 @use '../../utils' as *;
 @use 'sass:list';
 @use 'sass:string';
+@use 'sass:map';
 
 $-specializing-items: (
 	'item1': 'circle; #{$red}',
@@ -23,18 +24,25 @@ $-specializing-items: (
 		border: 1px solid $gray90;
 		border-radius: 2px;
 		background-color: white;
+		@media (pointer: fine) {
+			transition: filter $dur;
+			filter: grayscale(1);
+			&:hover {
+				filter: grayscale(0);
+			}
+		}
 	}
 
 	.specializing {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		gap: 24px;
 		padding-top: 24px;
 		border-top: 1px solid $gray95;
 	}
 
 	.specializing__title {
-		margin-bottom: 24px;
 		text-align: center;
 	}
 
@@ -54,6 +62,41 @@ $-specializing-items: (
 				@include shape-render(list.nth(string.split($item, '; '), 1));
 				color: string.unquote(list.nth(string.split($item, '; '), 2));
 			}
+		}
+	}
+
+	@media (min-width: map.get($bp, 'mobile3/3')) {
+		.myclients-list {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	@media (min-width: map.get($bp, 'tablet2/3')) {
+		.myclients-list {
+			grid-template-columns: repeat(6, 1fr);
+		}
+
+		.specializing-list {
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+	}
+
+	@media (min-width: map.get($bp, 'laptop1/3')) {
+		.specializing {
+			flex-direction: row;
+		}
+
+		.specializing__title {
+			text-align: left;
+		}
+
+		.specializing-list {
+			align-items: flex-start;
+			flex-grow: 1;
+			flex-wrap: nowrap;
+			gap: 16px;
 		}
 	}
 }

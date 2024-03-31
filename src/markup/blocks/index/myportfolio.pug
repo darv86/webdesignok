@@ -9,7 +9,7 @@ section.section-myportfolio.section.section-bg
 				- const myportfolioImgsName = { item1: 'axasVerticalPreview-min', item2: 'gymSquarePreview-min', item3: 'autobutikSquarePreview-min', item4: 'lazHrizontalPreview-min' };
 				each item, key in self.myportfolio
 					if key.startsWith('item')
-						li.myportfolio-item
+						li.myportfolio-item(class=`myportfolio-${key}`)
 							figure.myportfolio-item__figure
 								img.myportfolio-item__img.img(
 									src=`/media/${myportfolioImgsName[key]}.jpg`

@@ -42,7 +42,7 @@
 .wrapper {
 	--pinline: 12px;
 	width: 100%;
-	max-width: calc(1120px + var(--pinline) * 2);
+	max-width: calc(1140px + var(--pinline) * 2);
 	margin: 0 auto;
 	padding: 0 var(--pinline);
 }
@@ -137,7 +137,8 @@
 }
 
 .section__desc {
-	margin-bottom: 48px;
+	max-width: 442px;
+	margin: 0 auto 48px;
 	text-align: center;
 }
 
@@ -177,5 +178,17 @@
 @media (min-width: map.get($bp, 'tablet3/3')) {
 	.title-1 {
 		font-size: calc(44.8px / 16px * 1rem);
+	}
+
+	.title-2 {
+		font-size: calc(33.6px / 16px * 1rem);
+	}
+
+	.title-3 {
+		font-size: calc(21px / 16px * 1rem);
+	}
+
+	.subtitle {
+		font-size: calc(23.8px / 16px * 1rem);
 	}
 }
