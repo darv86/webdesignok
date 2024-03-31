@@ -40,9 +40,13 @@
 		font-size: 32px;
 	}
 
-	.aside-scrolltop {
+	.aside-scrollup {
 		width: 32px;
 		margin-top: auto;
+		transition: rotate $dur;
+		&[up] {
+			rotate: -180deg;
+		}
 		&::before {
 			content: '';
 			rotate: 135deg;
