@@ -17,12 +17,12 @@
 		text-align: center;
 	}
 
-	.myportfolio-item__figure {
+	.myportfolio-item-figure {
 		position: relative;
 		isolation: isolate;
 	}
 
-	.myportfolio-item__img {
+	.myportfolio-item-img {
 		object-fit: cover;
 		object-position: top;
 		@media (pointer: fine) {
@@ -36,7 +36,7 @@
 		}
 	}
 
-	.myportfolio-item__figcaption {
+	.myportfolio-item-figcaption {
 		padding: 48px 24px;
 		background-color: color.change(white, $alpha: 0.92);
 		backdrop-filter: blur(5px);
@@ -60,13 +60,13 @@
 		}
 	}
 
-	.myportfolio-item__title {
+	.myportfolio-item-title {
 		display: inline-block;
 		align-self: center;
 		margin-bottom: 12px;
 	}
 
-	.myportfolio-item__desc {
+	.myportfolio-item-desc {
 		margin-bottom: 24px;
 	}
 
@@ -78,18 +78,18 @@
 		}
 
 		@media (pointer: coarse) {
-			.myportfolio-item__figure {
+			.myportfolio-item-figure {
 				display: flex;
 				flex-direction: column;
 			}
 
-			.myportfolio-item__figcaption {
+			.myportfolio-item-figcaption {
 				display: flex;
 				flex-direction: column;
 				flex-grow: 1;
 			}
 
-			.myportfolio-item__btn {
+			.myportfolio-item-btn {
 				margin-top: auto;
 			}
 		}
@@ -121,14 +121,14 @@
 		}
 
 		@media (pointer: coarse) {
-			.myportfolio-item__img {
+			.myportfolio-item-img {
 				position: absolute;
 				z-index: -1;
 				inset: 0;
 				height: 100%;
 			}
 
-			.myportfolio-item__figcaption {
+			.myportfolio-item-figcaption {
 				pointer-events: none;
 				transition: opacity $dur;
 				display: flex;
@@ -145,14 +145,14 @@
 				}
 			}
 
-			.myportfolio-item__btn {
+			.myportfolio-item-btn {
 				margin-top: initial;
 			}
 		}
 	}
 
 	@media (min-width: map.get($bp, 'tablet3/3')) {
-		.myportfolio-item__figcaption {
+		.myportfolio-item-figcaption {
 			padding: 48px;
 		}
 	}

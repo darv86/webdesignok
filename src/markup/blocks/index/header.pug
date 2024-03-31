@@ -1,20 +1,20 @@
 header.header-index.header.section-bg
 	.wrapper
-		.header-index__body
-			h1.header-index__title.title.title-1
-				span.header-index__title-word= self.mainscreen.title.text1[curlang]
-				span.header-index__title-word= self.mainscreen.title.text2[curlang]
-				span.header-index__title-word= self.mainscreen.title.text3[curlang]
+		.header-index-body
+			h1.header-index-title.title.title-1
+				span.header-index-title-word= self.mainscreen.title.text1[curlang]
+				span.header-index-title-word= self.mainscreen.title.text2[curlang]
+				span.header-index-title-word= self.mainscreen.title.text3[curlang]
 
-			p.header-index__desc= self.mainscreen.desc[curlang]
+			p.header-index-desc= self.mainscreen.desc[curlang]
 
-			.header-index__buttons
-				a.header-index__btn.btn.btn-1(href=`${basedir}contacts/`)= self.btn.contact[curlang]
-				a.header-index__btn.btn.btn-2(
+			.header-index-buttons
+				a.header-index-btn.btn.btn-1(href=`${basedir}contacts/`)= self.btn.contact[curlang]
+				a.header-index-btn.btn.btn-2(
 					href='/media/DesignerCV.pdf'
 					download='Dima-Radushev-designer-developer-cv'
 				)= self.btn.download[curlang]
 
-			figure.header-index__figure
-				img.header-index__img(src='/media/photo-radushev-min.png' alt='photo of Dima Radushev')
-				figcaption.header-index__figcaption(hidden)= self.info.name[curlang]
+			figure.header-index-figure
+				img.header-index-img(src='/media/photo-radushev-min.png' alt='photo of Dima Radushev')
+				figcaption.header-index-figcaption(hidden)= self.info.name[curlang]

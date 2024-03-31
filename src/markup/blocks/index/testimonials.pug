@@ -1,29 +1,29 @@
 section.section-testimonials.section.section-bg
 	.wrapper
-		.section__body
-			h2.section-testimonials__title.section__title.title.title-2.title-line= self.testimonials.title[curlang]
+		.section-body
+			h2.section-testimonials-title.section-title.title.title-2.title-line= self.testimonials.title[curlang]
 
-			p.section-testimonials__desc.section__desc= self.testimonials.desc[curlang]
+			p.section-testimonials-desc.section-desc= self.testimonials.desc[curlang]
 
 			ul.testimonials-slider.snap-slider(data-snap-slider='testimonials')
 				- const testimonialsImgsName = { item1: 'veronikaTimpfeevaClient', item2: 'rustamKhakimovClient', item3: 'olegDudkoClient' };
 				each item, key in self.testimonials
 					if key.startsWith('item')
-						li.testimonials-slider__item.snap-slide(class=`testimonials-slider__${key}`)
+						li.testimonials-slider-item.snap-slide(class=`testimonials-slider-${key}`)
 							article.testimonials-item
-								img.testimonials-item__img.img(
+								img.testimonials-item-img.img(
 									src=`/media/${testimonialsImgsName[key]}.jpg`
 									loading='lazy'
 									alt=`photo of a client ${key.slice(-1)}`
 								)
-								h2.testimonials-item__title.title.title-3= item.title[curlang]
+								h2.testimonials-item-title.title.title-3= item.title[curlang]
 
-								p.testimonials-item__caption= item.caption[curlang]
+								p.testimonials-item-caption= item.caption[curlang]
 
-								p.testimonials-item__desc.subtitle= item.desc[curlang]
+								p.testimonials-item-desc.subtitle= item.desc[curlang]
 
-			ul.testimonials-slider__bullets.snap-slider-nav(data-snap-slider-nav='testimonials')
+			ul.testimonials-slider-bullets.snap-slider-nav(data-snap-slider-nav='testimonials')
 				- let i = 1;
 				each item, key in self.testimonials
 					if key.startsWith('item')
-						il.testimonials-slider__bullet: button.testimonials-slider__bullet-btn.snap-indicator
+						il.testimonials-slider-bullet: button.testimonials-slider-bullet-btn.snap-indicator

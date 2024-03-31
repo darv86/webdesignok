@@ -6,14 +6,14 @@
 		padding-top: 7vh;
 	}
 
-	.header-index__title {
+	.header-index-title {
 		display: flex;
 		flex-direction: column;
 		margin-bottom: 24px;
 		text-align: center;
 	}
 
-	.header-index__desc {
+	.header-index-desc {
 		margin-bottom: 36px;
 		line-height: 2;
 		&::before {
@@ -26,21 +26,21 @@
 		}
 	}
 
-	.header-index__buttons {
+	.header-index-buttons {
 		display: flex;
 		flex-direction: column;
 		gap: 18px;
 		margin-bottom: 48px;
 	}
 
-	.header-index__img {
+	.header-index-img {
 		display: block;
 		height: 65vmin;
 		margin: 0 auto;
 	}
 
 	@media (min-width: map.get($bp, 'mobile3/3')) {
-		.header-index__buttons {
+		.header-index-buttons {
 			flex-direction: row;
 			justify-content: center;
 			gap: 24px;
@@ -48,7 +48,7 @@
 	}
 
 	@media (min-width: map.get($bp, 'tablet1/3')) {
-		.header-index__body {
+		.header-index-body {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: space-between;
@@ -58,13 +58,13 @@
 			height: 100%;
 		}
 
-		.header-index__title {
+		.header-index-title {
 			margin: 0;
 			width: col(5, 48px);
 			text-align: left;
 		}
 
-		.header-index__desc {
+		.header-index-desc {
 			position: relative;
 			width: col(7, 48px);
 			max-width: 570px;
@@ -80,13 +80,13 @@
 			}
 		}
 
-		.header-index__buttons {
+		.header-index-buttons {
 			justify-content: flex-start;
 			margin: 0;
 			width: col(6, 48px);
 		}
 
-		.header-index__figure {
+		.header-index-figure {
 			width: col(6, 48px);
 			position: relative;
 		}
@@ -99,7 +99,7 @@
 		}
 
 		@media (pointer: fine) {
-			.header-index__figcaption {
+			.header-index-figcaption {
 				position: absolute;
 				right: 16px;
 				bottom: 16vmin;
@@ -108,7 +108,7 @@
 				transition: color $dur;
 				display: inline-block;
 				color: $gray90;
-				:where(.header-index__figure):hover & {
+				:where(.header-index-figure):hover & {
 					color: $gray50;
 				}
 			}

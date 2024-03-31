@@ -1,13 +1,13 @@
 section.section-results.section
 	.wrapper
-		.section__body
-			h2.section__title.title.title-2.title-line= self.results.title[curlang]
+		.section-body
+			h2.section-title.title.title-2.title-line= self.results.title[curlang]
 
-			p.section__desc= self.results.desc[curlang]
+			p.section-desc= self.results.desc[curlang]
 
 			ul.results-list
 				each item, key in self.results
 					if key.startsWith('item')
 						li.results-item(class=`icon-results-${key}`)
-							p.results-item__subtitle.subtitle!= item.title[curlang]
-							p.results-item__desc.title.title-2!= item.desc[curlang]
+							p.results-item-subtitle.subtitle!= item.title[curlang]
+							p.results-item-desc.title.title-2!= item.desc[curlang]

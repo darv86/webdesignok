@@ -43,7 +43,7 @@ $-services-items: (
 	@each $key-item, $item in $-services-items {
 		.services-#{$key-item} {
 			@each $key-desc, $desc in $item {
-				.services-item__#{$key-desc} {
+				.services-item-#{$key-desc} {
 					&::before {
 						@include shape-render(list.nth(string.split($desc, '; '), 1));
 						color: string.unquote(list.nth(string.split($desc, '; '), 2));
@@ -53,7 +53,7 @@ $-services-items: (
 		}
 	}
 
-	.services-item__img-box {
+	.services-item-img-box {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -63,23 +63,23 @@ $-services-items: (
 		background-color: color.change($violet, $alpha: 0.08);
 	}
 
-	.services-item__title {
+	.services-item-title {
 		margin-bottom: 24px;
 		text-transform: uppercase;
 	}
 
-	.services-item__desc-list {
+	.services-item-desc-list {
 		display: flex;
 		flex-direction: column;
 		gap: 24px;
 		margin-bottom: 32px;
 	}
 
-	.services-item__desc {
+	.services-item-desc {
 		gap: 12px;
 	}
 
-	.services-item__btn {
+	.services-item-btn {
 		width: 100%;
 	}
 
@@ -88,7 +88,7 @@ $-services-items: (
 			width: col(6, 48px);
 		}
 
-		.services-item__btn {
+		.services-item-btn {
 			margin-top: auto;
 		}
 	}

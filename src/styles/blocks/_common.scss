@@ -26,7 +26,7 @@
 	text-rendering: optimizeLegibility;
 }
 
-.body__inner {
+.body-inner {
 	position: relative;
 	overflow-x: hidden;
 	display: flex;
@@ -130,13 +130,13 @@
 	padding: 60px 0 72px;
 }
 
-.section__title {
+.section-title {
 	max-width: max-content;
 	margin: 0 auto 24px;
 	text-align: center;
 }
 
-.section__desc {
+.section-desc {
 	max-width: 442px;
 	margin: 0 auto 48px;
 	text-align: center;

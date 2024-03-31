@@ -1,38 +1,38 @@
 nav.nav
-	.nav__body
-		.nav__header
-			a.nav__logo-link(href=basedir)
-				img.nav__logo-img(src='/media/logo-l-Radushev.svg' alt='Dima Radushev logo')
+	.nav-body
+		.nav-header
+			a.nav-logo-link(href=basedir)
+				img.nav-logo-img(src='/media/logo-l-Radushev.svg' alt='Dima Radushev logo')
 			button.nav-toggler
-				span.nav-toggler__lines
+				span.nav-toggler-lines
 
 		.nav-menu
 			each menuItemText, menuItemName in self.nav
 				if menuItemName === 'home'
-					a.nav__item.nav__link.icon-home(class={ 'nav__link--active': curpage === '/' } href=basedir)
-						span.nav__item-span= menuItemText[curlang]
+					a.nav-item.nav-link.icon-home(class={ 'nav-link--active': curpage === '/' } href=basedir)
+						span.nav-item-span= menuItemText[curlang]
 				else
-					a.nav__item.nav__link(
-						class=[`icon-${menuItemName}`, { 'nav__link--active': curpage === menuItemName }]
+					a.nav-item.nav-link(
+						class=[`icon-${menuItemName}`, { 'nav-link--active': curpage === menuItemName }]
 						href=`${basedir}${menuItemName}.html`
 					)
-						span.nav__item-span= menuItemText[curlang]
+						span.nav-item-span= menuItemText[curlang]
 
 		address.nav-contact-info
-			a.nav__item.nav__link.icon-phone(href=`tel:${self.info.phone[curlang]}`)
-				span.nav__item-span= self.info.phone[curlang]
-			a.nav__item.nav__link.icon-mail(href=`mailto:${self.info.email[curlang]}`)
-				span.nav__item-span= self.info.email[curlang]
+			a.nav-item.nav-link.icon-phone(href=`tel:${self.info.phone[curlang]}`)
+				span.nav-item-span= self.info.phone[curlang]
+			a.nav-item.nav-link.icon-mail(href=`mailto:${self.info.email[curlang]}`)
+				span.nav-item-span= self.info.email[curlang]
 
 		.nav-langs(data-select)
-			button.nav__item.nav-langs__btn(class=`flag-${curlang}` data-shower)
-			.nav-langs__options
+			button.nav-item.nav-langs-btn(class=`flag-${curlang}` data-shower)
+			.nav-langs-options
 				each transl, lang in self.langs
-					a.nav__item.nav-langs__option(
+					a.nav-item.nav-langs-option(
 						class=`flag-${lang}`
 						data-option
 						data-selected=lang === curlang ? true : false
 						hidden=lang === curlang ? true : false
 						href=`/${lang === deflang ? '' : lang + '/'}${curpage === '/' ? '' : curpage + '.html'}`
 					)
-						span.nav__item-span= transl
+						span.nav-item-span= transl
