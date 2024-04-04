@@ -63,11 +63,22 @@
 	padding: 12px 48px;
 	background-color: $gray10;
 	border-radius: 2px;
-	transition: background-color 0.2s;
+	transition:
+		translate 0.2s,
+		background-color 0.2s;
 	color: white;
 	@media (pointer: coarse) {
 		&:active {
 			background-color: $violet;
+		}
+	}
+	@media (pointer: fine) {
+		&:hover {
+			translate: 0 -2px;
+			background-color: $violet;
+		}
+		&:active {
+			translate: 0;
 		}
 	}
 }
@@ -83,6 +94,11 @@
 	}
 	@media (pointer: coarse) {
 		&:active {
+			text-decoration: underline;
+		}
+	}
+	@media (pointer: fine) {
+		&:hover {
 			text-decoration: underline;
 		}
 	}
@@ -124,6 +140,15 @@
 	font-size: calc(20.4px / 16px * 1rem);
 	line-height: 1;
 	text-wrap: balance;
+}
+
+.header-page {
+	padding-top: 96px;
+}
+
+.header-page-title {
+	text-align: center;
+	color: $gray90;
 }
 
 .section {
