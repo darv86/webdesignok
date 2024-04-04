@@ -1,4 +1,52 @@
 constant,content
+,UI
+btn.contact,Contact me
+btn.order,Order service
+btn.choose,Choose service
+btn.download,Download CV
+btn.viewProject,View project
+btn.viewPortfolio,View portfolio 
+nav.home,Home
+nav.services,Services
+nav.services.web-design,Web design
+nav.services.web-development,Web development
+nav.services.graphic-design,Graphic design
+nav.portfolio,Portfolio
+nav.portfolio.axas-project,Axas project
+nav.portfolio.gym-devices,Gym devices
+nav.portfolio.auto-boutique,Auto boutique
+nav.portfolio.laz-factory,LAZ factory
+nav.skills,Skills
+nav.experience,Experience
+nav.education,Education
+nav.contacts,Contacts
+langs,English
+,
+,FOOTER
+footer.credits,Designed & Developed by Dima Radushev
+footer.services.title,Services
+footer.aboutme.title,About me
+footer.contacts.title,Contacts
+,
+,TITLE
+title.index,Web design & Development
+title.contacts,Contacts of Dima Radushev
+title.education,Education of Dima Radushev
+,
+,INFO
+info.phone,+38(093)8366030
+info.email,hi@webdesignok.com
+info.name,Dima Radushev
+info.url,webdesignOK.com
+info.facebook,facebook.com/dimarad86
+info.pinterest,pinterest.com/dimaradushev
+info.skype,Darv86
+info.telegram,@DimaRadushev
+info.behance,behance.net/dimarad
+info.github,github.com/darv86
+,
+,
+,
 ,Page: INDEX
 ,MAIN SCREEN
 mainscreen.title.text1,Human
@@ -87,49 +135,72 @@ testimonials.item3.title,Oleg Dudko
 testimonials.item3.caption,CEO of Nicepage
 testimonials.item3.desc,"A competent professional, immediately figured out the task and helped identify several usability problems. Very careful attitude to even the simplest tasks. Great job! Recommended!"
 ,
-,UI
-btn.contact,Contact me
-btn.order,Order service
-btn.choose,Choose service
-btn.download,Download CV
-btn.view,View project
-nav.home,Home
-nav.services,Services
-nav.services.web-design,Web design
-nav.services.web-development,Web development
-nav.services.graphic-design,Graphic design
-nav.portfolio,Portfolio
-nav.portfolio.axas-project,Axas project
-nav.portfolio.gym-devices,Gym devices
-nav.portfolio.auto-boutique,Auto boutique
-nav.portfolio.laz-factory,LAZ factory
-nav.skills,Skills
-nav.experience,Experience
-nav.education,Education
-nav.contacts,Contacts
-langs,English
+,Page: EDUCATION
+,MAIN SECTION
+education.item1.time,Now
+education.item1.title,Back-end
+education.item1.institution,Institution: Mentored education
+education.item1.spec,Specialization: Software engineering
+education.item1.skills.item1,Node.js
+education.item1.skills.item2,Patterns
+education.item1.skills.item3,Architecture
+education.item2.time,2021
+education.item2.title,Front-end
+education.item2.institution,Institution: Online course
+education.item2.spec,Specialization: EcmaScript expert
+education.item2.skills.item1,Prototype
+education.item2.skills.item2,Class
+education.item2.skills.item3,Modules
+education.item3.time,2018
+education.item3.title,UI/UX design
+education.item3.institution,Institution: Self-education
+education.item3.spec,Specialization: Full stack web designer
+education.item3.skills.item1,3D
+education.item3.skills.item2,Animation
+education.item3.skills.item3,Drawing
+education.item4.time,2017
+education.item4.title,Web Design
+education.item4.institution,Institution: National Aviation University
+education.item4.spec,Specialization: Web design and web sites support
+education.item4.skills.item1,Usability
+education.item4.skills.item2,Design
+education.item4.skills.item3,HTML
+education.item4.skills.item4,CSS
+education.item1.time,2014
+education.item1.title,Development
+education.item1.institution,Institution: Interregional Academy of Personnel Management
+education.item1.spec,Specialization: Development of computer programs
+education.item1.skills.item1,Java
+education.item1.skills.item2,OOP
+education.item1.skills.item3,Database
+education.item1.skills.item4,IDE
+education.item5.time,2012
+education.item5.title,Graphic Design
+education.item5.institution,Institution: Institute of Postgraduate Education “Ukrsteno”
+education.item5.spec,Specialization: Computer technology in advertising and publishing
+education.item5.skills.item1,Visualization
+education.item5.skills.item2,Identity
+education.item5.skills.item3,Typography
+education.item6.time,2009
+education.item6.title,Marketing
+education.item6.institution,Institution: Kiev National Economic University
+education.item6.spec,Specialization: Master of marketing
+education.item6.skills.item1,Research
+education.item6.skills.item2,Advertising
+education.item6.skills.item3,PR
+education.item6.skills.item4,Promotion
+education.item7.time,2003
+education.item7.title,High School
+education.item7.institution,Institution: School of general education #129
+education.item7.spec,Specialization: Secondary education
+education.item7.skills.item1,English
+education.item7.skills.item2,Grammar
+education.item7.skills.item3,Math
 ,
-,FOOTER
-footer.credits,Designed & Developed by Dima Radushev
-footer.services.title,Services
-footer.aboutme.title,About me
-footer.contacts.title,Contacts
-,
-,
-,
-,
-,TITLE
-title.index,Web design & Development
-title.contacts,Contacts of Dima Radushev
-,
-,INFO
-info.phone,+38(093)8366030
-info.email,hi@webdesignok.com
-info.name,Dima Radushev
-info.url,webdesignOK.com
-info.facebook,facebook.com/dimarad86
-info.pinterest,pinterest.com/dimaradushev
-info.skype,Darv86
-info.telegram,@DimaRadushev
-info.behance,behance.net/dimarad
-info.github,github.com/darv86
+,BOOKS
+education.books.title,Books educate me
+education.books.desc,"In the books I found many interesting things about composition, the effect of color, and the power of typography. Here are some of them."
+education.books.item1,Wassily Kandinsky - Point and line to plane
+education.books.item2,Johann Wolfgang Goathe - Theory of colours
+education.books.item3,Johannes Itten - Design and form
+education.books.item4,Johannes Itten - The art of color

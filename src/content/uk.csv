@@ -1,8 +1,55 @@
 constant,content
+,UI
+btn.contact,Зв'яжіться зі мною
+btn.order,Замовляйте сервіс
+btn.choose,Виберіть сервіс
+btn.download,Завантажте резюме
+btn.viewProject,Переглянути проект
+btn.viewPortfolio,Переглянути портфоліо
+nav.home,Головна
+nav.services,Послуги
+nav.services.web-design,Веб дизайн
+nav.services.web-development,Веб розробка
+nav.services.graphic-design,Графічний дизайн
+nav.portfolio,Портфоліо
+nav.portfolio.axas-project,Проект Axas
+nav.portfolio.gym-devices,Gym devices
+nav.portfolio.auto-boutique,Авто бутік
+nav.portfolio.laz-factory,ЛАЗ завод
+nav.skills,Навички
+nav.experience,Досвід
+nav.education,Освіта
+nav.contacts,Контакти
+langs,Українська
+,
+,FOOTER
+footer.credits,Дизайн і розробка Дмитром Радушевим
+footer.services.title,Послуги
+footer.aboutme.title,Про мене
+footer.contacts.title,Контакти
+,
+,TITLE
+title.index,Веб дизайн & розробка
+title.contacts,Контакти Дмитра Радушева
+title.education,Освіта Дмитра Радушева
+,
+,INFO
+info.phone,+38(093)8366030
+info.email,hi@webdesignok.com
+info.name,Дмитро Радушев
+info.url,webdesignOK.com
+info.facebook,facebook.com/dimarad86
+info.pinterest,pinterest.com/dimaradushev
+info.skype,Darv86
+info.telegram,@DimaRadushev
+info.behance,behance.net/dimarad
+info.github,github.com/darv86
+,
+,
 ,Page: INDEX
 ,MAIN SCREEN
 mainscreen.title.text1,Людина
-mainscreen.title.text2,Визайнер
+mainscreen.title.text2,Дизайнер
 mainscreen.title.text3,Розробник
 mainscreen.desc,"Радий вас тут зустріти. Мене звати Дмитро Радушев. Я створюю візуальні комунікації з людьми и для людей. Розробив дизайн и сам сайт, щоб ви з легкітю знайшли інформацію про мої навички та послуги. Маю надію, що ця подорож буде корисною для вас."
 mainscreen.caption,Дмитро Радушев
@@ -53,7 +100,7 @@ advantages.item5.desc,Дотримуюсь дедлайнів
 advantages.item6.desc,Результат з любов'ю
 ,
 ,MYPORTFOLIO
-myportfolio.title,Дивіться моє портфоліо
+myportfolio.title,Перегляньте моє портфоліо
 myportfolio.desc,"Тут ви можете знайти деякі проекти, де я брав участь. Відвідайте сторінку з деталями, щоб знайти більше інформації про проект, який вам подобається."
 myportfolio.item1.title,Проект Axas
 myportfolio.item1.desc,Веб дизайн цільової сторінки для стартап-компанії з розробки додатків.
@@ -87,47 +134,72 @@ testimonials.item3.title,Олег Дудко
 testimonials.item3.caption,Генеральний директор Nicepage
 testimonials.item3.desc,Грамотний фахівець відразу розібрався із завданням і допоміг виявити кілька проблем юзабіліті. Дуже уважне ставлення навіть до найпростіших справ. Чудова робота! Рекомендую!
 ,
-,UI
-btn.contact,Зв'яжіться зі мною
-btn.order,Замовляйте сервіс
-btn.choose,Виберіть сервіс
-btn.download,Завантажте резюме
-btn.view,Переглянути проект
-nav.home,Головна
-nav.services,Послуги
-nav.services.web-design,Веб дизайн
-nav.services.web-development,Веб розробка
-nav.services.graphic-design,Графічний дизайн
-nav.portfolio,Портфоліо
-nav.portfolio.axas-project,Проект Axas
-nav.portfolio.gym-devices,Gym devices
-nav.portfolio.auto-boutique,Авто бутік
-nav.portfolio.laz-factory,ЛАЗ завод
-nav.skills,Навички
-nav.experience,Досвід
-nav.education,Освіта
-nav.contacts,Контакти
-langs,Українська
 ,
-,FOOTER
-footer.credits,Дизайн і розробка Дмитром Радушевим
-footer.services.title,Послуги
-footer.aboutme.title,Про мене
-footer.contacts.title,Контакти
+,MAIN SECTION
+education.item1.time,Зараз
+education.item1.title,Back-end
+education.item1.institution,Заклад: Менторська освіта
+education.item1.spec,Спеціалізація: Інженерія програмного забезпечення
+education.item1.skills.item1,Node.js
+education.item1.skills.item2,Патерни
+education.item1.skills.item3,Архітектура
+education.item2.time,2021
+education.item2.title,Front-end
+education.item2.institution,Заклад: Онлайн курс
+education.item2.spec,Спеціалізація: Експерт EcmaScript
+education.item2.skills.item1,Прототип
+education.item2.skills.item2,Клас
+education.item2.skills.item3,Модулі
+education.item3.time,с
+education.item3.title,UI/UX дизайн
+education.item3.institution,Заклад: Самоосвіта
+education.item3.spec,Спеціалізація: Full stack веб-дизайнер
+education.item3.skills.item1,3D
+education.item3.skills.item2,Анімація
+education.item3.skills.item3,Малювання
+education.item4.time,2017
+education.item4.title,Веб дизайн
+education.item4.institution,Установа: Національний авіаційний університет
+education.item4.spec,Спеціалізація: Веб-дизайн та підтримка веб-сайтів
+education.item4.skills.item1,Юзабіліті
+education.item4.skills.item2,Дизайн
+education.item4.skills.item3,HTML
+education.item4.skills.item4,CSS
+education.item1.time,2014
+education.item1.title,Розробка
+education.item1.institution,Установа: Міжрегіональна академія управління персоналом
+education.item1.spec,Спеціалізація: Розробка комп'ютерних програм
+education.item1.skills.item1,Java
+education.item1.skills.item2,ООП
+education.item1.skills.item3,База даних
+education.item1.skills.item4,IDE
+education.item5.time,2012
+education.item5.title,Графічний дизайн
+education.item5.institution,Заклад: Інститут післядипломної освіти «Укртено»
+education.item5.spec,Спеціалізація: Комп'ютерні технології в рекламі та видавничій справі
+education.item5.skills.item1,Візуалізація
+education.item5.skills.item2,Ідентика
+education.item5.skills.item3,Типографіка
+education.item6.time,2009
+education.item6.title,Маркетинг
+education.item6.institution,Установа: Київський національний економічний університет
+education.item6.spec,Спеціалізація: магістр маркетингу
+education.item6.skills.item1,Дослідження
+education.item6.skills.item2,Реклама
+education.item6.skills.item3,PR
+education.item6.skills.item4,Просування
+education.item7.time,2003
+education.item7.title,Вища школа
+education.item7.institution,Заклад: Загальноосвітня школа №129
+education.item7.spec,Спеціалізація: Освіта середня
+education.item7.skills.item1,Англійська
+education.item7.skills.item2,Граматика
+education.item7.skills.item3,Математика
 ,
-,
-,TITLE
-title.index,Веб дизайн & розробка
-title.contacts,Контакти Дмитра Радушева
-,
-,INFO
-info.phone,+38(093)8366030
-info.email,hi@webdesignok.com
-info.name,Дмитро Радушев
-info.url,webdesignOK.com
-info.facebook,facebook.com/dimarad86
-info.pinterest,pinterest.com/dimaradushev
-info.skype,Darv86
-info.telegram,@DimaRadushev
-info.behance,behance.net/dimarad
-info.github,github.com/darv86
+,BOOKS
+education.books.title,Книги мене виховують
+education.books.desc,"У книгах я знайшов багато цікавого про композицію, ефект кольору та силу типографіки. Ось деякі з них."
+education.books.item1,Василь Кандинський - Точка і пряма на площині
+education.books.item2,Йоганн Вольфганг Гете - Теорія кольорів
+education.books.item3,Йоганнес Іттен - Дизайн і форма
+education.books.item4,Йоганнес Іттен - Мистецтво кольору
