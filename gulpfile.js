@@ -13,7 +13,6 @@ import webpack from 'webpack-stream';
 import imagemin from 'gulp-imagemin';
 import webp from 'gulp-webp';
 import webpHtml from 'gulp-webp-html-nosvg';
-import newer from 'gulp-newer';
 import gulpif from 'gulp-if';
 import font2woff2 from 'gulp-ttf2woff2';
 import realFavicon from 'gulp-real-favicon';
@@ -75,12 +74,8 @@ export const scripts = () => {
 
 export const media = () => {
 	return src([`${paths.root.src}${paths.media.src[0]}`, `!${paths.root.src}${paths.media.src[1]}`])
-		.pipe(newer(paths.root.dest + paths.media.dest))
 		.pipe(webp())
-		.pipe(dest(paths.root.dest + paths.media.dest))
-		.pipe(src(paths.root.src + paths.media.src))
-		.pipe(newer(paths.root.dest + paths.media.dest))
-		.pipe(gulpif(isRelease, imagemin()))
+		.pipe(imagemin())
 		.pipe(dest(paths.root.dest + paths.media.dest))
 		.pipe(gulpif(!isRelease, browsersync.stream()));
 };
@@ -192,7 +187,6 @@ export const watcher = () => {
 	watch(paths.root.src + paths.markup.watch, markup);
 	watch(paths.root.src + paths.styles.watch, styles);
 	watch(paths.root.src + paths.scripts.watch, scripts);
-	watch(paths.root.src + paths.media.watch, media);
 };
 
 export const release = series(
