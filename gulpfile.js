@@ -26,10 +26,9 @@ import webpackConfig from './webpack.config.js';
 import siteConfig from './siteConfig.js';
 
 const { isRelease, paths, isCompressing, colors, ftp } = siteConfig;
-const { src, dest, series, parallel, watch, lastRun } = gulp;
+const { src, dest, series, parallel, watch } = gulp;
 const sass = gulpSass(dartSass);
 
-let content;
 export const getContent = async () => {
 	const langsArr = (await readdir(paths.root.src + paths.content.src)).map(file => path.parse(file).name),
 		[rawJsonArr, constantsArr, contentArr] = [[], [], []];
@@ -42,13 +41,12 @@ export const getContent = async () => {
 			for (const lang of langsArr) constantsArr.push(`${constant}.${lang}`);
 			for (const lang of content) contentArr.push(lang.content);
 		});
-	content = _.zipObjectDeep(constantsArr, contentArr);
-	return content;
+	return _.zipObjectDeep(constantsArr, contentArr);
 };
 
-export const markup = () => {
+export const markup = async () => {
 	return src(paths.root.src + paths.markup.src)
-		.pipe(pug({ pretty: isCompressing.html ? false : '	', data: { ...content, colors }, doctype: 'html', self: true }))
+		.pipe(pug({ pretty: isCompressing.html ? false : '	', data: { ...(await getContent()), colors }, doctype: 'html', self: true }))
 		.pipe(webpHtml())
 		.pipe(dest(paths.root.dest + paths.markup.dest))
 		.pipe(gulpif(!isRelease, browsersync.stream()));
@@ -75,7 +73,7 @@ export const scripts = () => {
 export const media = () => {
 	return src([`${paths.root.src}${paths.media.src[0]}`, `!${paths.root.src}${paths.media.src[1]}`])
 		.pipe(webp())
-		.pipe(imagemin())
+		.pipe(gulpif(isRelease, imagemin()))
 		.pipe(dest(paths.root.dest + paths.media.dest))
 		.pipe(gulpif(!isRelease, browsersync.stream()));
 };
