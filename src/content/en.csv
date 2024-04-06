@@ -147,7 +147,7 @@ education.item2.title,Front-end
 education.item2.institution,Institution: Online course
 education.item2.spec,Specialization: EcmaScript expert
 education.item2.skills.item1,Prototype
-education.item2.skills.item2,Class
+education.item2.skills.item2,EventLoop
 education.item2.skills.item3,Modules
 education.item3.time,2018
 education.item3.title,UI/UX design
@@ -198,7 +198,8 @@ education.item8.skills.item3,Math
 ,BOOKS
 education.books.title,Books educate me
 education.books.desc,"In the books I found many interesting things about composition, the effect of color, and the power of typography. Here are some of them."
-education.books.item1,Wassily Kandinsky - Point and line to plane
-education.books.item2,Johann Wolfgang Goathe - Theory of colours
-education.books.item3,Johannes Itten - Design and form
+education.books.item1,Johann Wolfgang Goathe - Theory of colours
+education.books.item2,Johannes Itten - Design and form
+education.books.item3,Ethan Marcotte - Responsive web design
 education.books.item4,Johannes Itten - The art of color
+education.books.item5,Wassily Kandinsky - Point and line to plane

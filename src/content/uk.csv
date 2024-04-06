@@ -147,7 +147,7 @@ education.item2.title,Front-end
 education.item2.institution,Заклад: Онлайн курс
 education.item2.spec,Спеціалізація: Експерт EcmaScript
 education.item2.skills.item1,Прототип
-education.item2.skills.item2,Клас
+education.item2.skills.item2,EventLoop
 education.item2.skills.item3,Модулі
 education.item3.time,2018
 education.item3.title,UI/UX дизайн
@@ -198,7 +198,8 @@ education.item8.skills.item3,Математика
 ,BOOKS
 education.books.title,Книги мене виховують
 education.books.desc,"У книгах я знайшов багато цікавого про композицію, ефект кольору та силу типографіки. Ось деякі з них."
-education.books.item1,Василь Кандинський - Точка і пряма на площині
-education.books.item2,Йоганн Вольфганг Гете - Теорія кольорів
-education.books.item3,Йоганнес Іттен - Дизайн і форма
+education.books.item1,Йоганн Вольфганг Гете - Теорія кольорів
+education.books.item2,Йоганнес Іттен - Дизайн і форма
+education.books.item3,Ітан Маркотт - Респонсивний веб дизайн
 education.books.item4,Йоганнес Іттен - Мистецтво кольору
+education.books.item5,Василь Кандинський - Точка і пряма на площині

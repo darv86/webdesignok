@@ -147,7 +147,7 @@ education.item2.title,Front-end
 education.item2.institution,Institución: Curso en línea
 education.item2.spec,Especialización: experto en EcmaScript
 education.item2.skills.item1,Prototipo
-education.item2.skills.item2,Clase
+education.item2.skills.item2,EventLoop
 education.item2.skills.item3,Módulos
 education.item3.time,2018
 education.item3.title,Diseño UI/UX
@@ -198,7 +198,8 @@ education.item8.skills.item3,Matemáticas
 ,BOOKS
 education.books.title,Los libros me educan
 education.books.desc,"En los libros encontré muchas cosas interesantes sobre la composición, el efecto del color y el poder de la tipografía. Éstos son algunos de ellos."
-education.books.item1,Wassily Kandinsky - Punto y recta al plano
-education.books.item2,Johann Wolfgang Goathe - Teoría de los colores
-education.books.item3,Johannes Itten - Diseño y forma
+education.books.item1,Johann Wolfgang Goathe - Teoría de los colores
+education.books.item2,Johannes Itten - Diseño y forma
+education.books.item3,Ethan Marcotte - Diseño web responsivo
 education.books.item4,Johannes Itten - El arte del color
+education.books.item5,Wassily Kandinsky - Punto y recta al plano
