@@ -22,8 +22,7 @@ section.section-testimonials.section.section-bg
 
 								p.testimonials-item-desc.subtitle= item.desc[curlang]
 
-			ul.testimonials-slider-bullets.snap-slider-nav(data-snap-slider-nav='testimonials')
-				- let i = 1;
+			.testimonials-slider-bullets.snap-slider-nav(data-snap-slider-nav='testimonials')
 				each item, key in self.testimonials
 					if key.startsWith('item')
-						il.testimonials-slider-bullet: button.testimonials-slider-bullet-btn.snap-indicator
+						button.testimonials-slider-bullet-btn.snap-indicator

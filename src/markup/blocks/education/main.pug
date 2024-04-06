@@ -1,0 +1,21 @@
+main.main-pages
+	.wrapper
+		.main-pages-body
+			ul.main-pages-items
+				each item, key in self.education
+					if key.startsWith('item')
+						li.main-pages-item(class=`main-pages-${key}`)
+							time.main-pages-item-time.subtitle.shape(class=`education-${key}-time`)
+								span.main-pages-item-time-span= item.time[curlang]
+							article.main-pages-item-body
+								h3.main-pages-item-title.title.title-3= item.title[curlang]
+								p.main-pages-item-institution= item.institution[curlang]
+								p.main-pages-item-spec= item.spec[curlang]
+								ul.main-pages-item-skills
+									each skill in item.skills
+										li.main-pages-item-skill= skill[curlang]
+
+			.main-pages-links
+				a.btn.btn-2(href='')= self.btn.contact[curlang]
+				a.btn.btn-2(href='')= self.btn.download[curlang]
+				a.btn.btn-2(href='')= self.btn.viewPortfolio[curlang]

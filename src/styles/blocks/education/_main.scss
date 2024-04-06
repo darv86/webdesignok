@@ -1,0 +1,26 @@
+@use '../../utils' as *;
+@use 'sass:map';
+@use 'sass:list';
+@use 'sass:string';
+
+$-education-items: (
+	'item1': 'rectangle; #{$violet}',
+	'item2': 'circle; #{$yellow}',
+	'item3': 'triangle; #{$teal}',
+	'item4': 'rectangle; #{$red}',
+	'item5': 'circle; #{$violet}',
+	'item6': 'triangle; #{$yellow}',
+	'item7': 'rectangle; #{$teal}',
+	'item8': 'circle; #{$red}',
+);
+
+@mixin main {
+	@each $key-item, $item in $-education-items {
+		.education-#{$key-item}-time {
+			&::before {
+				@include shape-render(list.nth(string.split($item, '; '), 1));
+				color: string.unquote(list.nth(string.split($item, '; '), 2));
+			}
+		}
+	}
+}
