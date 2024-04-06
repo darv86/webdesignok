@@ -45,7 +45,6 @@ info.telegram,@DimaRadushev
 info.behance,behance.net/dimarad
 info.github,github.com/darv86
 ,
-,
 ,Page: INDEX
 ,MAIN SCREEN
 mainscreen.title.text1,Людина
@@ -134,7 +133,7 @@ testimonials.item3.title,Олег Дудко
 testimonials.item3.caption,Генеральний директор Nicepage
 testimonials.item3.desc,Грамотний фахівець відразу розібрався із завданням і допоміг виявити кілька проблем юзабіліті. Дуже уважне ставлення навіть до найпростіших справ. Чудова робота! Рекомендую!
 ,
-,
+,Page: EDUCATION
 ,MAIN SECTION
 education.item1.time,Зараз
 education.item1.title,Back-end
@@ -150,7 +149,7 @@ education.item2.spec,Спеціалізація: Експерт EcmaScript
 education.item2.skills.item1,Прототип
 education.item2.skills.item2,Клас
 education.item2.skills.item3,Модулі
-education.item3.time,с
+education.item3.time,2018
 education.item3.title,UI/UX дизайн
 education.item3.institution,Заклад: Самоосвіта
 education.item3.spec,Спеціалізація: Full stack веб-дизайнер
@@ -160,41 +159,41 @@ education.item3.skills.item3,Малювання
 education.item4.time,2017
 education.item4.title,Веб дизайн
 education.item4.institution,Установа: Національний авіаційний університет
-education.item4.spec,Спеціалізація: Веб-дизайн та підтримка веб-сайтів
+education.item4.spec,Спеціалізація: веб-дизайн та підтримка веб-сайтів
 education.item4.skills.item1,Юзабіліті
 education.item4.skills.item2,Дизайн
 education.item4.skills.item3,HTML
 education.item4.skills.item4,CSS
-education.item1.time,2014
-education.item1.title,Розробка
-education.item1.institution,Установа: Міжрегіональна академія управління персоналом
-education.item1.spec,Спеціалізація: Розробка комп'ютерних програм
-education.item1.skills.item1,Java
-education.item1.skills.item2,ООП
-education.item1.skills.item3,База даних
-education.item1.skills.item4,IDE
-education.item5.time,2012
-education.item5.title,Графічний дизайн
-education.item5.institution,Заклад: Інститут післядипломної освіти «Укртено»
-education.item5.spec,Спеціалізація: Комп'ютерні технології в рекламі та видавничій справі
-education.item5.skills.item1,Візуалізація
-education.item5.skills.item2,Ідентика
-education.item5.skills.item3,Типографіка
-education.item6.time,2009
-education.item6.title,Маркетинг
-education.item6.institution,Установа: Київський національний економічний університет
-education.item6.spec,Спеціалізація: магістр маркетингу
-education.item6.skills.item1,Дослідження
-education.item6.skills.item2,Реклама
-education.item6.skills.item3,PR
-education.item6.skills.item4,Просування
-education.item7.time,2003
-education.item7.title,Вища школа
-education.item7.institution,Заклад: Загальноосвітня школа №129
-education.item7.spec,Спеціалізація: Освіта середня
-education.item7.skills.item1,Англійська
-education.item7.skills.item2,Граматика
-education.item7.skills.item3,Математика
+education.item5.time,2014
+education.item5.title,Розробка
+education.item5.institution,Установа: Міжрегіональна академія управління персоналом
+education.item5.spec,Спеціалізація: Розробка комп'ютерних програм
+education.item5.skills.item1,Java
+education.item5.skills.item2,ООП
+education.item5.skills.item3,База даних
+education.item5.skills.item4,IDE
+education.item6.time,2012
+education.item6.title,Графічний дизайн
+education.item6.institution,Заклад: Інститут післядипломної освіти «Укртено»
+education.item6.spec,Спеціалізація: Комп'ютерні технології в рекламі та видавничій справі
+education.item6.skills.item1,Візуалізація
+education.item6.skills.item2,Ідентика
+education.item6.skills.item3,Типографіка
+education.item7.time,2009
+education.item7.title,Маркетинг
+education.item7.institution,Установа: Київський національний економічний університет
+education.item7.spec,Спеціалізація: магістр маркетингу
+education.item7.skills.item1,Дослідження
+education.item7.skills.item2,Реклама
+education.item7.skills.item3,PR
+education.item7.skills.item4,Просування
+education.item8.time,2003
+education.item8.title,Вища школа
+education.item8.institution,Заклад: Загальноосвітня школа №129
+education.item8.spec,Спеціалізація: Освіта середня
+education.item8.skills.item1,Англійська
+education.item8.skills.item2,Граматика
+education.item8.skills.item3,Математика
 ,
 ,BOOKS
 education.books.title,Книги мене виховують

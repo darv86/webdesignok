@@ -45,9 +45,6 @@ info.telegram,@DimaRadushev
 info.behance,behance.net/dimarad
 info.github,github.com/darv86
 ,
-,
-,
-,
 ,Page: INDEX
 ,MAIN SCREEN
 mainscreen.title.text1,Humano
@@ -167,36 +164,36 @@ education.item4.skills.item1,Usabilidad
 education.item4.skills.item2,Diseño
 education.item4.skills.item3,HTML
 education.item4.skills.item4,CSS
-education.item1.time,2014
-education.item1.title,Desarrollo
-education.item1.institution,Institución: Academia Interregional de Gestión de Personal
-education.item1.spec,Especialización: Desarrollo de programas informáticos
-education.item1.skills.item1,Java
-education.item1.skills.item2,OOP
-education.item1.skills.item3,Database
-education.item1.skills.item4,IDE
-education.item5.time,2012
-education.item5.title,Diseño gráfico
-education.item5.institution,Institución: Instituto de Educación de Postgrado “Ukrsteno”
-education.item5.spec,Especialización: Tecnología informática en publicidad y edición
-education.item5.skills.item1,Visualización
-education.item5.skills.item2,Identidad
-education.item5.skills.item3,Tipografía
-education.item6.time,2009
-education.item6.title,Marketing
-education.item6.institution,Institución: Universidad Económica Nacional de Kiev
-education.item6.spec,Especialización: Maestría en marketing
-education.item6.skills.item1,Investigación
-education.item6.skills.item2,Publicidad
-education.item6.skills.item3,PR
-education.item6.skills.item4,Promoción
-education.item7.time,2003
-education.item7.title,Escuela secundaria
-education.item7.institution,Institución: Escuela de educación general #129
-education.item7.spec,Especialización: Educación secundaria
-education.item7.skills.item1,Inglés
-education.item7.skills.item2,Gramática
-education.item7.skills.item3,Matemáticas
+education.item5.time,2014
+education.item5.title,Desarrollo
+education.item5.institution,Institución: Academia Interregional de Gestión de Personal
+education.item5.spec,Especialización: Desarrollo de programas informáticos
+education.item5.skills.item1,Java
+education.item5.skills.item2,OOP
+education.item5.skills.item3,Database
+education.item5.skills.item4,IDE
+education.item6.time,2012
+education.item6.title,Diseño gráfico
+education.item6.institution,Institución: Instituto de Educación de Postgrado “Ukrsteno”
+education.item6.spec,Especialización: Tecnología informática en publicidad y edición
+education.item6.skills.item1,Visualización
+education.item6.skills.item2,Identidad
+education.item6.skills.item3,Tipografía
+education.item7.time,2009
+education.item7.title,Marketing
+education.item7.institution,Institución: Universidad Económica Nacional de Kiev
+education.item7.spec,Especialización: Maestría en marketing
+education.item7.skills.item1,Investigación
+education.item7.skills.item2,Publicidad
+education.item7.skills.item3,PR
+education.item7.skills.item4,Promoción
+education.item8.time,2003
+education.item8.title,Escuela secundaria
+education.item8.institution,Institución: Escuela de educación general #129
+education.item8.spec,Especialización: Educación secundaria
+education.item8.skills.item1,Inglés
+education.item8.skills.item2,Gramática
+education.item8.skills.item3,Matemáticas
 ,
 ,BOOKS
 education.books.title,Los libros me educan
