@@ -29,7 +29,7 @@ const { isRelease, paths, isCompressing, colors, ftp } = siteConfig;
 const { src, dest, series, parallel, watch } = gulp;
 const sass = gulpSass(dartSass);
 
-export const getContent = async () => {
+const getContent = async () => {
 	const langsArr = (await readdir(paths.root.src + paths.content.src)).map(file => path.parse(file).name),
 		[rawJsonArr, constantsArr, contentArr] = [[], [], []];
 	for (const lang of langsArr) rawJsonArr.push(await csvtojson().fromFile(`${paths.root.src}${paths.content.src}/${lang}.csv`));
@@ -189,9 +189,9 @@ export const watcher = () => {
 
 export const release = series(
 	clean,
-	getContent,
+	// getContent,
 	parallel(markup, styles, scripts, fonts, media, resources, favicon),
 	gulpif(ftp.onRelease, deploy, async () => {}),
 );
 
-export default series(clean, getContent, parallel(markup, styles, scripts, fonts, media, resources, favicon), parallel(watcher, server));
+export default series(clean, parallel(markup, styles, scripts, fonts, media, resources, favicon), parallel(watcher, server));
