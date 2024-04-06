@@ -3,12 +3,12 @@
 
 @mixin testimonials {
 	:root {
-		--slider-pinline: 24px;
+		--testimonials-slider-pinline: 24px;
 	}
 
 	.testimonials-slider {
 		margin-bottom: 24px;
-		padding: 24px var(--slider-pinline);
+		padding: 24px var(--testimonials-slider-pinline);
 		border: 1px solid $gray90;
 		border-radius: 2px;
 		background-color: white;
@@ -16,7 +16,7 @@
 
 	.testimonials-slider-item {
 		width: 100%;
-		scroll-margin: var(--slider-pinline);
+		scroll-margin: var(--testimonials-slider-pinline);
 		opacity: 0.1;
 		transition: opacity $dur;
 		&.is-current {
@@ -44,50 +44,23 @@
 		line-height: 1.5;
 	}
 
-	.testimonials-slider-bullets {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 12px;
-	}
-
-	.testimonials-slider-bullet {
-		line-height: 0;
-	}
-
-	.testimonials-slider-bullet-btn {
-		transition:
-			scale $dur,
-			background-color $dur;
-		width: 12px;
-		aspect-ratio: 1;
-		border-radius: 50%;
-		background-color: $gray90;
-		font-size: 0;
-		line-height: 0;
-		&.is-current {
-			scale: calc(14px / 12px);
-			background-color: $violet;
-		}
-	}
-
 	@media (min-width: map.get($bp, 'tablet1/3')) {
 		:root {
-			--slider-pinline: 48px;
+			--testimonials-slider-pinline: 48px;
 		}
 
 		.testimonials-slider {
-			padding: 48px var(--slider-pinline) 60px;
+			padding: 48px var(--testimonials-slider-pinline) 60px;
 		}
 	}
 
 	@media (min-width: map.get($bp, 'tablet2/3')) {
 		:root {
-			--slider-pinline: 194px;
+			--testimonials-slider-pinline: 194px;
 		}
 
 		.testimonials-slider {
-			padding: 48px var(--slider-pinline) 72px;
+			padding: 48px var(--testimonials-slider-pinline) 72px;
 		}
 	}
 }
