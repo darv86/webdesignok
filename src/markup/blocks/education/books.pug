@@ -1,0 +1,22 @@
+section.section-books.section.section-bg
+	.wrapper
+		.section-body
+			h2.section-title.title.title-2.title-line= self.education.books.title[curlang]
+
+			p.section-desc= self.education.books.desc[curlang]
+
+			ul.education-books-slider.snap-slider(data-snap-slider='books')
+				- const booksImgsName = { item1: 'goethe', item2: 'johannes', item3: 'marcotte', item4: 'itten', item5: 'kandinsky' };
+				each item, key in self.education.books
+					if key.startsWith('item')
+						li.education-books-slide.snap-slide
+							img.education-books-slide-img.img(
+								src=`/media/${booksImgsName[key]}-min.jpg`
+								alt=`poster of the book: ${item[curlang]}`
+								title=item[curlang]
+							)
+
+			.books-slider-bullets.snap-slider-nav(data-snap-slider-nav='books')
+				each item, key in self.education.books
+					if key.startsWith('item')
+						button.books-slider-bullet-btn.snap-indicator
