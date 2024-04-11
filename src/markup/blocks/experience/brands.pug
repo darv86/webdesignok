@@ -6,12 +6,12 @@ section.section-brands.section.section-bg
 			p.section-desc= self.experience.brands.desc[curlang]
 
 			ul.experience-brands
-				- const brandsImgsName = { item1: 'goethe', item2: 'johannes', item3: 'marcotte', item4: 'itten', item5: 'kandinsky' };
+				- const brandsImgsName = { item1: 'lazLogo240', item2: 'ctgLogo240', item3: 'mtiLogo240', item4: 'sibisLogo240', item5: 'homeLogo240', item6: 'nicepageLogo240' };
 				each item, key in self.experience.brands
 					if key.startsWith('item')
-						li.experience-brands
-							img.experience-brands-img.img(
-								src=`/media/${brandsImgsName[key]}-min.jpg`
-								alt=`poster of the book: ${item[curlang]}`
+						li.experience-brand
+							img.experience-brand-img.img(
+								src=`/media/${brandsImgsName[key]}.png`
+								alt=`logo of the company: ${item[curlang]}`
 								title=item[curlang]
 							)

@@ -2,50 +2,29 @@
 @use 'sass:map';
 
 @mixin brands {
-	:root {
-		--books-slider-gap: 24px;
-		--books-slider-peek: calc(var(--books-slider-gap) * 2);
+	.experience-brands {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 24px;
 	}
 
-	.education-books-slider {
-		gap: var(--books-slider-gap);
-		margin-bottom: 24px;
-		padding: 0 var(--books-slider-peek);
-	}
-
-	.education-books-slide {
-		width: 100%;
-		padding: 24px 12px;
-		scroll-snap-align: center;
+	.experience-brand {
+		padding: 24px;
 		border: 1px solid $gray90;
 		border-radius: 2px;
 		background-color: white;
-		opacity: 0.1;
-		transition: opacity $dur;
-		&.is-current {
-			opacity: 1;
+		@media (pointer: fine) {
+			transition: filter $dur;
+			filter: grayscale(100%);
+			&:hover {
+				filter: grayscale(0%);
+			}
 		}
 	}
 
-	@media (min-width: map.get($bp, 'mobile3/3')) {
-		.education-books-slider {
-			padding: 0 calc(100% / 5 + var(--books-slider-peek));
-		}
-	}
-
-	@media (min-width: map.get($bp, 'tablet2/3')) {
-		.education-books-slider {
-			overflow: hidden;
-			padding: 0;
-		}
-
-		.education-books-slide {
-			flex: 1;
-			opacity: 1;
-		}
-
-		.books-slider-bullets {
-			display: none;
+	@media (min-width: map.get($bp, 'tablet1/3')) {
+		.experience-brands {
+			display: flex;
 		}
 	}
 }
