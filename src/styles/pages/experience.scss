@@ -1,0 +1,7 @@
+@use '../blocks/experience/header' as *;
+@use '../blocks/experience/main' as *;
+@use '../blocks/experience/brands' as *;
+
+@include header;
+@include main;
+@include brands;

@@ -32,6 +32,7 @@ footer.contacts.title,Контакти
 title.index,Веб дизайн & розробка
 title.contacts,Контакти Дмитра Радушева
 title.education,Освіта Дмитра Радушева
+title.experience,Досвід Дмитра Радушева
 ,
 ,INFO
 info.phone,+38(093)8366030
@@ -142,7 +143,7 @@ education.item1.spec,Спеціалізація: Інженерія програ
 education.item1.skills.item1,Node.js
 education.item1.skills.item2,Патерни
 education.item1.skills.item3,Архітектура
-education.item2.time,2021
+education.item2.time,2020
 education.item2.title,Front-end
 education.item2.institution,Заклад: Онлайн курс
 education.item2.spec,Спеціалізація: Експерт EcmaScript
@@ -203,3 +204,96 @@ education.books.item2,Йоганнес Іттен - Дизайн і форма
 education.books.item3,Ітан Маркотт - Респонсивний веб дизайн
 education.books.item4,Йоганнес Іттен - Мистецтво кольору
 education.books.item5,Василь Кандинський - Точка і пряма на площині
+,
+,Page: EXPERIENCE
+,MAIN SECTION
+experience.item1.time.to,Зараз
+experience.item1.time.from,05/2022
+experience.item1.title,Back-end
+experience.item1.employer,Роботодавець: Самозайнятість
+experience.item1.role,Посада: Інженер-програміст
+experience.item1.skills.item1,OpenSource
+experience.item1.skills.item2,Back-end
+experience.item1.skills.item3,Менеджмент
+experience.item2.time.to,04/2022
+experience.item2.time.from,07/2020
+experience.item2.title,Front-end
+experience.item2.employer,Роботодавець: Profit Center
+experience.item2.role,Роль: Front-end розробник
+experience.item2.skills.item1,Front-end
+experience.item2.skills.item2,ECN
+experience.item2.skills.item3,DX оптимізація
+experience.item3.time.to,06/2020
+experience.item3.time.from,08/2017
+experience.item3.title,UI/UX дизайн
+experience.item3.employer,Роботодавець: Самозайнятість
+experience.item3.role,Посада: Дизайнер і розробник
+experience.item3.skills.item1,Арт дирекція
+experience.item3.skills.item2,UI/UX
+experience.item3.skills.item3,Front-end
+experience.item4.time.to,01/2017
+experience.item4.time.from,10/2016
+experience.item4.title,Цифровий маркетинг
+experience.item4.employer,"Роботодавець: ТОВ ""Сібіс""."
+experience.item4.role,Посада: заступник начальника відділу маркетингу
+experience.item4.skills.item1,Дослідження користувачів
+experience.item4.skills.item2,Дизайн
+experience.item4.skills.item3,Електронна комерція
+experience.item5.time.to,08/2016
+experience.item5.time.from,07/2015
+experience.item5.title,Маркетинг і дизайн
+experience.item5.employer,Роботодавець: ТОВ «Сіті Транспорт Груп».
+experience.item5.role,Посада: Креативний менеджер
+experience.item5.skills.item1,Дизайн продукту
+experience.item5.skills.item2,Маркетинг
+experience.item5.skills.item3,Новий сайт
+experience.item6.time.to,04/2015
+experience.item6.time.from,02/2015
+experience.item6.title,Розробка
+experience.item6.employer,Роботодавець: Інформпроект
+experience.item6.role,Посада: Молодший інженер
+experience.item6.skills.item1,Інтерфейс
+experience.item6.skills.item2,База даних
+experience.item6.skills.item3,Delphi
+experience.item7.time.to,03/2014
+experience.item7.time.from,05/2012
+experience.item7.title,Цифровий маркетинг
+experience.item7.employer,"Роботодавець: ТОВ ""Контрактстрой""."
+experience.item7.role,Посада: начальник відділу маркетингу
+experience.item7.skills.item1,Айдентика
+experience.item7.skills.item2,Стратегія
+experience.item7.skills.item3,Аналітика
+experience.item8.time.to,06/2011
+experience.item8.time.from,11/2009
+experience.item8.title,Цифровий маркетинг
+experience.item8.employer,Роботодавець: ТОВ «Протекон».
+experience.item8.role,Посада: заступник начальника комерційного відділу
+experience.item8.skills.item1,Новий сайт
+experience.item8.skills.item2,Promotion
+experience.item8.skills.item3,Керівник проекту
+experience.item9.time.to,11/2009
+experience.item9.time.from,04/2008
+experience.item9.title,Маркетинг
+experience.item9.employer,Роботодавець: ТОВ «Раско».
+experience.item9.role,Посада: старший спеціаліст відділу маркетингу.
+experience.item9.skills.item1,Promotion
+experience.item9.skills.item2,Продажі
+experience.item9.skills.item3,Айдентика
+experience.item10.time.to,05/2007
+experience.item10.time.from,10/2006
+experience.item10.title,Цифровий маркетинг
+experience.item10.employer,Роботодавець: Елікс-Центр (офіційний дилер Canon)
+experience.item10.role,Посада: молодший спеціаліст відділу маркетингу.
+experience.item10.skills.item1,PR
+experience.item10.skills.item2,Контент
+experience.item10.skills.item3,Promotion
+,
+,BRANDS
+experience.brands.title,"Бренди, з якими я працював"
+experience.brands.desc,"Співпрацювати з великими компаніями – це привілей. Ця можливість дозволяє мені рости як професіонал, і я вдячний за це."
+experience.brands.item1,ЛАЗ - Львівський автобусний завод
+experience.brands.item2,Сіті Транспорт Груп
+experience.brands.item3,Корпорація MTI
+experience.brands.item4,SI BIS Ltd.
+experience.brands.item5,Ресторан Home
+experience.brands.item6,Конструктор сайтів Nicepage

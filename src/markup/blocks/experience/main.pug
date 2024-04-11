@@ -1,0 +1,23 @@
+main.main-pages.experience-page
+	.wrapper
+		.main-pages-body
+			ul.main-pages-items
+				each item, key in self.experience
+					if key.startsWith('item')
+						li.experience-item.main-pages-item(class=`main-pages-${key}`)
+							.experience-item-time.main-pages-item-time.subtitle.shape(class=`experience-${key}-time`)
+								.experience-item-time-body
+									span.experience-item-time-span.experience-item-time-span-to.main-pages-item-time-span= item.time.to[curlang]
+									span.experience-item-time-span.experience-item-time-span-from.main-pages-item-time-span= item.time.from[curlang]
+							article.main-pages-item-body
+								h3.main-pages-item-title.title.title-3= item.title[curlang]
+								p.experience-item-employer= item.employer[curlang]
+								p.experience-item-role.main-pages-item-desc= item.role[curlang]
+								ul.main-pages-item-skills
+									each skill in item.skills
+										li.main-pages-item-skill= skill[curlang]
+
+			.main-pages-links
+				a.btn.btn-2(href='')= self.btn.contact[curlang]
+				a.btn.btn-2(href='')= self.btn.download[curlang]
+				a.btn.btn-2(href='')= self.btn.viewPortfolio[curlang]

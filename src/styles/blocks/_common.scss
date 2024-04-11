@@ -234,7 +234,7 @@
 	margin-bottom: 12px;
 }
 
-.main-pages-item-spec {
+.main-pages-item-desc {
 	margin-bottom: 6px;
 }
 
@@ -287,9 +287,6 @@
 		align-items: flex-start;
 		gap: 48px;
 		padding-left: 0;
-		&:not(:last-child)::after {
-			left: 109px;
-		}
 	}
 
 	.main-pages-item-time {
@@ -299,10 +296,6 @@
 			position: static;
 			order: 1;
 		}
-	}
-
-	.main-pages-item-time-span {
-		width: 4ch;
 	}
 }
 
@@ -345,11 +338,5 @@
 
 	.subtitle {
 		font-size: calc(23.8px / 16px * 1rem);
-	}
-
-	.main-pages-item {
-		&:not(:last-child)::after {
-			left: 117px;
-		}
 	}
 }

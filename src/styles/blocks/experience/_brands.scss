@@ -1,0 +1,51 @@
+@use '../../utils' as *;
+@use 'sass:map';
+
+@mixin brands {
+	:root {
+		--books-slider-gap: 24px;
+		--books-slider-peek: calc(var(--books-slider-gap) * 2);
+	}
+
+	.education-books-slider {
+		gap: var(--books-slider-gap);
+		margin-bottom: 24px;
+		padding: 0 var(--books-slider-peek);
+	}
+
+	.education-books-slide {
+		width: 100%;
+		padding: 24px 12px;
+		scroll-snap-align: center;
+		border: 1px solid $gray90;
+		border-radius: 2px;
+		background-color: white;
+		opacity: 0.1;
+		transition: opacity $dur;
+		&.is-current {
+			opacity: 1;
+		}
+	}
+
+	@media (min-width: map.get($bp, 'mobile3/3')) {
+		.education-books-slider {
+			padding: 0 calc(100% / 5 + var(--books-slider-peek));
+		}
+	}
+
+	@media (min-width: map.get($bp, 'tablet2/3')) {
+		.education-books-slider {
+			overflow: hidden;
+			padding: 0;
+		}
+
+		.education-books-slide {
+			flex: 1;
+			opacity: 1;
+		}
+
+		.books-slider-bullets {
+			display: none;
+		}
+	}
+}

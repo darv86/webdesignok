@@ -12,11 +12,13 @@ $-education-items: (
 	'item6': 'triangle; #{$yellow}',
 	'item7': 'rectangle; #{$teal}',
 	'item8': 'circle; #{$red}',
+	'item9': 'triangle; #{$violet}',
+	'item10': 'rectangle; #{$yellow}',
 );
 
 @mixin main {
 	@each $key-item, $item in $-education-items {
-		.education-#{$key-item}-time {
+		.experience-#{$key-item}-time {
 			&::before {
 				@include shape-render(list.nth(string.split($item, '; '), 1));
 				color: string.unquote(list.nth(string.split($item, '; '), 2));
@@ -24,22 +26,32 @@ $-education-items: (
 		}
 	}
 
+	.experience-item-time-span-to {
+		&::after {
+			content: ' - ';
+		}
+	}
+
 	@media (min-width: map.get($bp, 'tablet1/3')) {
-		.education-item {
+		.experience-item {
 			&:not(:last-child)::after {
-				left: 109px;
+				left: 146px;
 			}
 		}
 
-		.education-item-time-span {
-			width: 4ch;
+		.experience-item-time-span {
+			display: block;
+			width: 7ch;
+			&::after {
+				content: none;
+			}
 		}
 	}
 
 	@media (min-width: map.get($bp, 'tablet3/3')) {
-		.education-item {
+		.experience-item {
 			&:not(:last-child)::after {
-				left: 117px;
+				left: 160px;
 			}
 		}
 	}

@@ -32,6 +32,7 @@ footer.contacts.title,Contactos
 title.index,Web diseño & Desarrollo
 title.contacts,Contactos de Dima Radushev
 title.education,Educación de Dima Radushev
+title.experience,La experiencia de Dima Radushev
 ,
 ,INFO
 info.phone,+38(093)8366030
@@ -131,7 +132,7 @@ testimonials.item2.caption,Dueño de negocio de muebles
 testimonials.item2.desc,"¡Estoy muy satisfecho con el trabajo de Dmitry! Sin más preguntas, de un vistazo, ¡Dmitry completó la tarea de crear un prototipo de sitio web en un plazo de 2 días! Velocidad, calidad, atención al cliente y la capacidad de profundizar en los detalles: ¡lo mejor! Recomiendo trabajar con Dima. ¡Definitivamente no te arrepentirás!"
 testimonials.item3.title,Oleg Dudko
 testimonials.item3.caption,CEO de Nicepage
-testimonials.item3.desc,Un profesional competente comprendió inmediatamente la tarea y ayudó a identificar varios problemas de usabilidad. Actitud muy cuidadosa incluso con las tareas más simples. ¡Gran trabajo! ¡Recomendado!
+testimonials.item3.desc,Un profesional competente entendió inmediatamente la tarea y ayudó a identificar varios problemas de usabilidad. Actitud muy cuidadosa incluso con las tareas más simples. ¡Gran trabajo! ¡Recomendado!
 ,
 ,Page: EDUCATION
 ,MAIN SECTION
@@ -142,7 +143,7 @@ education.item1.spec,Especialización: Ingeniería de software
 education.item1.skills.item1,Nodo.js
 education.item1.skills.item2,Patrones
 education.item1.skills.item3,Arquitectura
-education.item2.time,2021
+education.item2.time,2020
 education.item2.title,Front-end
 education.item2.institution,Institución: Curso en línea
 education.item2.spec,Especialización: experto en EcmaScript
@@ -203,3 +204,96 @@ education.books.item2,Johannes Itten - Diseño y forma
 education.books.item3,Ethan Marcotte - Diseño web responsivo
 education.books.item4,Johannes Itten - El arte del color
 education.books.item5,Wassily Kandinsky - Punto y recta al plano
+,
+,Page: EXPERIENCE
+,MAIN SECTION
+experience.item1.time.to,Ahora
+experience.item1.time.from,05/2022
+experience.item1.title,Back-end
+experience.item1.employer,Empleador: Trabajo por cuenta propia
+experience.item1.role,Rol: Ingeniero de software
+experience.item1.skills.item1,Fuente abierta
+experience.item1.skills.item2,Back-end
+experience.item1.skills.item3,Gestión
+experience.item2.time.to,04/2022
+experience.item2.time.from,07/2020
+experience.item2.title,Front-end
+experience.item2.employer,Empleador: Centro de ganancias
+experience.item2.role,Rol: Desarrollador front-end
+experience.item2.skills.item1,Front-end
+experience.item2.skills.item2,ECN
+experience.item2.skills.item3,optimización DX
+experience.item3.time.to,06/2020
+experience.item3.time.from,08/2017
+experience.item3.title,Diseño UI/UX
+experience.item3.employer,Empleador: Trabajo por cuenta propia
+experience.item3.role,Rol: Diseñador y Desarrollador
+experience.item3.skills.item1,Dirección artística
+experience.item3.skills.item2,UI/UX
+experience.item3.skills.item3,Front-end
+experience.item4.time.to,01/2017
+experience.item4.time.from,10/2016
+experience.item4.title,Digital Marketing
+experience.item4.employer,"Empleador: Sibis, Ltd."
+experience.item4.role,Rol: Subdirector de marketing
+experience.item4.skills.item1,User research
+experience.item4.skills.item2,Diseño
+experience.item4.skills.item3,Comercio electrónico
+experience.item5.time.to,08/2016
+experience.item5.time.from,07/2015
+experience.item5.title,Marketing y Diseño
+experience.item5.employer,"Empleador: City Transport Group, Ltd."
+experience.item5.role,Rol: Gerente creativo
+experience.item5.skills.item1,Diseño de producto
+experience.item5.skills.item2,Marketing
+experience.item5.skills.item3,Nuevo sitio web
+experience.item6.time.to,04/2015
+experience.item6.time.from,02/2015
+experience.item6.title,Desarrollo
+experience.item6.employer,Empleador: Informeproyecto
+experience.item6.role,Rol: Ingeniero junior
+experience.item6.skills.item1,Interfaz
+experience.item6.skills.item2,Database
+experience.item6.skills.item3,Delphi
+experience.item7.time.to,03/2014
+experience.item7.time.from,05/2012
+experience.item7.title,Digital Marketing
+experience.item7.employer,"Empleador: Contractstroy, Ltd."
+experience.item7.role,Rol: Jefe de Marketing
+experience.item7.skills.item1,Identidad
+experience.item7.skills.item2,Estrategia
+experience.item7.skills.item3,Analítica
+experience.item8.time.to,06/2011
+experience.item8.time.from,11/2009
+experience.item8.title,Publicidad digital
+experience.item8.employer,"Empleador: Protecon, Ltd."
+experience.item8.role,Rol: Subdirector Comercial
+experience.item8.skills.item1,Nuevo sitio web
+experience.item8.skills.item2,Promoción
+experience.item8.skills.item3,Project lead
+experience.item9.time.to,11/2009
+experience.item9.time.from,04/2008
+experience.item9.title,Marketing
+experience.item9.employer,"Empleador: Rasko, Ltd."
+experience.item9.role,"Rol: Especialista sénior, Departamento de Marketing."
+experience.item9.skills.item1,Promoción
+experience.item9.skills.item2,Ventas
+experience.item9.skills.item3,Identidad
+experience.item10.time.to,05/2007
+experience.item10.time.from,10/2006
+experience.item10.title,Digital Marketing
+experience.item10.employer,Empleador: Eliks-Center (distribuidor autorizado de Canon)
+experience.item10.role,"Rol: Especialista junior, Departamento de marketing."
+experience.item10.skills.item1,PR
+experience.item10.skills.item2,Contenido
+experience.item10.skills.item3,Promoción
+,
+,BRANDS
+experience.brands.title,Marcas con las que trabajé
+experience.brands.desc,Es un privilegio cooperar con grandes empresas. Esta oportunidad me permite crecer como profesional y estoy agradecido por ello.
+experience.brands.item1,LAZ - Fábrica de autobuses de Lviv
+experience.brands.item2,Grupo de transporte urbano
+experience.brands.item3,Corporación MTI
+experience.brands.item4,SI BIS Ltd.
+experience.brands.item5,Restaurante Home
+experience.brands.item6,Creador de sitios web Nicepage
