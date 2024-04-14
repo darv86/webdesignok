@@ -5,6 +5,9 @@ block append vars
 		curpage = 'contacts';
 		pageTitle = self.title.contacts[curlang];
 
+block append meta
+	meta(name='description' content='Contacts of Dima Radushev')
+
 block append styles
 	link(rel='stylesheet' href='/css/pages/contacts.css')
 
@@ -12,7 +15,8 @@ block append scripts
 	script(src='/js/pages/contacts.js')
 
 block header
-	header.header
+	include ../blocks/contacts/header
 
 block content
-	//- img(src='/media/gymDevicesKeyview.jpg' srcset='/media/gymDevicesKeyview@2.jpg 2x')
+	include ../blocks/contacts/main
+	include ../blocks/contacts/form

@@ -1,0 +1,7 @@
+main.contacts-page
+	.wrapper
+		.contacts-pages-body
+			ul.contacts-items
+				each item, key in self.contacts
+					if key.startsWith('item')
+						li.contacts-item(class=`main-pages-${key}`)

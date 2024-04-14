@@ -1,0 +1,7 @@
+@use '../../utils' as *;
+@use 'sass:map';
+
+@mixin main {
+	@media (min-width: map.get($bp, 'tablet3/3')) {
+	}
+}
