@@ -1,11 +1,15 @@
 constant,content
 ,UI
+langs,Español
+,
 btn.contact,Contáctame
 btn.order,Pedido servicio
 btn.choose,Elija servicio
 btn.download,Descargar CV
 btn.viewProject,Ver proyecto
 btn.viewPortfolio,Ver portafolio
+btn.sendMsg,Enviar mensaje
+,
 nav.home,Inicio 
 nav.services,Servicios
 nav.services.web-design,Diseño web
@@ -20,7 +24,15 @@ nav.skills,Habilidades
 nav.experience,Experiencia
 nav.education,Educación
 nav.contacts,Contactos
-langs,Español
+,
+form.name.placeholder,Nombre
+form.name.title,Introduzca al menos 2 letras
+form.email.placeholder,Correo electrónico
+form.email.title,ejemplo@email.com
+form.message.placeholder,Mensaje
+form.message.title,Escribe algún mensaje
+form.projectInfo.placeholder,Información del proyecto
+form.projectInfo.title,Añade información sobre tu proyecto
 ,
 ,FOOTER
 footer.credits,Diseñado y desarrollado por Dima Radushev
@@ -132,7 +144,7 @@ testimonials.item2.caption,Dueño de negocio de muebles
 testimonials.item2.desc,"¡Estoy muy satisfecho con el trabajo de Dmitry! Sin más preguntas, de un vistazo, ¡Dmitry completó la tarea de crear un prototipo de sitio web en un plazo de 2 días! Velocidad, calidad, atención al cliente y la capacidad de profundizar en los detalles: ¡lo mejor! Recomiendo trabajar con Dima. ¡Definitivamente no te arrepentirás!"
 testimonials.item3.title,Oleg Dudko
 testimonials.item3.caption,CEO de Nicepage
-testimonials.item3.desc,Un profesional competente entendió inmediatamente la tarea y ayudó a identificar varios problemas de usabilidad. Actitud muy cuidadosa incluso con las tareas más simples. ¡Gran trabajo! ¡Recomendado!
+testimonials.item3.desc,Un profesional competente comprendió inmediatamente la tarea y ayudó a identificar varios problemas de usabilidad. Actitud muy cuidadosa incluso con las tareas más simples. ¡Gran trabajo! ¡Recomendado!
 ,
 ,Page: EDUCATION
 ,MAIN SECTION
@@ -235,7 +247,7 @@ experience.item4.time.to,01/2017
 experience.item4.time.from,10/2016
 experience.item4.title,Digital Marketing
 experience.item4.employer,"Empleador: Sibis, Ltd."
-experience.item4.role,Rol: Subdirector de marketing
+experience.item4.role,Función: Subdirector de marketing
 experience.item4.skills.item1,User research
 experience.item4.skills.item2,Diseño
 experience.item4.skills.item3,Comercio electrónico
@@ -297,3 +309,11 @@ experience.brands.item3,Corporación MTI
 experience.brands.item4,SI BIS Ltd.
 experience.brands.item5,Restaurante Home
 experience.brands.item6,Creador de sitios web Nicepage
+,
+,Page: CONTACTS
+,MAIN SECTION
+contacts.cta,"No dude en ponerse en contacto conmigo. Estoy abierto a sugerencias o comentarios. Usar mis contactos incluso para decir ""Hola"""
+,
+,FORM
+contacts.form.title,Formulario de contacto
+contacts.form.desc,Formulario de contacto esta es la forma más sencilla de ponerse en contacto conmigo. Sólo envíame un par de líneas y te responderé a tu correo electrónico.

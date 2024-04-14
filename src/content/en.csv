@@ -1,11 +1,15 @@
 constant,content
 ,UI
+langs,English
+,
 btn.contact,Contact me
 btn.order,Order service
 btn.choose,Choose service
 btn.download,Download CV
 btn.viewProject,View project
 btn.viewPortfolio,View portfolio 
+btn.sendMsg,Send message
+,
 nav.home,Home
 nav.services,Services
 nav.services.web-design,Web design
@@ -20,7 +24,15 @@ nav.skills,Skills
 nav.experience,Experience
 nav.education,Education
 nav.contacts,Contacts
-langs,English
+,
+form.name.placeholder,Name
+form.name.title,Enter at least 2 letters
+form.email.placeholder,E-mail
+form.email.title,example@email.com
+form.message.placeholder,Message
+form.message.title,Type some message
+form.projectInfo.placeholder,Project info
+form.projectInfo.title,Add some info about your project
 ,
 ,FOOTER
 footer.credits,Designed & Developed by Dima Radushev
@@ -297,3 +309,11 @@ experience.brands.item3,MTI Corporation
 experience.brands.item4,SI BIS Ltd.
 experience.brands.item5,Home restaurant
 experience.brands.item6,Nicepage website builder
+,
+,Page: CONTACTS
+,MAIN SECTION
+contacts.cta,Feel free to contact me. I’m open for suggestions or any feedback. Use my contacts to even say “Hi”
+,
+,FORM
+contacts.form.title,Contact form
+contacts.form.desc,Contact form this is the simplest way to get in touch with me. Just drop me a couple lines and I will respond on your e-mail.

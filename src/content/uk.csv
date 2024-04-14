@@ -1,11 +1,15 @@
 constant,content
 ,UI
+langs,Українська
+,
 btn.contact,Зв'яжіться зі мною
 btn.order,Замовляйте сервіс
 btn.choose,Виберіть сервіс
 btn.download,Завантажте резюме
 btn.viewProject,Переглянути проект
 btn.viewPortfolio,Переглянути портфоліо
+btn.sendMsg,Відправити повідомлення
+,
 nav.home,Головна
 nav.services,Послуги
 nav.services.web-design,Веб дизайн
@@ -20,7 +24,15 @@ nav.skills,Навички
 nav.experience,Досвід
 nav.education,Освіта
 nav.contacts,Контакти
-langs,Українська
+,
+form.name.placeholder,Ім'я
+form.name.title,Введіть принаймні 2 літери
+form.email.placeholder,Е-пошта
+form.email.title,example@email.com
+form.message.placeholder,Повідомлення
+form.message.title,Введіть повідомлення
+form.projectInfo.placeholder,Інформація про проект
+form.projectInfo.title,Додайте інформацію про свій проект
 ,
 ,FOOTER
 footer.credits,Дизайн і розробка Дмитром Радушевим
@@ -251,7 +263,7 @@ experience.item6.time.to,04/2015
 experience.item6.time.from,02/2015
 experience.item6.title,Розробка
 experience.item6.employer,Роботодавець: Інформпроект
-experience.item6.role,Посада: Молодший інженер
+experience.item6.role,Посада: молодший інженер
 experience.item6.skills.item1,Інтерфейс
 experience.item6.skills.item2,База даних
 experience.item6.skills.item3,Delphi
@@ -297,3 +309,11 @@ experience.brands.item3,Корпорація MTI
 experience.brands.item4,SI BIS Ltd.
 experience.brands.item5,Ресторан Home
 experience.brands.item6,Конструктор сайтів Nicepage
+,
+,Page: CONTACTS
+,MAIN SECTION
+contacts.cta,"Не соромтеся звертатися до мене. Я відкритий для пропозицій або будь-яких відгуків. Використовуйте мої контакти, щоб навіть сказати «Привіт»"
+,
+,FORM
+contacts.form.title,Контактна форма
+contacts.form.desc,"Контактна форма - це найпростіший спосіб зв'язатися зі мною. Просто напишіть мені пару рядків, і я відповім на вашу електронну пошту."
