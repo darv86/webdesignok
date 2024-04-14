@@ -1,8 +1,12 @@
+@use '../blocks/header-pages' as *;
+@use '../blocks/main-pages' as *;
 @use '../blocks/education/header' as *;
 @use '../blocks/education/main' as *;
 @use '../blocks/education/books' as *;
 @use '../libs/snap-slider';
 
+@include header-pages;
+@include main-pages;
 @include header;
 @include main;
 @include books;

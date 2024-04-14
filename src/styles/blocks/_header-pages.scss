@@ -1,0 +1,19 @@
+@use '../utils' as *;
+@use 'sass:map';
+
+@mixin header-pages {
+	.header-pages {
+		padding: 60px 0 24px;
+	}
+
+	.header-pages-title {
+		text-align: center;
+		color: $gray90;
+	}
+
+	@media (min-width: map.get($bp, 'mobile3/3')) {
+		.header-pages {
+			padding: 96px 0 30px;
+		}
+	}
+}

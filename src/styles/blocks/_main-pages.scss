@@ -1,0 +1,121 @@
+@use '../utils' as *;
+@use 'sass:map';
+
+@mixin main-pages {
+	.main-pages {
+		padding: 24px 0 72px;
+	}
+
+	.main-pages-item {
+		position: relative;
+		isolation: isolate;
+		padding-left: 48px;
+		padding-bottom: 48px;
+		&:last-child {
+			padding-bottom: 0;
+		}
+		&:not(:last-child)::after {
+			content: '';
+			position: absolute;
+			top: 22px;
+			left: 11px;
+			z-index: -1;
+			display: block;
+			height: calc(100% - 20px);
+			width: 2px;
+			background-color: $gray95;
+		}
+	}
+
+	.main-pages-item-time {
+		position: relative;
+		isolation: isolate;
+		margin-bottom: 24px;
+		&::before {
+			position: absolute;
+			top: 0;
+			left: -48px;
+		}
+		:where(.main-pages-item:hover) &::before {
+			background-color: currentColor;
+			translate: 0 -3px;
+		}
+	}
+
+	.main-pages-item-title {
+		margin-bottom: 12px;
+	}
+
+	.main-pages-item-desc {
+		margin-bottom: 6px;
+	}
+
+	.main-pages-item-skills {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px;
+	}
+
+	.main-pages-item-skill {
+		transition: background-color $dur;
+		padding: 3px 20px;
+		border: 1px solid $gray90;
+		border-radius: 1px;
+		text-transform: uppercase;
+		font-style: italic;
+		@media (pointer: fine) {
+			&:hover {
+				background-color: $gray10;
+				color: white;
+			}
+		}
+	}
+
+	.main-pages-links {
+		display: none;
+	}
+
+	@media (min-width: map.get($bp, 'mobile3/3')) {
+		.main-pages {
+			padding: 30px 0 112px;
+		}
+	}
+
+	@media (min-width: map.get($bp, 'tablet1/3')) {
+		.main-pages-item {
+			display: flex;
+			align-items: flex-start;
+			gap: 48px;
+			padding-left: 0;
+		}
+
+		.main-pages-item-time {
+			gap: 48px;
+			margin-bottom: 0;
+			&::before {
+				position: static;
+				order: 1;
+			}
+		}
+	}
+
+	@media (min-width: map.get($bp, 'tablet2/3')) {
+		.main-pages-body {
+			display: flex;
+			justify-content: space-between;
+			gap: 48px;
+		}
+
+		.main-pages-links {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 18px;
+			align-self: flex-start;
+			padding: 14px 0 14px 48px;
+			border-left: 1px solid;
+			border-image-source: linear-gradient($red, $violet);
+			border-image-slice: 1;
+		}
+	}
+}
