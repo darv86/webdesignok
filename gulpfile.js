@@ -72,7 +72,7 @@ export const scripts = () => {
 
 export const media = () => {
 	return src([`${paths.root.src}${paths.media.src[0]}`, `!${paths.root.src}${paths.media.src[1]}`])
-		.pipe(webp())
+		.pipe(gulpif(img => img.extname !== '.webp', webp()))
 		.pipe(gulpif(isRelease, imagemin()))
 		.pipe(dest(paths.root.dest + paths.media.dest))
 		.pipe(gulpif(!isRelease, browsersync.stream()));
