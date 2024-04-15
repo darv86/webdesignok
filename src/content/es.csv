@@ -27,7 +27,7 @@ nav.contacts,Contactos
 ,
 form.name.placeholder,Nombre
 form.name.title,Introduzca al menos 2 letras
-form.email.placeholder,Correo electrónico
+form.email.placeholder,E-mail
 form.email.title,ejemplo@email.com
 form.message.placeholder,Mensaje
 form.message.title,Escribe algún mensaje
@@ -234,7 +234,7 @@ experience.item2.employer,Empleador: Centro de ganancias
 experience.item2.role,Rol: Desarrollador front-end
 experience.item2.skills.item1,Front-end
 experience.item2.skills.item2,ECN
-experience.item2.skills.item3,optimización DX
+experience.item2.skills.item3,Optimización DX
 experience.item3.time.to,06/2020
 experience.item3.time.from,08/2017
 experience.item3.title,Diseño UI/UX

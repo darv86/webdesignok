@@ -1,0 +1,95 @@
+@use '../utils' as *;
+@use 'sass:map';
+
+@mixin forms {
+	.form-body {
+		display: grid;
+		gap: 12px;
+		margin-bottom: 36px;
+	}
+
+	.form-item {
+		position: relative;
+		isolation: isolate;
+		&::after {
+			position: absolute;
+			top: 18px;
+			right: 24px;
+			line-height: 0;
+		}
+		&:has(.form-input:valid) {
+			&::after {
+				content: url('/media/done.svg');
+			}
+		}
+	}
+
+	.form-item-name {
+		&::after {
+			content: url('/media/userForm.svg');
+		}
+	}
+
+	.form-item-email {
+		&::after {
+			content: url('/media/mailForm.svg');
+		}
+	}
+
+	.form-item-message {
+		&::after {
+			content: url('/media/textForm.svg');
+		}
+	}
+
+	.form-label {
+		font-size: 0;
+	}
+
+	.form-input {
+		width: 100%;
+		padding: 18px 60px 18px 24px;
+		border: 1px solid $gray90;
+		border-radius: 2px;
+		background-color: white;
+		font-size: calc(18px / 16px * 1rem);
+		line-height: normal;
+		color: $gray10;
+		&:focus,
+		&:focus-visible {
+			outline: 1px solid $violet;
+			outline-offset: 2px;
+		}
+	}
+
+	.form-textarea {
+		resize: vertical;
+	}
+
+	.form-btn {
+		width: 100%;
+	}
+
+	@media (min-width: map.get($bp, 'mobile3/3')) {
+		.form {
+			max-width: 558px;
+			margin: 0 auto;
+		}
+
+		.form-body {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 24px;
+			margin-bottom: 48px;
+		}
+
+		.form-item-message {
+			grid-column: 1 / -1;
+		}
+
+		.form-btn {
+			display: block;
+			width: initial;
+			margin: 0 auto;
+		}
+	}
+}

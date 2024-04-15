@@ -4,3 +4,38 @@ section.section-form.section.section-bg
 			h2.section-title.title.title-2.title-line= self.contacts.form.title[curlang]
 
 			p.section-desc= self.contacts.form.desc[curlang]
+
+			form.contact-form.form(action='' method='post' enctype='multipart/form-data')
+				fieldset.form-body
+					.form-item.form-item-name
+						label.form-label= self.form.name.placeholder[curlang]
+							input.form-input(
+								name='user-name'
+								type='text'
+								placeholder=self.form.name.placeholder[curlang]
+								title=self.form.name.title[curlang]
+								pattern='[A-Za-zА-Яа-яЁё]{2,}'
+								required
+							)
+
+					.form-item.form-item-email
+						label.form-label= self.form.email.placeholder[curlang]
+							input.form-input(
+								type='email'
+								name='user-email'
+								placeholder=self.form.email.placeholder[curlang]
+								title=self.form.email.title[curlang]
+								pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
+								required
+							)
+
+					.form-item.form-item-message
+						label.form-label= self.form.message.placeholder[curlang]
+							textarea.form-input.form-textarea(
+								name='message'
+								type='text'
+								placeholder=self.form.message.placeholder[curlang]
+								required
+							)
+
+				button.form-btn.btn.btn-1(type='submit')= self.btn.sendMsg[curlang]
