@@ -33,6 +33,7 @@
 		"singleQuote": true,
 		"arrowParens": "avoid",
 		"pugAttributeSeparator": "as-needed",
+		"pugIdNotation": "as-is",
 		"plugins": [
 			"@prettier/plugin-pug"
 		],
