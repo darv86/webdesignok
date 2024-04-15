@@ -1,7 +1,37 @@
-main.contacts-page
+main.contacts-page.main-pages
 	.wrapper
 		.contacts-pages-body
-			ul.contacts-items
-				each item, key in self.contacts
-					if key.startsWith('item')
-						li.contacts-item(class=`main-pages-${key}`)
+			figure.contacts-figure
+				img.contacts-figure-img.img(
+					src='/media/contactsRadushev.webp'
+					srcset='/media/contactsRadushev@2x.webp 2x'
+					alt='image avatar of Dima Radushev'
+				)
+				figcaption.contacts-figure-figcaption.subtitle= self.contacts.cta[curlang]
+
+			.contacts-info
+				.contacts-item
+					h3.contacts-item-title.title.title-3.title-line= self.contacts.email.title[curlang]
+					address.contacts-item-address
+						p.contacts-item-desc.icon-mail= self.info.email[curlang]
+
+				.contacts-item
+					h3.contacts-item-title.title.title-3.title-line= self.contacts.phone.title[curlang]
+					address.contacts-item-address
+						p.contacts-item-desc.icon-phone= self.info.phone[curlang]
+
+				.contacts-item
+					h3.contacts-item-title.title.title-3.title-line= self.contacts.messengers.title[curlang]
+					address.contacts-item-address
+						p.contacts-item-desc.contacts-info-icons.contacts-info-skype= self.info.skype[curlang]
+						p.contacts-item-desc.contacts-info-icons.contacts-info-whatsapp= self.info.phone[curlang]
+						p.contacts-item-desc.contacts-info-icons.contacts-info-telegram= self.info.telegram[curlang]
+						p.contacts-item-desc.contacts-info-icons.contacts-info-viber= self.info.phone[curlang]
+
+				.contacts-item
+					h3.contacts-item-title.title.title-3.title-line= self.contacts.socials.title[curlang]
+					address.contacts-item-address
+						p.contacts-item-desc.contacts-info-icons.contacts-info-github= self.info.github[curlang]
+						p.contacts-item-desc.contacts-info-icons.contacts-info-facebook= self.info.facebook[curlang]
+						p.contacts-item-desc.contacts-info-icons.contacts-info-behance= self.info.behance[curlang]
+						p.contacts-item-desc.contacts-info-icons.contacts-info-pinterest= self.info.pinterest[curlang]

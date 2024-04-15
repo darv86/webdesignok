@@ -313,6 +313,11 @@ experience.brands.item6,Nicepage website builder
 ,Page: CONTACTS
 ,MAIN SECTION
 contacts.cta,Feel free to contact me. I’m open for suggestions or any feedback. Use my contacts to even say “Hi”
+contacts.email.title,E-mail
+contacts.phone.title,Phone
+contacts.messengers.title,Messengers
+contacts.socials.title,Social Media
+,
 ,
 ,FORM
 contacts.form.title,Contact form

@@ -313,6 +313,11 @@ experience.brands.item6,Конструктор сайтів Nicepage
 ,Page: CONTACTS
 ,MAIN SECTION
 contacts.cta,"Не соромтеся звертатися до мене. Я відкритий для пропозицій або будь-яких відгуків. Використовуйте мої контакти, щоб навіть сказати «Привіт»"
+contacts.email.title,Е-пошта
+contacts.phone.title,Телефон
+contacts.messengers.title,Месенджери
+contacts.socials.title,Соц.медіа
+,
 ,
 ,FORM
 contacts.form.title,Контактна форма

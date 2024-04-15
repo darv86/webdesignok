@@ -2,6 +2,145 @@
 @use 'sass:map';
 
 @mixin main {
-	@media (min-width: map.get($bp, 'tablet3/3')) {
+	.contacts-figure {
+		margin-bottom: 48px;
+	}
+
+	.contacts-figure-img {
+		width: 170px;
+		margin: 0 auto 24px;
+	}
+
+	.contacts-figure-figcaption {
+		text-align: center;
+		line-height: 1.5;
+	}
+
+	.contacts-info {
+		display: grid;
+		grid-template-columns: max-content;
+		justify-content: center;
+		gap: 48px;
+	}
+
+	.contacts-item-address {
+		display: grid;
+		gap: 12px;
+	}
+
+	.contacts-item-title {
+		width: max-content;
+		margin-bottom: 12px;
+		&::after {
+			margin: 6px 0 0;
+		}
+	}
+
+	.contacts-item-desc {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		&[class*='icon-']::before {
+			font-size: calc(16px / 14px * 1em);
+		}
+	}
+
+	.contacts-info-icons {
+		&::before {
+			line-height: 0;
+		}
+	}
+
+	.contacts-info-skype {
+		&::before {
+			content: url('/media/skypeLogo.svg');
+		}
+	}
+
+	.contacts-info-telegram {
+		&::before {
+			content: url('/media/telegramLogo.svg');
+		}
+	}
+
+	.contacts-info-whatsapp {
+		&::before {
+			content: url('/media/whatsappLogo.svg');
+		}
+	}
+
+	.contacts-info-viber {
+		&::before {
+			content: url('/media/viberLogo.svg');
+		}
+	}
+
+	.contacts-info-github {
+		&::before {
+			content: url('/media/githubLogo.svg');
+		}
+	}
+
+	.contacts-info-facebook {
+		&::before {
+			content: url('/media/facebookLogo.svg');
+		}
+	}
+
+	.contacts-info-behance {
+		&::before {
+			content: url('/media/behanceLogo.svg');
+		}
+	}
+
+	.contacts-info-pinterest {
+		&::before {
+			content: url('/media/pinterestLogo.svg');
+		}
+	}
+
+	@media (min-width: map.get($bp, 'mobile3/3')) {
+		.contacts-info {
+			max-width: 455px;
+			grid-template-columns: repeat(2, 1fr);
+			margin: 0 auto;
+		}
+	}
+
+	@media (min-width: map.get($bp, 'tablet1/3')) {
+		.contacts-figure {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 24px;
+		}
+
+		.contacts-figure-img {
+			margin: 0;
+		}
+
+		.contacts-figure-figcaption {
+			max-width: 364px;
+			text-align: left;
+		}
+
+		.contacts-item-title {
+			margin-bottom: 24px;
+			&::after {
+				margin: 12px 0 0;
+			}
+		}
+	}
+
+	@media (min-width: map.get($bp, 'tablet2/3')) {
+		.contacts-pages-body {
+			display: flex;
+			align-items: flex-start;
+			gap: 60px;
+		}
+
+		.contacts-figure {
+			margin: 0;
+		}
 	}
 }

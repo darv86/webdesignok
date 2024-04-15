@@ -313,6 +313,11 @@ experience.brands.item6,Creador de sitios web Nicepage
 ,Page: CONTACTS
 ,MAIN SECTION
 contacts.cta,"No dude en ponerse en contacto conmigo. Estoy abierto a sugerencias o comentarios. Usar mis contactos incluso para decir ""Hola"""
+contacts.email.title,E-mail
+contacts.phone.title,Teléfono
+contacts.messengers.title,Mensajeros
+contacts.socials.title,Medios de social
+,
 ,
 ,FORM
 contacts.form.title,Formulario de contacto

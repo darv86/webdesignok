@@ -1,9 +1,11 @@
 @use '../blocks/header-pages' as *;
+@use '../blocks/main-pages' as *;
 @use '../blocks/contacts/header' as *;
 @use '../blocks/contacts/main' as *;
 @use '../blocks/contacts/form' as *;
 
 @include header-pages;
+@include main-pages;
 @include header;
 @include main;
 @include form;
