@@ -2,6 +2,7 @@
 // import { Transform } from 'node:stream';
 import { readdir, unlink } from 'node:fs/promises';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import gulp from 'gulp';
 import pug from 'gulp-pug';
 import * as dartSass from 'sass';
@@ -25,6 +26,9 @@ import _ from 'lodash/lodash.min.js';
 import webpackConfig from './webpack.config.js';
 import siteConfig from './siteConfig.js';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const { isRelease, paths, isCompressing, colors, ftp } = siteConfig;
 const { src, dest, series, parallel, watch } = gulp;
 const sass = gulpSass(dartSass);
@@ -46,7 +50,7 @@ const getContent = async () => {
 
 export const markup = async () => {
 	return src(paths.root.src + paths.markup.src)
-		.pipe(pug({ pretty: isCompressing.html ? false : '	', data: { ...(await getContent()), colors }, doctype: 'html', self: true }))
+		.pipe(pug({ pretty: isCompressing.html ? false : '	', data: { ...(await getContent()), colors }, basedir: __dirname, doctype: 'html', self: true }))
 		.pipe(webpHtml())
 		.pipe(dest(paths.root.dest + paths.markup.dest))
 		.pipe(gulpif(!isRelease, browsersync.stream()));
