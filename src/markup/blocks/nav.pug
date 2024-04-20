@@ -14,7 +14,7 @@ nav.nav
 				else
 					a.nav-item.nav-link(
 						class=[`icon-${menuItemName}`, { 'nav-link--active': curpage === menuItemName }]
-						href=`${basedir}${menuItemName}.html`
+						href=`${basedir}${menuItemName}`
 					)
 						span.nav-item-span= menuItemText[curlang]
 
@@ -33,6 +33,6 @@ nav.nav
 						data-option
 						data-selected=lang === curlang ? true : false
 						hidden=lang === curlang ? true : false
-						href=`/${lang === deflang ? '' : lang + '/'}${curpage === '/' ? '' : curpage + '.html'}`
+						href=`/${lang === deflang ? '' : lang + '/'}${curpage === '/' ? '' : curpage}`
 					)
 						span.nav-item-span= transl

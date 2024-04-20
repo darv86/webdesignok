@@ -1,4 +1,4 @@
-extends ../base
+extends /src/markup/base
 
 block append vars
 	-
@@ -15,8 +15,8 @@ block append scripts
 	script(src='/js/pages/contacts.js')
 
 block header
-	include ../blocks/contacts/header
+	include ../../blocks/contacts/header
 
 block content
-	include ../blocks/contacts/main
-	include ../blocks/contacts/form
+	include ../../blocks/contacts/main
+	include ../../blocks/contacts/form
