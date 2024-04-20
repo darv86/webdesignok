@@ -1,0 +1,9 @@
+@use '../../blocks/header-pages' as *;
+@use '../../blocks/main-pages' as *;
+@use '../../blocks/portfolio/header' as *;
+@use '../../blocks/portfolio/main' as *;
+
+@include header-pages;
+@include main-pages;
+@include header;
+@include main;

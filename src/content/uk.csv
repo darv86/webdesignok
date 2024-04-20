@@ -45,6 +45,7 @@ title.index,Веб дизайн & розробка
 title.contacts,Контакти Дмитра Радушева
 title.education,Освіта Дмитра Радушева
 title.experience,Досвід Дмитра Радушева
+title.portfolio,Портфоліо Дмитра Радушева
 ,
 ,INFO
 info.phone,+38(093)8366030
@@ -263,7 +264,7 @@ experience.item6.time.to,04/2015
 experience.item6.time.from,02/2015
 experience.item6.title,Розробка
 experience.item6.employer,Роботодавець: Інформпроект
-experience.item6.role,Посада: молодший інженер
+experience.item6.role,Посада: Молодший інженер
 experience.item6.skills.item1,Інтерфейс
 experience.item6.skills.item2,База даних
 experience.item6.skills.item3,Delphi

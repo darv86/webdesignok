@@ -1,0 +1,23 @@
+main.section-portfolio.main-pages
+	.wrapper
+		.section-body
+			ul.portfolio-list
+				- const myportfolioImgsName = { item1: 'axasVerticalPreview-min', item2: 'gymSquarePreview-min', item3: 'autobutikSquarePreview-min', item4: 'lazHrizontalPreview-min' };
+				each item, key in self.myportfolio
+					if key.startsWith('item')
+						li.portfolio-item(class=`portfolio-${key}`)
+							figure.portfolio-item-figure
+								img.portfolio-item-img.img(
+									src=`/media/${myportfolioImgsName[key]}.jpg`
+									alt=`thumbnail of webpage for ${item.title.en}`
+									loading='lazy'
+								)
+
+								figcaption.portfolio-item-figcaption
+									h3.portfolio-item-title.title.title-3.title-line= item.title[curlang]
+
+									p.portfolio-item-desc= item.desc[curlang]
+
+									each pageName, address in self.nav.portfolio
+										if item.title[curlang] === pageName[curlang]
+											a.portfolio-item-btn.btn.btn-2(href=`${basedir}portfolio/${address}/`)= self.btn.viewProject[curlang]

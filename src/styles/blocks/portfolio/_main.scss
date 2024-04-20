@@ -1,0 +1,159 @@
+@use '../../utils' as *;
+@use 'sass:map';
+@use 'sass:color';
+
+@mixin main {
+	.portfolio-list {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 48px;
+	}
+
+	.portfolio-item {
+		display: grid;
+		border: 1px solid $gray90;
+		border-radius: 2px;
+		overflow: hidden;
+		text-align: center;
+	}
+
+	.portfolio-item-figure {
+		position: relative;
+		isolation: isolate;
+	}
+
+	.portfolio-item-img {
+		object-fit: cover;
+		object-position: top;
+		@media (pointer: fine) {
+			position: absolute;
+			z-index: -1;
+			inset: 0;
+			height: 100%;
+		}
+		@media (pointer: coarse) {
+			height: 256px;
+		}
+	}
+
+	.portfolio-item-figcaption {
+		padding: 48px 24px;
+		background-color: color.change(white, $alpha: 0.92);
+		backdrop-filter: blur(5px);
+		@media (pointer: fine) {
+			pointer-events: none;
+			transition: opacity $dur;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			height: 100%;
+			min-height: 256px;
+			opacity: 0;
+			:where(.portfolio-item):hover & {
+				pointer-events: initial;
+				opacity: 1;
+			}
+		}
+		@media (pointer: coarse) {
+			position: relative;
+			margin-top: -88px;
+		}
+	}
+
+	.portfolio-item-title {
+		display: inline-block;
+		align-self: center;
+		margin-bottom: 12px;
+	}
+
+	.portfolio-item-desc {
+		margin-bottom: 24px;
+	}
+
+	@media (min-width: map.get($bp, 'mobile3/3')) {
+		.portfolio-list {
+			grid-template-columns: repeat(2, 1fr);
+			grid-auto-rows: 1fr;
+			gap: 24px;
+		}
+
+		@media (pointer: coarse) {
+			.portfolio-item-figure {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.portfolio-item-figcaption {
+				display: flex;
+				flex-direction: column;
+				flex-grow: 1;
+			}
+
+			.portfolio-item-btn {
+				margin-top: auto;
+			}
+		}
+	}
+
+	@media (min-width: map.get($bp, 'tablet2/3')) {
+		.portfolio-list {
+			grid-template-columns: initial;
+			grid-auto-rows: initial;
+			grid-template-areas:
+				'item1 item2 item3'
+				'item1 item4 item4';
+		}
+
+		.portfolio-item1 {
+			grid-area: item1;
+		}
+
+		.portfolio-item2 {
+			grid-area: item2;
+		}
+
+		.portfolio-item3 {
+			grid-area: item3;
+		}
+
+		.portfolio-item4 {
+			grid-area: item4;
+		}
+
+		@media (pointer: coarse) {
+			.portfolio-item-img {
+				position: absolute;
+				z-index: -1;
+				inset: 0;
+				height: 100%;
+			}
+
+			.portfolio-item-figcaption {
+				pointer-events: none;
+				transition: opacity $dur;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				flex-grow: initial;
+				height: 100%;
+				min-height: 256px;
+				margin-top: initial;
+				opacity: 0;
+				:where(.portfolio-item):hover & {
+					pointer-events: initial;
+					opacity: 1;
+				}
+			}
+
+			.portfolio-item-btn {
+				margin-top: initial;
+			}
+		}
+	}
+
+	@media (min-width: map.get($bp, 'tablet3/3')) {
+		.portfolio-item-figcaption {
+			padding: 48px;
+		}
+	}
+}

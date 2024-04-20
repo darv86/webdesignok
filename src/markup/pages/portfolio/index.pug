@@ -1,0 +1,20 @@
+extends /src/markup/base
+
+block append vars
+	-
+		curpage = 'portfolio';
+		pageTitle = self.title.portfolio[curlang];
+
+block append meta
+	meta(name='description' content='Portfolio of Dima Radushev')
+
+block append styles
+	link(rel='stylesheet' href='/css/pages/portfolio/portfolio.css')
+
+block append scripts
+
+block header
+	include ../../blocks/portfolio/header
+
+block content
+	include ../../blocks/portfolio/main

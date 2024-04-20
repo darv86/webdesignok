@@ -45,6 +45,7 @@ title.index,Web diseño & Desarrollo
 title.contacts,Contactos de Dima Radushev
 title.education,Educación de Dima Radushev
 title.experience,La experiencia de Dima Radushev
+title.portfolio,Portafolio de Dima Radushev
 ,
 ,INFO
 info.phone,+38(093)8366030
@@ -234,7 +235,7 @@ experience.item2.employer,Empleador: Centro de ganancias
 experience.item2.role,Rol: Desarrollador front-end
 experience.item2.skills.item1,Front-end
 experience.item2.skills.item2,ECN
-experience.item2.skills.item3,Optimización DX
+experience.item2.skills.item3,optimización DX
 experience.item3.time.to,06/2020
 experience.item3.time.from,08/2017
 experience.item3.title,Diseño UI/UX
