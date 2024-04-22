@@ -2,10 +2,6 @@
 @use 'sass:map';
 
 @mixin main-pages {
-	.main-pages {
-		padding: 24px 0 72px;
-	}
-
 	.main-pages-item {
 		position: relative;
 		isolation: isolate;
@@ -73,12 +69,6 @@
 
 	.main-pages-links {
 		display: none;
-	}
-
-	@media (min-width: map.get($bp, 'mobile3/3')) {
-		.main-pages {
-			padding: 30px 0 112px;
-		}
 	}
 
 	@media (min-width: map.get($bp, 'tablet1/3')) {
