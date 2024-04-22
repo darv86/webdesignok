@@ -3,6 +3,15 @@
 @use 'sass:color';
 
 @mixin main {
+	.portfolio-subtitle {
+		gap: 12px;
+		margin-bottom: 24px;
+		&::before {
+			@include shape-render('circle');
+			color: $red;
+		}
+	}
+
 	.portfolio-list {
 		display: grid;
 		grid-template-columns: 1fr;

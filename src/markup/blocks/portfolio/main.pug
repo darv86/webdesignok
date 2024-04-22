@@ -1,6 +1,7 @@
 main.section-portfolio.main-pages
 	.wrapper
 		.section-body
+			p.portfolio-subtitle.subtitle.shape= self.nav.services['web-design'][curlang]
 			ul.portfolio-list
 				- const myportfolioImgsName = { item1: 'axasVerticalPreview-min', item2: 'gymSquarePreview-min', item3: 'autobutikSquarePreview-min', item4: 'lazHrizontalPreview-min' };
 				each item, key in self.myportfolio
