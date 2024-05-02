@@ -56,9 +56,11 @@ export const markup = async () => {
 		.pipe(gulpif(!isRelease, browsersync.stream()));
 };
 
+// .pipe(sass({ outputStyle: isCompressing.css ? 'compressed' : undefined, importer: (url, prev, done) => done({ file: path.resolve('./node_modules').concat('/', url) }) }).on('error', sass.logError))
+// .pipe(sass({ outputStyle: isCompressing.css ? 'compressed' : undefined, includePaths: ['./', './node_modules'] }).on('error', sass.logError))
 export const styles = () => {
 	return src(paths.root.src + paths.styles.src, isRelease ? {} : { sourcemaps: true })
-		.pipe(sass({ outputStyle: isCompressing.css ? 'compressed' : undefined, importer: (url, prev, done) => done({ file: path.resolve('./node_modules').concat('/', url) }) }).on('error', sass.logError))
+		.pipe(sass({ outputStyle: isCompressing.css ? 'compressed' : undefined, loadPaths: [path.resolve('./'), path.resolve('./node_modules')] }).on('error', sass.logError))
 		.pipe(webpCss())
 		.pipe(gulpif(isRelease, autoprefixer({ grid: true, cascade: false })))
 		.pipe(gulpif(isRelease, groupMediaQueries()))
