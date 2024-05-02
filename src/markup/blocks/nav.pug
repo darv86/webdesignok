@@ -33,6 +33,6 @@ nav.nav
 						data-option
 						data-selected=lang === curlang ? true : false
 						hidden=lang === curlang ? true : false
-						href=`/${lang === deflang ? '' : lang + '/'}${curpage === '/' ? '' : curpage}`
+						href=`/${lang === deflang ? curpage : lang + '/' + curpage}`
 					)
 						span.nav-item-span= transl
