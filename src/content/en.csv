@@ -9,6 +9,8 @@ btn.download,Download CV
 btn.viewProject,View project
 btn.viewPortfolio,View portfolio 
 btn.sendMsg,Send message
+btn.backto,Back to Portfolio
+btn.watch,Watch it on Behance
 ,
 nav.home,Home
 nav.services,Services
@@ -46,6 +48,11 @@ title.contacts,Contacts of Dima Radushev
 title.education,Education of Dima Radushev
 title.experience,Experience of Dima Radushev
 title.portfolio,Portfolio of Dima Radushev
+title.portfolio.axas,Axas project designed by Dima Radushev
+title.portfolio.gym,Gym devices designed by Dima Radushev
+title.portfolio.autoBoutique,Auto boutique designed by Dima Radushev
+title.portfolio.laz,Laz factory designed by Dima Radushev
+,
 ,
 ,INFO
 info.phone,+38(093)8366030
@@ -319,7 +326,39 @@ contacts.phone.title,Phone
 contacts.messengers.title,Messengers
 contacts.socials.title,Social Media
 ,
-,
 ,FORM
 contacts.form.title,Contact form
 contacts.form.desc,Contact form this is the simplest way to get in touch with me. Just drop me a couple lines and I will respond on your e-mail.
+,
+,Page: PORTFOLIO
+,MAIN SECTION
+portfolio.clientInfo,Client information
+portfolio.servicesProvided,Services provided
+portfolio.desktopVersion,Desktop version
+portfolio.mobileVersion,Mobile version
+portfolio.landingPage,Landing Page
+portfolio.homePage,Home Page
+portfolio.productPage,Product Page
+portfolio.catalogPage,Catalog Page
+portfolio.offerPage,Offer Page
+portfolio.contactsPage,Contacts Page
+,
+,Page: AXAS-PROJECT
+,MAIN SECTION
+portfolio.axas.info,"Startup company, which located in Russia, Krasnodar. Established - 2018. Specializes in developing native and web applications."
+portfolio.axas.services,"The logical structure was provided by the client. According to this structure, I designed a landing page with all modal windows."
+,
+,Page: GYM DEVICES
+,MAIN SECTION
+portfolio.gym.info,"E-commerce company. Located in Russia, Moscow. Established - 2013. Specializes in the sale of professional sports equipment."
+portfolio.gym.services,"I’ve designed wireframes for the desktop, tablet and mobile versions. Then a clickable prototype of the pages was designed."
+,
+,Page: AUTO BOUTIQUE
+,MAIN SECTION
+portfolio.autoBoutique.info,"Located in Russia, Moscow. Established - 1995. Provides a wide range of automotive accessories and detailing services."
+portfolio.autoBoutique.services,I made a landing page design specially for detailing services. Modal windows and capture forms have also been designed.
+,
+,Page: LAZ FACTORY
+,MAIN SECTION
+portfolio.laz.info,"Located in Ukraine, Lviv. Established - 1945. One of the largest public transport factory in Europe. Has two Guinness records."
+portfolio.laz.services,Photo shooting. Photography retouching. Conception and logical structure. Web design for promo website. Web development.

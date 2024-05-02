@@ -9,6 +9,8 @@ btn.download,Descargar CV
 btn.viewProject,Ver proyecto
 btn.viewPortfolio,Ver portafolio
 btn.sendMsg,Enviar mensaje
+btn.backto,Volver al portafolio
+btn.watch,Míralo en Behance
 ,
 nav.home,Inicio 
 nav.services,Servicios
@@ -46,6 +48,11 @@ title.contacts,Contactos de Dima Radushev
 title.education,Educación de Dima Radushev
 title.experience,La experiencia de Dima Radushev
 title.portfolio,Portafolio de Dima Radushev
+title.portfolio.axas,Proyecto Axas diseñado por Dima Radushev
+title.portfolio.gym,Gym devices diseñados por Dima Radushev
+title.portfolio.autoBoutique,Auto boutique diseñada por Dima Radushev
+title.portfolio.laz,Fábrica Laz diseñada por Dima Radushev
+,
 ,
 ,INFO
 info.phone,+38(093)8366030
@@ -235,7 +242,7 @@ experience.item2.employer,Empleador: Centro de ganancias
 experience.item2.role,Rol: Desarrollador front-end
 experience.item2.skills.item1,Front-end
 experience.item2.skills.item2,ECN
-experience.item2.skills.item3,optimización DX
+experience.item2.skills.item3,Optimización DX
 experience.item3.time.to,06/2020
 experience.item3.time.from,08/2017
 experience.item3.title,Diseño UI/UX
@@ -319,7 +326,39 @@ contacts.phone.title,Teléfono
 contacts.messengers.title,Mensajeros
 contacts.socials.title,Medios de social
 ,
-,
 ,FORM
 contacts.form.title,Formulario de contacto
 contacts.form.desc,Formulario de contacto esta es la forma más sencilla de ponerse en contacto conmigo. Sólo envíame un par de líneas y te responderé a tu correo electrónico.
+,
+,Page: PORTFOLIO
+,MAIN SECTION
+portfolio.clientInfo,Información del cliente
+portfolio.servicesProvided,Servicios prestados
+portfolio.desktopVersion,Version de escritorio
+portfolio.mobileVersion,Version móvil
+portfolio.landingPage,Página de destino
+portfolio.homePage,Página de inicio
+portfolio.productPage,Página del producto
+portfolio.catalogPage,Página del catálogo
+portfolio.offerPage,Página de oferta
+portfolio.contactsPage,Página de contactos
+,
+,Page: AXAS-PROJECT
+,MAIN SECTION
+portfolio.axas.info,"Empresa de nueva creación, ubicada en Rusia, Krasnodar. Establecido - 2018. Se especializa en el desarrollo de aplicaciones nativas y web."
+portfolio.axas.services,"La estructura lógica fue proporcionada por el cliente. Según esta estructura, diseñé una página de destino con todas las ventanas modales."
+,
+,Page: GYM DEVICES
+,MAIN SECTION
+portfolio.gym.info,"Empresa de comercio electrónico. Ubicado en Rusia, Moscú. Establecido - 2013. Se especializa en la venta de material deportivo profesional."
+portfolio.gym.services,"He diseñado wireframes para las versiones de escritorio, tableta y móvil. Luego se diseñó un prototipo de las páginas en el que se podía hacer clic."
+,
+,Page: AUTO BOUTIQUE
+,MAIN SECTION
+portfolio.autoBoutique.info,"Ubicado en Rusia, Moscú. Establecido en 1995. Ofrece una amplia gama de accesorios y servicios de detallado para automóviles."
+portfolio.autoBoutique.services,Hice un diseño de página de aterrizaje especialmente para servicios de detallado. También se han diseñado ventanas modales y formularios de captura.
+,
+,Page: LAZ FACTORY
+,MAIN SECTION
+portfolio.laz.info,"Ubicado en Ucrania, Lviv. Fundada en 1945. Una de las fábricas de transporte público más grandes de Europa. Tiene dos récords Guinness."
+portfolio.laz.services,Sesión de fotos. Retoque fotográfico. Concepción y estructura lógica. Diseño web para sitio web promocional. Desarrollo web.

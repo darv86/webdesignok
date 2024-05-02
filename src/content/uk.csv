@@ -9,6 +9,8 @@ btn.download,Завантажте резюме
 btn.viewProject,Переглянути проект
 btn.viewPortfolio,Переглянути портфоліо
 btn.sendMsg,Відправити повідомлення
+btn.backto,Повернутися до портфоліо
+btn.watch,Переглянути на Behance
 ,
 nav.home,Головна
 nav.services,Послуги
@@ -46,6 +48,11 @@ title.contacts,Контакти Дмитра Радушева
 title.education,Освіта Дмитра Радушева
 title.experience,Досвід Дмитра Радушева
 title.portfolio,Портфоліо Дмитра Радушева
+title.portfolio.axas,Проект Axas - дизайн спроектовано Радушевим Дмитром
+title.portfolio.gym,Gym devices - дизайн спроектовано Радушевим Дмитром
+title.portfolio.autoBoutique,Авто бутик - дизайн спроектовано Радушевим Дмитром
+title.portfolio.laz,ЛАЗ завод - дизайн спроектовано Радушевим Дмитром
+,
 ,
 ,INFO
 info.phone,+38(093)8366030
@@ -264,7 +271,7 @@ experience.item6.time.to,04/2015
 experience.item6.time.from,02/2015
 experience.item6.title,Розробка
 experience.item6.employer,Роботодавець: Інформпроект
-experience.item6.role,Посада: Молодший інженер
+experience.item6.role,Посада: молодший інженер
 experience.item6.skills.item1,Інтерфейс
 experience.item6.skills.item2,База даних
 experience.item6.skills.item3,Delphi
@@ -323,3 +330,36 @@ contacts.socials.title,Соц.медіа
 ,FORM
 contacts.form.title,Контактна форма
 contacts.form.desc,"Контактна форма - це найпростіший спосіб зв'язатися зі мною. Просто напишіть мені пару рядків, і я відповім на вашу електронну пошту."
+,
+,Page: PORTFOLIO
+,MAIN SECTION
+portfolio.clientInfo,Інформація про клієнта
+portfolio.servicesProvided,Надані послуги
+portfolio.desktopVersion,Настільна версія
+portfolio.mobileVersion,Мобільна версія
+portfolio.landingPage,Цільова сторінка
+portfolio.homePage,Домашня сторінка
+portfolio.productPage,Сторінка продукту
+portfolio.catalogPage,Сторінка каталогу
+portfolio.offerPage,Сторінка пропозиції
+portfolio.contactsPage,Сторінка контактів
+,
+,Page: AXAS-PROJECT
+,MAIN SECTION
+portfolio.axas.info,"Стартап-компанія, яка знаходиться в Росії, Краснодар. Створено - 2018. Спеціалізується на розробці нативних і веб-додатків."
+portfolio.axas.services,Логічну структуру надав клієнт. Відповідно до цієї структури я розробив цільову сторінку з усіма модальними вікнами.
+,
+,Page: GYM DEVICES
+,MAIN SECTION
+portfolio.gym.info,"Компанія електронної комерції. Знаходиться в Росії, Москва. Створено - 2013. Спеціалізується на продажу професійного спортивного обладнання."
+portfolio.gym.services,"Я розробив фрейми для настільних ПК, планшетів і мобільних версій. Потім був розроблений клікабельний прототип сторінок."
+,
+,Page: AUTO BOUTIQUE
+,MAIN SECTION
+portfolio.autoBoutique.info,"Знаходиться в Росії, Москва. Заснована - 1995. Надає широкий спектр автомобільних аксесуарів і послуг з деталізації."
+portfolio.autoBoutique.services,Я зробив дизайн цільової сторінки спеціально для послуг деталізації. Також були розроблені модальні вікна та форми.
+,
+,Page: LAZ FACTORY
+,MAIN SECTION
+portfolio.laz.info,"Знаходиться в Україні, Львів. Дата заснування - 1945. Один з найбільших заводів громадського транспорту в Європі. Має два рекорди Гіннеса."
+portfolio.laz.services,Фотозйомка. Ретуш фотографій. Концепція та логічна структура. Веб дизайн промо сайту. Веб-розробка.
