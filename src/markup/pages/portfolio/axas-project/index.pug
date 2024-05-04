@@ -9,12 +9,13 @@ block append meta
 	meta(name='description' content='Axas project: a part of the portfolio of Dima Radushev')
 
 block append styles
-	link(rel='stylesheet' href='/css/pages/portfolio/portfolio.css')
+	link(rel='stylesheet' href='/css/pages/portfolio/axas-project/axas-project.css')
 
 block append scripts
 
 block header
-	//- include ../../blocks/portfolio/header
+	include /src/markup/blocks/portfolio/axas-project/header
 
 block content
-	//- include ../../blocks/portfolio/main
+	include /src/markup/blocks/portfolio/axas-project/about
+	include /src/markup/blocks/portfolio/axas-project/gallery

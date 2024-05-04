@@ -1,0 +1,14 @@
+main.main-pages.portfolio-project-page
+	.wrapper
+		.main-pages-body
+			img.portfolio-project-img.img(
+				src='/media/axasProjectKeyview.jpg'
+				srcset='/media/axasProjectKeyview@2.jpg 2x'
+				alt='landing page for axas project designed by Dima Radushev'
+			)
+
+			.portfolio-project-info
+				btn.portfolio-project-btn-backto.btn.btn-backto.icon-backto= self.btn.backto[curlang]
+				h3.portfolio-project-title.title.title-3= self.portfolio.clientInfo[curlang]
+				p.portfolio-project-desc= self.portfolio.axas.info[curlang]
+				//- p.portfolio-project-desc= self.portfolio.axas.info[curlang]
