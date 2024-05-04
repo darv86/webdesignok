@@ -1,8 +1,8 @@
 // @ts-nocheck
 // import { Transform } from 'node:stream';
+// import { fileURLToPath } from 'node:url';
 import { readdir, unlink } from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import gulp from 'gulp';
 import pug from 'gulp-pug';
 import * as dartSass from 'sass';
@@ -26,9 +26,6 @@ import _ from 'lodash/lodash.min.js';
 import webpackConfig from './webpack.config.js';
 import siteConfig from './siteConfig.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 const { isRelease, paths, isCompressing, colors, ftp } = siteConfig;
 const { src, dest, series, parallel, watch } = gulp;
 const sass = gulpSass(dartSass);
@@ -50,17 +47,22 @@ const getContent = async () => {
 
 export const markup = async () => {
 	return src(paths.root.src + paths.markup.src)
-		.pipe(pug({ pretty: isCompressing.html ? false : '	', data: { ...(await getContent()), colors }, basedir: __dirname, doctype: 'html', self: true }))
+		.pipe(pug({ pretty: isCompressing.html ? false : '	', data: { ...(await getContent()), colors }, basedir: path.resolve('./'), doctype: 'html', self: true }))
+		.on('error', err => console.error(err.message))
 		.pipe(webpHtml())
 		.pipe(dest(paths.root.dest + paths.markup.dest))
 		.pipe(gulpif(!isRelease, browsersync.stream()));
 };
-
-// .pipe(sass({ outputStyle: isCompressing.css ? 'compressed' : undefined, importer: (url, prev, done) => done({ file: path.resolve('./node_modules').concat('/', url) }) }).on('error', sass.logError))
-// .pipe(sass({ outputStyle: isCompressing.css ? 'compressed' : undefined, includePaths: ['./', './node_modules'] }).on('error', sass.logError))
 export const styles = () => {
 	return src(paths.root.src + paths.styles.src, isRelease ? {} : { sourcemaps: true })
-		.pipe(sass({ outputStyle: isCompressing.css ? 'compressed' : undefined, loadPaths: [path.resolve('./'), path.resolve('./node_modules')] }).on('error', sass.logError))
+		.pipe(
+			sass({
+				outputStyle: isCompressing.css ? 'compressed' : undefined,
+				loadPaths: [path.resolve('./'), path.resolve('./node_modules')],
+				// TODO: refactor legacy importer to modern importers
+				importer: url => (!url.startsWith('/') ? null : { file: path.resolve('./').concat('/', url) }),
+			}).on('error', sass.logError),
+		)
 		.pipe(webpCss())
 		.pipe(gulpif(isRelease, autoprefixer({ grid: true, cascade: false })))
 		.pipe(gulpif(isRelease, groupMediaQueries()))
@@ -195,9 +197,8 @@ export const watcher = () => {
 
 export const release = series(
 	clean,
-	// getContent,
 	parallel(markup, styles, scripts, fonts, media, resources, favicon),
 	gulpif(ftp.onRelease, deploy, async () => {}),
 );
 
-export default series(clean, parallel(markup, styles, scripts, fonts, media, resources, favicon), parallel(watcher, server));
+export default series(clean, parallel(markup, styles, scripts, fonts, media, resources), parallel(watcher, server));
