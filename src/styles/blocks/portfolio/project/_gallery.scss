@@ -1,0 +1,10 @@
+@use '/src/styles/utils' as *;
+@use 'sass:map';
+
+@mixin gallery {
+	// .portfolio-project {
+	// }
+
+	@media (min-width: map.get($bp, 'tablet2/3')) {
+	}
+}

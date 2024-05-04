@@ -1,0 +1,11 @@
+@use '/src/styles/utils' as *;
+@use 'sass:map';
+
+@mixin about {
+	.portfolio-project-img {
+		display: none;
+	}
+
+	@media (min-width: map.get($bp, 'tablet1/3')) {
+	}
+}

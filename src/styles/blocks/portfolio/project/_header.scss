@@ -1,0 +1,7 @@
+@use '/src/styles/utils' as *;
+@use 'sass:map';
+
+@mixin header {
+	@media (min-width: map.get($bp, 'tablet2/3')) {
+	}
+}
