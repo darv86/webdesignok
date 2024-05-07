@@ -53,6 +53,7 @@ export const markup = async () => {
 		.pipe(dest(paths.root.dest + paths.markup.dest))
 		.pipe(gulpif(!isRelease, browsersync.stream()));
 };
+
 export const styles = () => {
 	return src(paths.root.src + paths.styles.src, isRelease ? {} : { sourcemaps: true })
 		.pipe(

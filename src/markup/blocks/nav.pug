@@ -6,17 +6,19 @@ nav.nav
 			button.nav-toggler
 				span.nav-toggler-lines
 
-		.nav-menu
+		menu.nav-menu
 			each menuItemText, menuItemName in self.nav
 				if menuItemName === 'home'
-					a.nav-item.nav-link.icon-home(class={ 'nav-link--active': curpage === '/' } href=basedir)
-						span.nav-item-span= menuItemText[curlang]
+					li.nav-menu-item
+						a.nav-item.nav-link.icon-home(class={ 'nav-link--active': curpage === '/' } href=basedir)
+							span.nav-item-span= menuItemText[curlang]
 				else
-					a.nav-item.nav-link(
-						class=[`icon-${menuItemName}`, { 'nav-link--active': curpage === menuItemName }]
-						href=`${basedir}${menuItemName}`
-					)
-						span.nav-item-span= menuItemText[curlang]
+					li.nav-menu-item
+						a.nav-item.nav-link(
+							class=[`icon-${menuItemName}`, { 'nav-link--active': curpage === menuItemName }]
+							href=`${basedir}${menuItemName}`
+						)
+							span.nav-item-span= menuItemText[curlang]
 
 		address.nav-contact-info
 			a.nav-item.nav-link.icon-phone(href=`tel:${self.info.phone[curlang]}`)
