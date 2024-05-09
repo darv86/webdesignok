@@ -10,10 +10,6 @@
 		display: none;
 	}
 
-	.btn-backto {
-		margin-bottom: 48px;
-	}
-
 	.portfolio-project-title {
 		width: max-content;
 		margin-bottom: 12px;
@@ -24,6 +20,34 @@
 
 	.portfolio-project-desc-info {
 		margin-bottom: 24px;
+	}
+
+	.btn-backto {
+		margin-bottom: 48px;
+		&::before {
+			content: url('/media/backTo.svg');
+		}
+		@media (pointer: coarse) {
+			&:active {
+				&::before {
+					translate: -3px 0;
+				}
+			}
+		}
+		@media (pointer: fine) {
+			&:hover {
+				&::before {
+					translate: -3px 0;
+				}
+			}
+		}
+	}
+
+	.btn-watch {
+		margin-top: 12px;
+		&::after {
+			content: url('/media/behanceLogo.svg');
+		}
 	}
 
 	@media (min-width: map.get($bp, 'tablet1/3')) {

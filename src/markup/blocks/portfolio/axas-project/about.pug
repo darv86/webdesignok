@@ -7,7 +7,7 @@
 		)
 
 	article.portfolio-project-info
-		a.portfolio-project-btn-backto.btn.btn-backto(
+		a.portfolio-project-btn-backto.btn.btn-link.btn-backto(
 			href=`/${curlang === deflang ? '' : curlang + '/'}portfolio/`
 		)= self.btn.backto[curlang]
 		h3.portfolio-project-title.title.title-3.title-line= self.portfolio.clientInfo[curlang]

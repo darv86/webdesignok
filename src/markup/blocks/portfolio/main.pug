@@ -21,4 +21,4 @@ main.section-portfolio.main-pages
 
 									each pageName, address in self.nav.portfolio
 										if item.title[curlang] === pageName[curlang]
-											a.portfolio-item-btn.btn.btn-2(href=`${basedir}portfolio/${address}/`)= self.btn.viewProject[curlang]
+											a.portfolio-item-btn.btn.btn-link.btn-2(href=`${basedir}portfolio/${address}/`)= self.btn.viewProject[curlang]

@@ -1,0 +1,9 @@
+@use '/src/styles/blocks/header-pages' as *;
+@use '/src/styles/blocks/portfolio/project/header' as *;
+@use '/src/styles/blocks/portfolio/project/about' as *;
+@use '/src/styles/blocks/portfolio/project/gallery' as *;
+
+@include header-pages;
+@include header;
+@include about;
+@include gallery;

@@ -1,0 +1,22 @@
+.portfolio-project-about
+	figure.portfolio-project-figure
+		img.portfolio-project-img.img(
+			src='/media/lazProjectKeyview.jpg'
+			srcset='/media/lazProjectKeyview@2.jpg 2x'
+			alt='preview of a landing page for laz factory project designed by Dima Radushev'
+		)
+
+	article.portfolio-project-info
+		a.portfolio-project-btn-backto.btn.btn-link.btn-backto(
+			href=`/${curlang === deflang ? '' : curlang + '/'}portfolio/`
+		)= self.btn.backto[curlang]
+		h3.portfolio-project-title.title.title-3.title-line= self.portfolio.clientInfo[curlang]
+		p.portfolio-project-desc.portfolio-project-desc-info= self.portfolio.laz.info[curlang]
+		h3.portfolio-project-title.title.title-3.title-line= self.portfolio.servicesProvided[curlang]
+		p.portfolio-project-desc= self.portfolio.laz.services[curlang]
+
+		a.portfolio-project-btn-watch.btn.btn-link.btn-watch(
+			href='https://www.behance.net/gallery/71412909/Graphic-Web-design-Golden-Bus'
+			rel='nofollow noreferrer noopener'
+			target='_blank'
+		)= self.btn.watch[curlang]

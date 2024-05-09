@@ -1,0 +1,23 @@
+extends /src/markup/base
+
+block append vars
+	-
+		curpage = 'portfolio/laz-factory';
+		pageTitle = self.title.portfolio.laz[curlang];
+
+block append meta
+	meta(name='description' content='LAZ factory: a part of the portfolio of Dima Radushev')
+
+block append styles
+	link(rel='stylesheet' href='/css/pages/portfolio/laz-factory/laz-factory.css')
+
+block append scripts
+
+block header
+	include /src/markup/blocks/portfolio/laz-factory/header
+
+block content
+	main.main-pages.portfolio-project-page
+		.wrapper
+			include /src/markup/blocks/portfolio/laz-factory/about
+			include /src/markup/blocks/portfolio/laz-factory/gallery

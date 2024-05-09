@@ -59,6 +59,25 @@
 	text-wrap: nowrap;
 }
 
+.btn-link {
+	gap: 8px;
+	color: $violet;
+	&::before {
+		transition: translate 0.3s;
+		line-height: 0;
+	}
+	@media (pointer: coarse) {
+		&:active {
+			text-decoration: underline;
+		}
+	}
+	@media (pointer: fine) {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
 .btn-1 {
 	padding: 12px 48px;
 	background-color: $gray10;
@@ -84,51 +103,11 @@
 }
 
 .btn-2 {
-	gap: 8px;
-	color: $violet;
 	&::before {
 		content: '';
 		border-top: calc(5px / 18px * 1em) solid transparent;
 		border-left: calc(10px / 18px * 1em) solid;
 		border-bottom: calc(5px / 18px * 1em) solid transparent;
-	}
-	@media (pointer: coarse) {
-		&:active {
-			text-decoration: underline;
-		}
-	}
-	@media (pointer: fine) {
-		&:hover {
-			text-decoration: underline;
-		}
-	}
-}
-
-.btn-backto {
-	gap: 10px;
-	color: $violet;
-	&::before {
-		transition: translate 0.3s;
-	}
-	@media (pointer: coarse) {
-		&:active {
-			text-decoration: underline;
-			&::before {
-				translate: -3px 0;
-			}
-		}
-	}
-	@media (pointer: fine) {
-		&:hover {
-			text-decoration: underline;
-			&::before {
-				translate: -3px 0;
-			}
-		}
-	}
-	&::before {
-		content: url('/media/backTo.svg');
-		line-height: 0;
 	}
 }
 
