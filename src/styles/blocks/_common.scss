@@ -104,6 +104,34 @@
 	}
 }
 
+.btn-backto {
+	gap: 10px;
+	color: $violet;
+	&::before {
+		transition: translate 0.3s;
+	}
+	@media (pointer: coarse) {
+		&:active {
+			text-decoration: underline;
+			&::before {
+				translate: -3px 0;
+			}
+		}
+	}
+	@media (pointer: fine) {
+		&:hover {
+			text-decoration: underline;
+			&::before {
+				translate: -3px 0;
+			}
+		}
+	}
+	&::before {
+		content: url('/media/backTo.svg');
+		line-height: 0;
+	}
+}
+
 .title {
 	font-family: $title-font700, sans-serif;
 	line-height: 1;

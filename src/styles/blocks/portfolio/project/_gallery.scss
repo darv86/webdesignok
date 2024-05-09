@@ -2,8 +2,23 @@
 @use 'sass:map';
 
 @mixin gallery {
-	// .portfolio-project {
-	// }
+	.portfolio-project-gallery-title {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		margin-bottom: 24px;
+		&::before {
+			@include shape-render('rectangle');
+			color: $yellow;
+		}
+	}
+
+	.portfolio-project-gallery-figure {
+		border: 1px solid $gray90;
+		border-radius: 2px;
+	}
+
+	// .portfolio-project-galley-img { }
 
 	@media (min-width: map.get($bp, 'tablet2/3')) {
 	}

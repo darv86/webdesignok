@@ -2,10 +2,48 @@
 @use 'sass:map';
 
 @mixin about {
-	.portfolio-project-img {
+	.portfolio-project-about {
+		margin-bottom: 48px;
+	}
+
+	.portfolio-project-figure {
 		display: none;
 	}
 
+	.btn-backto {
+		margin-bottom: 48px;
+	}
+
+	.portfolio-project-title {
+		width: max-content;
+		margin-bottom: 12px;
+		&::after {
+			margin: 12px 0 0;
+		}
+	}
+
+	.portfolio-project-desc-info {
+		margin-bottom: 24px;
+	}
+
 	@media (min-width: map.get($bp, 'tablet1/3')) {
+		.portfolio-project-about {
+			--gap: 48px;
+			display: flex;
+			align-items: center;
+			gap: var(--gap);
+		}
+
+		.portfolio-project-figure {
+			display: block;
+			flex-shrink: 0;
+			width: col(7, var(--gap));
+		}
+	}
+
+	@media (min-width: map.get($bp, 'tablet2/3')) {
+		.main-pages-body {
+			--gap: 72px;
+		}
 	}
 }
