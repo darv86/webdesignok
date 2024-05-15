@@ -64,9 +64,9 @@ export default {
 	ftp: {
 		onRelease: true,
 		config: {
-			host: 'ftp.webdesignok.com',
-			user: 'darv@webdesignok.com',
-			password: '!Groovy77',
+			host: '',
+			user: '',
+			password: '',
 			port: 21,
 			parallel: 10,
 			reload: true,
