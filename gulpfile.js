@@ -54,16 +54,10 @@ export const markup = async () => {
 		.pipe(gulpif(!isRelease, browsersync.stream()));
 };
 
+// TODO: refactor legacy importer to modern importers
 export const styles = () => {
 	return src(paths.root.src + paths.styles.src, isRelease ? {} : { sourcemaps: true })
-		.pipe(
-			sass({
-				outputStyle: isCompressing.css ? 'compressed' : undefined,
-				loadPaths: [path.resolve('./'), path.resolve('./node_modules')],
-				// TODO: refactor legacy importer to modern importers
-				importer: url => (!url.startsWith('/') ? null : { file: path.resolve('./').concat('/', url) }),
-			}).on('error', sass.logError),
-		)
+		.pipe(sass({ outputStyle: isCompressing.css ? 'compressed' : undefined, loadPaths: path.resolve('./node_modules'), importer: url => (!url.startsWith('/') ? null : { file: url.slice(1) }) }).on('error', sass.logError))
 		.pipe(webpCss())
 		.pipe(gulpif(isRelease, autoprefixer({ grid: true, cascade: false })))
 		.pipe(gulpif(isRelease, groupMediaQueries()))
