@@ -80,6 +80,7 @@
 	},
 	"dependencies": {
 		"@tannerhodges/snap-slider": "^2.0.3",
-		"core-js-pure": "^3.22.2"
+		"core-js-pure": "^3.22.2",
+		"photoswipe": "^5.4.3"
 	}
 }
