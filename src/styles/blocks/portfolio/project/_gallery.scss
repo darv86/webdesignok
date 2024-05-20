@@ -1,25 +1,54 @@
 @use '/src/styles/utils' as *;
 @use 'sass:map';
+@use 'sass:color';
 
 @mixin gallery {
+	.section-portfolio-project-gallery {
+		display: grid;
+		gap: 48px;
+	}
+
+	.portfolio-project-gallery-body {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 24px;
+	}
+
 	.portfolio-project-gallery-title {
 		display: flex;
 		align-items: center;
 		gap: 12px;
 		margin-bottom: 24px;
-		&::before {
-			@include shape-render('rectangle');
-			color: $yellow;
-		}
 	}
 
 	.portfolio-project-gallery-figure {
+		display: grid;
+		gap: 12px;
+	}
+
+	.portfolio-project-galley-img {
 		border: 1px solid $gray90;
 		border-radius: 2px;
 	}
 
-	// .portfolio-project-galley-img { }
+	.portfolio-project-gallery-item-img {
+		object-fit: cover;
+		object-position: top center;
+		height: 154px;
+	}
 
-	@media (min-width: map.get($bp, 'tablet2/3')) {
+	.portfolio-project-galley-figcaption {
+		line-height: 1;
+		color: $gray50;
+	}
+
+	@media (min-width: map.get($bp, 'mobile3/3')) {
+		.portfolio-project-gallery-body {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		.portfolio-project-gallery-item-img {
+			height: 306px;
+		}
 	}
 }

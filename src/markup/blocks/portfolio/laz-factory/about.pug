@@ -1,4 +1,4 @@
-.portfolio-project-about
+section.section-portfolio-project-about
 	figure.portfolio-project-figure
 		img.portfolio-project-img.img(
 			src='/media/lazProjectKeyview.jpg'
@@ -6,7 +6,7 @@
 			alt='preview of a landing page for laz factory project designed by Dima Radushev'
 		)
 
-	article.portfolio-project-info
+	.portfolio-project-info
 		a.portfolio-project-btn-backto.btn.btn-link.btn-backto(
 			href=`/${curlang === deflang ? '' : curlang + '/'}portfolio/`
 		)= self.btn.backto[curlang]

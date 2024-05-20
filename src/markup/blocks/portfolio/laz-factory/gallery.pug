@@ -1,8 +1,87 @@
-.portfolio-project-gallery
-	h4.portfolio-project-gallery-title.subtitle.shape= self.portfolio.homePage[curlang]
+section.section-portfolio-project-gallery.photoswipe-gallery
+	.portfolio-project-gallery
+		h4.portfolio-project-gallery-title.subtitle.shape.--red.--rectangle= self.portfolio.homePage[curlang]
 
-	figure.portfolio-project-gallery-figure
-		img.portfolio-project-galley-img.img(
-			src='/media/axasLandingPage.jpg'
-			alt='full screen image of a landing page for axas project designed by Dima Radushev'
-		)
+		.portfolio-project-gallery-body
+			a.photoswipe-gallery-slide(
+				href='/media/laz-home-desktop.jpg'
+				data-pswp-webp-src='/media/laz-home-desktop.webp'
+				data-pswp-width='1920'
+				data-pswp-height='6000'
+				data-cropped='true'
+				target='_blank'
+			)
+				figure.portfolio-project-gallery-item.portfolio-project-gallery-figure
+					img.portfolio-project-gallery-item-img.portfolio-project-galley-img.img(
+						src='/media/laz-home-desktop.jpg'
+						alt='desktop version of home page for laz factory designed by Dima Radushev'
+						loading='lazy'
+					)
+					figcaption.portfolio-project-galley-figcaption= self.portfolio.desktopVersion[curlang]
+
+			a.photoswipe-gallery-slide(
+				href='/media/laz-home-mobile.jpg'
+				data-pswp-webp-src='/media/laz-home-mobile.webp'
+				data-pswp-width='375'
+				data-pswp-height='5774'
+				data-cropped='true'
+				target='_blank'
+			)
+				figure.portfolio-project-gallery-item.portfolio-project-gallery-figure
+					img.portfolio-project-gallery-item-img.portfolio-project-galley-img.img(
+						src='/media/laz-home-mobile.jpg'
+						alt='mobile version of home page for laz factory designed by Dima Radushev'
+						loading='lazy'
+					)
+					figcaption.portfolio-project-galley-figcaption= self.portfolio.mobileVersion[curlang]
+
+			a.photoswipe-gallery-slide(
+				href='/media/laz-menu-mobile.jpg'
+				data-pswp-webp-src='/media/laz-menu-mobile.webp'
+				data-pswp-width='375'
+				data-pswp-height='812'
+				data-cropped='true'
+				target='_blank'
+			)
+				figure.portfolio-project-gallery-item.portfolio-project-gallery-figure
+					img.portfolio-project-gallery-item-img.portfolio-project-galley-img.img(
+						src='/media/laz-menu-mobile.jpg'
+						alt='mobile version of main menu for laz factory designed by Dima Radushev'
+						loading='lazy'
+					)
+					figcaption.portfolio-project-galley-figcaption= self.portfolio.mobileVersion[curlang]
+
+	.portfolio-project-gallery
+		h4.portfolio-project-gallery-title.subtitle.shape.--teal.--circle= self.portfolio.productPage[curlang]
+		.portfolio-project-gallery-body
+			a.photoswipe-gallery-slide(
+				href='/media/laz-vehicle-desktop.jpg'
+				data-pswp-webp-src='/media/laz-vehicle-desktop.webp'
+				data-pswp-width='1920'
+				data-pswp-height='3867'
+				data-cropped='true'
+				target='_blank'
+			)
+				figure.portfolio-project-gallery-item.portfolio-project-gallery-figure
+					img.portfolio-project-gallery-item-img.portfolio-project-galley-img.img(
+						src='/media/laz-vehicle-desktop.jpg'
+						alt='desktop version of product page for laz factory designed by Dima Radushev'
+						loading='lazy'
+					)
+					figcaption.portfolio-project-galley-figcaption= self.portfolio.desktopVersion[curlang]
+
+			a.photoswipe-gallery-slide(
+				href='/media/laz-vehicle-mobile.jpg'
+				data-pswp-webp-src='/media/laz-vehicle-mobile.webp'
+				data-pswp-width='375'
+				data-pswp-height='2100'
+				data-cropped='true'
+				target='_blank'
+			)
+				figure.portfolio-project-gallery-item.portfolio-project-gallery-figure
+					img.portfolio-project-gallery-item-img.portfolio-project-galley-img.img(
+						src='/media/laz-vehicle-mobile.jpg'
+						alt='mobile version of product page for laz factory designed by Dima Radushev'
+						loading='lazy'
+					)
+					figcaption.portfolio-project-galley-figcaption= self.portfolio.mobileVersion[curlang]

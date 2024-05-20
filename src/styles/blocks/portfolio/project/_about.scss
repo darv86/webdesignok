@@ -2,7 +2,7 @@
 @use 'sass:map';
 
 @mixin about {
-	.portfolio-project-about {
+	.section-portfolio-project-about {
 		margin-bottom: 48px;
 	}
 
@@ -51,7 +51,7 @@
 	}
 
 	@media (min-width: map.get($bp, 'tablet1/3')) {
-		.portfolio-project-about {
+		.section-portfolio-project-about {
 			--gap: 48px;
 			display: flex;
 			align-items: center;

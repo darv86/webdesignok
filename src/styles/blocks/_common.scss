@@ -24,11 +24,14 @@
 	line-height: 1.5;
 	color: $gray40;
 	text-rendering: optimizeLegibility;
+	&:has(dialog[open]) {
+		overflow-y: hidden;
+	}
 }
 
 .body-inner {
-	position: relative;
 	overflow-x: hidden;
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	min-height: 100dvh;
@@ -191,6 +194,34 @@
 			translate: 0 -3px;
 		}
 	}
+}
+
+.--rectangle::before {
+	@include shape-render('rectangle');
+}
+
+.--circle::before {
+	@include shape-render('circle');
+}
+
+.--triangle::before {
+	@include shape-render('triangle');
+}
+
+.--yellow::before {
+	color: $yellow;
+}
+
+.--teal::before {
+	color: $teal;
+}
+
+.--red::before {
+	color: $red;
+}
+
+.--violet::before {
+	color: $violet;
 }
 
 @include nav;
