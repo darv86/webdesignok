@@ -5,15 +5,15 @@ $dur: 0.3s;
 		@error 'Only "hidden" or "visible" arguments are possible';
 	}
 
-	@keyframes #{if($state == hidden, hidden, visible)} {
+	@keyframes #{if(sass($state == hidden): hidden; else: visible)} {
 		from {
-			overflow: if($state != hidden, hidden, visible);
+			overflow: if(sass($state == hidden): hidden; else: visible);
 		}
-		#{if($state == hidden, 99%, 1%)} {
+		#{if(sass($state == hidden): 99%; else: 1%)} {
 			overflow: visible;
 		}
 		to {
-			overflow: if($state == hidden, hidden, visible);
+			overflow: if(sass($state == hidden): hidden; else: visible);
 		}
 	}
 }
