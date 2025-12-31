@@ -1,7 +1,8 @@
 // @ts-nocheck
 // import { Transform } from 'node:stream';
-// import { fileURLToPath } from 'node:url';
+import { pathToFileURL } from 'node:url';
 import { createRequire } from 'node:module';
+import fs from 'node:fs';
 import { readdir, unlink } from 'node:fs/promises';
 import path from 'node:path';
 import gulp from 'gulp';
@@ -26,9 +27,10 @@ import csvtojson from 'csvtojson';
 import _ from 'lodash/lodash.min.js';
 import webpackConfig from './webpack.config.js';
 import siteConfig from './siteConfig.js';
+import { log } from 'node:console';
 
 const require = createRequire(import.meta.url);
-const { pathToFileURL } = require('url');
+// const { pathToFileURL } = require('url');
 const { isRelease, paths, isCompressing, colors, ftp } = siteConfig;
 const { src, dest, series, parallel, watch } = gulp;
 const sass = gulpSass(dartSass);
@@ -57,10 +59,16 @@ export const markup = async () => {
 		.pipe(gulpif(!isRelease, browsersync.stream()));
 };
 
-// TODO: refactor legacy importer to modern importers
 export const styles = () => {
 	return src(paths.root.src + paths.styles.src, isRelease ? {} : { sourcemaps: true })
-		.pipe(sass({ outputStyle: isCompressing.css ? 'compressed' : undefined, includePaths: [pathToFileURL('node_modules').pathname.slice(1)], importer: url => (!url.startsWith('/') ? null : { file: url.slice(1) }) }).on('error', sass.logError))
+		.pipe(
+			sass({
+				// importer: url => (url.startsWith('/') ? { file: url.slice(1) } : null),
+				importers: [{ findFileUrl: url => (url.startsWith('/') ? pathToFileURL(path.resolve(url.slice(1))) : null) }],
+				outputStyle: isCompressing.css ? 'compressed' : undefined,
+				includePaths: [pathToFileURL('node_modules').pathname.slice(1)],
+			}).on('error', sass.logError),
+		)
 		.pipe(webpCss())
 		.pipe(gulpif(isRelease, autoprefixer({ grid: true, cascade: false })))
 		.pipe(gulpif(isRelease, groupMediaQueries()))
@@ -181,7 +189,7 @@ export const deploy = () => {
 export const server = () => {
 	browsersync.init({
 		server: paths.root.dest,
-		port: 88,
+		port: 8000,
 		open: false,
 		notify: false,
 	});
