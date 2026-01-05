@@ -1,14 +1,12 @@
 // @ts-nocheck
 import { pathToFileURL } from 'node:url';
-import { createRequire } from 'node:module';
-import { readdir, unlink } from 'node:fs/promises';
+import { rm, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import gulp from 'gulp';
 import pug from 'gulp-pug';
 import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import webpCss from 'gulp-webp-css-fixed';
-import autoprefixer from 'gulp-autoprefixer';
 import groupMediaQueries from 'gulp-group-css-media-queries';
 import webpack from 'webpack-stream';
 import imagemin from 'gulp-imagemin';
@@ -17,7 +15,6 @@ import webpHtml from 'gulp-webp-html-nosvg';
 import gulpif from 'gulp-if';
 import font2woff2 from 'gulp-ttf2woff2';
 import realFavicon from 'gulp-real-favicon';
-import del from 'del';
 import browsersync from 'browser-sync';
 import ftpConnection from 'vinyl-ftp';
 import named from 'vinyl-named';
@@ -65,7 +62,6 @@ export const styles = () => {
 			}).on('error', sass.logError),
 		)
 		.pipe(webpCss())
-		.pipe(gulpif(isRelease, autoprefixer({ grid: true, cascade: false })))
 		.pipe(gulpif(isRelease, groupMediaQueries()))
 		.pipe(dest(paths.root.dest + paths.styles.dest, isRelease ? {} : { sourcemaps: true }))
 		.pipe(gulpif(!isRelease, browsersync.stream()));
@@ -80,15 +76,15 @@ export const scripts = () => {
 };
 
 export const media = () => {
-	return src([`${paths.root.src}${paths.media.src[0]}`, `!${paths.root.src}${paths.media.src[1]}`])
-		.pipe(gulpif(img => img.extname !== '.webp', webp()))
+	return src([`${paths.root.src}${paths.media.src[0]}`, `!${paths.root.src}${paths.media.src[1]}`], { encoding: false })
+		.pipe(gulpif(img => ['.jpg', '.jpeg', '.png', '.tiff', '.tif'].includes(img.extname.toLowerCase()), webp()))
 		.pipe(gulpif(isRelease, imagemin()))
 		.pipe(dest(paths.root.dest + paths.media.dest))
 		.pipe(gulpif(!isRelease, browsersync.stream()));
 };
 
 export const fonts = () => {
-	return src(paths.root.src + paths.fonts.src)
+	return src(paths.root.src + paths.fonts.src, { encoding: false })
 		.pipe(gulpif(font => font.extname === '.ttf' || font.extname === '.otf', font2woff2({ ignoreExt: true, clone: true })))
 		.pipe(dest(paths.root.dest + paths.fonts.dest));
 };
@@ -163,18 +159,19 @@ export const favicon = cb => {
 			markupFile,
 		},
 		async () => {
-			await unlink(markupFile);
+			await rm(markupFile, { force: true });
 			cb();
 		},
 	);
 };
 
-export const clean = () => {
-	return del(paths.root.dest + '/**/*', { dot: true });
+export const clean = async () => {
+	await rm(paths.root.dest, { recursive: true, force: true });
 };
 
 export const nmclean = () => {
-	return del(['node_modules', 'build', 'package-lock.json'], { dot: true });
+	// await deleteAsync(['node_modules', 'build', 'package-lock.json'], { force: true, dot: true });
+	return Promise.all(['node_modules', 'build', 'package-lock.json'].map(async file => await rm(file, { recursive: true })));
 };
 
 export const deploy = () => {
